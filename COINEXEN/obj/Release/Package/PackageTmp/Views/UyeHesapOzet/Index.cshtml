@@ -1,0 +1,431 @@
+﻿@using COINEXEN.Models
+@model IEnumerable<UserOrderModel>
+<style>
+    .coinlink a {
+        color: white !important;
+        text-decoration:none
+    }
+        .coinlink a:hover {
+            color: #f4e185 !important;
+        }
+</style>
+
+<title>@ViewBag.Uye.UserName Hesap Özeti</title>
+<div class="container my-4 profilLinks">
+    <div class="row">
+        <div class="col-lg-3 px-3">
+
+            <div class="row profilLinks-header py-3">
+                <div class="col-md-4">
+                    <span>
+                        <i class="fa fa-user-circle fa-3x" aria-hidden="true" style="margin: auto;"></i>
+                    </span>
+                </div>
+                <div class="col-md-8 ">
+                    <span style="display: block;font-weight: bold; font-size: 1.2rem;">@ViewBag.Uye.Name @ViewBag.Uye.Surname</span>
+
+
+                    <span style="display: block;">Onaylı Hesap</span>
+
+                </div>
+                <div class="col-md-12" style="padding:0 0 0 0;">
+                    <span>
+                        <strong>Bakiye=@ViewBag.Uye.Bakiye <i class="fa fa-try" aria-hidden="true"></i></strong>
+                                    </span>
+
+                </div>
+
+
+            </div>
+            <div class="row hesapOzeti-linkler">
+                <div class="col-md-12">
+                    <a href="">Profilim</a>
+                </div>
+                <div class="col-md-12">
+                    <a href="#hesapOzeti">Varlıklarım</a>
+                </div>
+                <div class="col-md-12">
+                    <a href="#transferler">Transferlerim</a>
+                </div>
+                <div class="col-md-12">
+                    <a href="#islemGecmisi">İşlem Geçmişim</a>
+                </div>
+                <div class="col-md-12">
+                    <a href="#limitler">Limitlerim</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 responsive-none">
+            <img src="~/coinexen_Proje/img/COINEXEN-removebg-preview.png"
+                 alt="" />
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="hesap-bilgileri">
+    <div class="container text-center mt-5 " id="hesapOzeti" style="padding-top:100px !important">
+
+        <h2>Hesap Özeti</h2>
+
+        <div class="container text-center ">
+            <canvas height="100" id="myChart"></canvas>
+            <h2> Hesabınızın Yaklaşık Değeri</h2>
+            <span class="text-white"><strong>
+    @ViewBag.Uye.HesapDeger<i class="fa fa-try" aria-hidden="true"></i>
+</strong></span>
+            <div class="text-white coinlink">
+                @if (Enumerable.Count(ViewBag.coinler) == 0)
+                {
+                    <div class="alert alert-warning" role="alert">
+                        Sahip olduğunuz Coin Bulunmamaktadır!
+                    </div>
+                }
+                else
+                {
+                    foreach (var item in ViewBag.coinler)
+                    {
+                        <strong> <a href="/CoinDetay/Index/@item.Coin.Id">@item.Coin.Name </a></strong><span>(@item.Quantity Adet) </span>
+                    }
+                }
+
+            </div>
+        </div>
+
+       
+
+
+    </div>
+
+    <div class="container text-center my-5 text-white py-3" id="transferler" style="padding-top:80px !important">
+
+        <div id="bekleyen-transfer" class="my-5 ">
+            <h2>Bekleyen Transferler</h2>
+            <div class="alert alert-warning" role="alert">
+                Bekleyen Transferiniz Bulunmamaktadır!
+            </div>
+        </div>
+
+        <div id="transfer-gecmisi" class="my-5">
+            <h2> Transfer Geçmişi</h2>
+
+            <div class="alert alert-warning" role="alert">
+                Transfer gçmişiniz Bulunmamaktadır!
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="islemGecmisi" class="container text-center my-5 py-3" style="padding-top:100px !important">
+
+
+
+
+        <h2>Son İşlemler</h2>
+
+       
+
+
+
+        <div class="row son-islemler">
+            <div class="mb-2" style="text-align:left !important"><h5 class="text-white">Alım İşlemi</h5></div>
+            <div class="col-md-12">
+                @if (Enumerable.Count(ViewBag.alimlar) == 0)
+                {
+                    <div class="alert alert-warning" role="alert">
+                        <strong> Daha önce alım işlemi yapmadınız!</strong>
+                    </div>
+
+                }
+                else
+                {
+                    <table class="table table-striped">
+                        <thead class="table-light">
+                            <tr>
+
+                                <th scope="col">Coin Adı</th>
+                                <th scope="col">Adet</th>
+                                <th scope="col">İşlem Adet Fiyat</th>
+                                <th class="responsive-none">Saat</th>
+                                <th>Toplam Fiyat</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ViewBag.alimlar)
+                            {
+                            <tr>
+
+                                <td>@item.CoinName</td>
+                                <td>@item.Quantity</td>
+
+
+                                @{
+                                    string fiyat = Convert.ToString(item.CoinPrice);
+                                    if (fiyat.Length > 7)
+                                    {
+
+
+
+                                        <td>
+                                            @fiyat.Substring(0, 7)
+                                        </td>
+
+                                    }
+                                    else
+                                    {
+                                        <td>
+
+                                            @item.CoinPrice
+                                        </td>
+                                    }
+                                }
+
+
+                                @*<td> @item.CoinPrice <i class="fa fa-try" aria-hidden="true"></i>
+        </td>*@
+
+                                <td class="responsive-none">@item.AlimDate</td>
+                                @{
+                                    string fiyattoplam = Convert.ToString(item.TotalPrice);
+                                    if (fiyattoplam.Length > 7)
+                                    {
+
+
+
+                                        <td>
+                                            @fiyattoplam.Substring(0, 7)
+                                        </td>
+
+                                    }
+                                    else
+                                    {
+                                        <td>
+
+                                            @item.TotalPrice
+                                        </td>
+                                    }
+                                }
+
+                                @*<td>@item.TotalPrice <i class="fa fa-try" aria-hidden="true"></i></td>*@
+
+                            </tr>
+                            }
+
+
+
+
+
+
+                        </tbody>
+
+                    </table>
+
+                }
+
+            </div>
+        </div>
+
+
+        <div class="row son-islemler">
+            <div class="mb-2" style="text-align:left !important"><h5 class="text-white">Satım İşlemi</h5></div>
+            <div class="col-md-12">
+
+                @if (Enumerable.Count(ViewBag.satislar) == 0)
+                {
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Daha önce satım işlemi yapmadınız!</strong>
+                    </div>
+
+                }
+                else
+                {
+                    <table class="table table-striped">
+                        <thead class="table-light">
+                            <tr>
+
+                                <th scope="col">Coin Adı</th>
+                                <th scope="col">Adet</th>
+                                <th scope="col">İşlem Adet Fiyat</th>
+                                <th class="responsive-none">Saat</th>
+                                <th>Toplam Fiyat</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in @ViewBag.satislar)
+                            {
+                            <tr>
+
+                                <td>@item.CoinName</td>
+                                <td>@item.Quantity</td>
+                                @{
+                                    string fiyat = Convert.ToString(item.CoinPrice);
+                                    if (fiyat.Length > 7)
+                                    {
+
+
+
+                                        <td>
+                                            @fiyat.Substring(0, 7)
+                                        </td>
+
+                                    }
+                                    else
+                                    {
+                                        <td>
+
+                                            @item.CoinPrice
+                                        </td>
+                                    }
+                                }
+                                @*<td>@item.CoinPrice <i class="fa fa-try" aria-hidden="true"></i></td>*@
+
+                                <td class="responsive-none">@item.SatisDate</td>
+
+
+
+                                @{
+                                    string fiyattoplam = Convert.ToString(item.TotalPrice);
+                                    if (fiyattoplam.Length > 7)
+                                    {
+
+
+
+                                        <td>
+                                            @fiyattoplam.Substring(0, 7)
+                                        </td>
+
+                                    }
+                                    else
+                                    {
+                                        <td>
+
+                                            @item.TotalPrice
+                                        </td>
+                                    }
+                                }
+
+                                @*<td>@item.TotalPrice <i class="fa fa-try" aria-hidden="true"></i></td>*@
+
+                            </tr>
+                            }
+
+
+
+
+
+
+                        </tbody>
+
+                    </table>
+
+                }
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <div id="limitler" class="container text-center my-5 py-3" style="padding-top:100px !important">
+        <h2> Limitler</h2>
+        <table class="table table-striped">
+
+            <tbody>
+                <tr>
+
+                    <td>Para Yatırma (Günlük)</td>
+
+                    <td>500,000.00 TL</td>
+
+                </tr>
+                <tr>
+
+                    <td>Para Yatırma (Aylık)</td>
+
+                    <td>2,500,000.00 TL</td>
+
+                </tr>
+                <tr>
+
+                    <td>Para Çekme (Günlük)</td>
+
+                    <td>500,000.00 TL</td>
+
+                </tr>
+                <tr>
+
+                    <td>Para Çekme (Aylık)</td>
+
+                    <td>2,500,000.00 TL</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<script>
+    var xValues = ["ADA", "LTC", "ETH", "MANA", "BTT"];
+    var yValues = [55, 49, 44, 24, 15];
+    var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145"
+    ];
+
+    new Chart("myChart", {
+        type: "doughnut",
+        data: {
+            labels: xValues,
+            datasets: [{
+
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+
+        }
+    });
+</script>
+

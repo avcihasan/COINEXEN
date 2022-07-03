@@ -1,0 +1,141 @@
+﻿@model COINEXEN.Entity.Coin
+@{
+    ViewBag.Title = "CartDetails";
+}
+
+<title>@Model.Name Alım</title>
+
+@using (Html.BeginForm("AddToCart", "Cart"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal py-5 container">
+        <div class="text-center text-white">
+
+
+            <h2 style="display:inline-block">Coin Alım</h2>
+        </div>
+        <hr />
+
+
+
+        <table class="table text-white text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Kısa Kod</th>
+                    <th scope="col">Coin İsmi</th>
+                    <th scope="col">Satış Adeti</th>
+                    <th scope="col">Fiyat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.KısaKod</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Stock</td>
+
+                    @{
+                        string fiyat = Convert.ToString(Model.Price);
+                        if (fiyat.Length > 7)
+                        {
+
+
+
+                            <td>
+                                @fiyat.Substring(0, 7) <i class="fa fa-try" aria-hidden="true"></i>
+                            </td>
+
+                        }
+                        else
+                        {
+                            <td>@Model.Price <i class="fa fa-try" aria-hidden="true"></i></td>
+                        }
+                    }
+                   
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+        <div class="form-group text-white text-center row mt-5">
+            <div class="col-md-4">
+                <h5>Almak İstediğiniz Adet</h5>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model=>model.AlimSayisi, "", new { @class = "text-danger" })
+
+                @Html.TextBoxFor(i => i.AlimSayisi, new { htmlAttributes = new { @class = "form-control text-center" }, autocomplete = "off" })
+            </div>
+            <div class="col-md-4">
+                <h5>Güncel Fiyat</h5>
+                <input type="text" name="sayi2" id="sayi2" value="@Model.Price.ToString().Replace(',', '.')" />
+            </div>
+            <div class="col-md-4">
+                <h5>Hesaplanan Ortalama Fiyat</h5>
+                <input type="text" name="sonuc" id="sonuc" />
+            </div>
+
+
+        </div>
+
+
+        <div class="form-group col-md-12 p-5 text-center text-white">
+            @Html.HiddenFor(i => i.Id)
+            <button type="submit" class="btn btn-success px-4">
+                <i class="fa fa-money fa-lg" aria-hidden="true"> Al</i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function carpma() {
+        var AlimSayisi = document.getElementById("AlimSayisi").value;
+
+
+
+        var sayi2 = document.getElementById("sayi2").value;
+
+        if (AlimSayisi == "" || sayi2 == "") {
+            document.getElementById("sonuc").value = "0";
+
+        }
+        else {
+
+            document.getElementById("sonuc").value = parseFloat(AlimSayisi) * parseFloat(sayi2);
+            parseFloat("sonuc");
+        }
+
+
+    }
+    setInterval("carpma()", 100);
+</script>
+
+
+
+
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

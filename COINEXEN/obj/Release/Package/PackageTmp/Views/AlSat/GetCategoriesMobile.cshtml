@@ -1,0 +1,35 @@
+﻿@using COINEXEN.Entity
+@model IEnumerable<Category>
+
+@{
+    var selectedCategory = Url.RequestContext.RouteData.Values["id"];
+}
+
+
+
+<div class="btn-group dropend satisKategori-Mobil">
+    <div class="row">
+        <div class="col-md-9">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Kategoriler
+            </button>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="/AlSat">Tüm Kategoriler</a></li>
+
+        @foreach (var kategoriler in Model)
+        {
+
+            <li><a class="dropdown-item" href="/AlSat/Index/@kategoriler.Id">@kategoriler.Name</a></li>
+        }
+    </ul>
+</div>
+
+
+
+
+

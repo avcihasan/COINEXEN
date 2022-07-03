@@ -1,0 +1,69 @@
+html{
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    
+}
+nav {
+   
+    background-color: #0F2C67 !important;
+    color: white;
+    border-bottom: 1px solid #f4e185;
+   
+}
+
+nav li{
+    margin: 0 10px;
+}
+nav li a{
+    text-decoration: none;
+    color: white;
+}
+nav li a:hover{
+
+    color: #f4e185;
+}
+nav sa span{
+    color: grey;
+    font-size: 0.9rem;
+}
+.islemler-Dropdown li {
+    background-color: #f4e185;
+}
+
+.islemler-Dropdown li a {
+    color: #0F2C67;
+}
+    .islemler-Dropdown li a:hover {
+        color: #f4e185;
+        background-color: #0F2C67;
+    }
+
+.islemler-Dropdown {
+    border: 1px solid #0F2C67;
+}
+
+textarea{
+    width:100% !important;
+}
+
+
+
+@media (max-width: 576px) {
+
+
+.responsive-none {
+        display: none;
+    }
+    .adminlogo img {
+        width:100%
+
+    }
+    }
+
+.adminlogo img {
+    max-width: 450px;
+    background-color: #0F2C67 !important;
+}

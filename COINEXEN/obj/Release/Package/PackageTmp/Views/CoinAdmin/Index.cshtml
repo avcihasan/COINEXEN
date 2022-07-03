@@ -1,0 +1,109 @@
+﻿@model IEnumerable<COINEXEN.Entity.Coin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<title>Coinler</title>
+<div>
+    
+<div class="text-center pt-5" style="color:black">
+    <h2>Coin Listesi</h2>
+</div>
+
+<p>
+    @Html.ActionLink("Coin Oluştur", "Create",null,new { @class = "btn btn-primary" })
+</p>
+<table class="table  table-striped mb-5">
+    <thead class="table-light">
+        <tr>
+
+            <th class="responsive-none">
+                @Html.DisplayNameFor(model => model.KısaKod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+
+            <th class="responsive-none">
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th class="responsive-none">
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </th>
+            <th></th>
+        </tr>
+
+    </thead>       
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td class="responsive-none">
+                    @Html.DisplayFor(modelItem => item.KısaKod)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+
+                <td class="responsive-none">
+                    @Html.DisplayFor(modelItem => item.Stock)
+                </td>
+
+                @{
+
+                    string sayi = Convert.ToString(@item.Price);
+                    if (sayi.Length < 2)
+                    {
+                        sayi = sayi.Substring(0, 1);
+
+                    }
+                    else if (sayi.Length < 3)
+                    {
+                        sayi = sayi.Substring(0, 2);
+
+                    }
+                    else if (sayi.Length < 4)
+                    {
+                        sayi = sayi.Substring(0, 3);
+
+                    }
+                    else if (sayi.Length < 5)
+                    {
+                        sayi = sayi.Substring(0, 4);
+
+                    }
+
+                    else
+                    {
+                        sayi = sayi.Substring(0, 5);
+
+                    }
+
+                    <td>@sayi <i class="fa fa-try" aria-hidden="true"></i></td>
+
+                }
+                @*@Html.DisplayFor(modelItem => item.Price)*@
+
+                <td class="responsive-none">
+                    @Html.DisplayFor(modelItem => item.Category.Name)
+                </td>
+                <td class="text-center">
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm my-1" })
+                    @Html.ActionLink("Detay", "Details", new { id = item.Id }, new { @class = "btn btn-info btn-sm " })
+                    @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>
+
+</div>
