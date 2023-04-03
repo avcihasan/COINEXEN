@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "KnURGyDXgun22WsM5kn6TKhFN+DK63tHe62CclLEYMX3oD2rUtqW1eQEf/+gaB2Mawk0vomceUqCLFG/KbtnIQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\COINEXEN.Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\avcih\\.nuget\\packages\\microsoft.aspnetcore.systemwebadapters\\1.0.0\\microsoft.aspnetcore.systemwebadapters.1.0.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\microsoft.aspnetcore.systemwebadapters.abstractions\\1.0.0\\microsoft.aspnetcore.systemwebadapters.abstractions.1.0.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\microsoft.aspnetcore.systemwebadapters.coreservices\\1.0.0\\microsoft.aspnetcore.systemwebadapters.coreservices.1.0.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\system.runtime.caching\\6.0.0\\system.runtime.caching.6.0.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\system.security.accesscontrol\\6.0.0\\system.security.accesscontrol.6.0.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\yarp.reverseproxy\\1.1.0\\yarp.reverseproxy.1.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
