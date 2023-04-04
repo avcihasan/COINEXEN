@@ -1,13 +1,10 @@
 ﻿using COINEXEN.Core.Entities.Identity;
+using COINEXEN.Core.UnitOfWorks;
 using COINEXEN.Repository.Contexts;
+using COINEXEN.Repository.UnitOfWorks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace COINEXEN.Repository
 {
@@ -24,6 +21,8 @@ namespace COINEXEN.Repository
                 opts.Password.RequireLowercase = false;
                 opts.Password.RequireUppercase = false;
             }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+
+            services.AddScoped<IUnitOfWork,UnitOfWork>();
         }
     }
 }

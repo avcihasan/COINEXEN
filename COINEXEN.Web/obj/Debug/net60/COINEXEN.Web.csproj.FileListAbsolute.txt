@@ -96,3 +96,15 @@ C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\obj\Debug\net60\refint\
 C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\obj\Debug\net60\COINEXEN.Web.pdb
 C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\obj\Debug\net60\COINEXEN.Web.genruntimeconfig.cache
 C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\obj\Debug\net60\ref\COINEXEN.Web.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\obj\Debug\net60\COINEXEN.Web.RazorAssemblyInfo.cache
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\obj\Debug\net60\COINEXEN.Web.RazorAssemblyInfo.cs
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\EntityFramework.SqlServer.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\EntityFramework.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\System.Data.SqlClient.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\runtimes\win-arm64\native\sni.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\runtimes\win-x64\native\sni.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\runtimes\win-x86\native\sni.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\AutoMapper.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

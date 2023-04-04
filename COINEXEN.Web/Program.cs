@@ -1,4 +1,5 @@
 using COINEXEN.Repository;
+using COINEXEN.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSystemWebAdapters();
@@ -8,6 +9,7 @@ builder.Services.AddReverseProxy().LoadFromConfig(builder.Configuration.GetSecti
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddRepositoryServices(builder.Configuration.GetConnectionString("SqlServer"));
+builder.Services.AddServiceServices();
 
 var app = builder.Build();
 
