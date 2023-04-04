@@ -1,0 +1,17 @@
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\obj\Debug\net6.0\COINEXEN.Repository.csproj.AssemblyReference.cache
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\obj\Debug\net6.0\COINEXEN.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\obj\Debug\net6.0\COINEXEN.Repository.AssemblyInfoInputs.cache
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\obj\Debug\net6.0\COINEXEN.Repository.AssemblyInfo.cs
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\obj\Debug\net6.0\COINEXEN.Repository.csproj.CoreCompileInputs.cache
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\bin\Debug\net6.0\COINEXEN.Repository.deps.json
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\bin\Debug\net6.0\COINEXEN.Repository.runtimeconfig.json
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\bin\Debug\net6.0\COINEXEN.Repository.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\bin\Debug\net6.0\COINEXEN.Repository.pdb
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\bin\Debug\net6.0\COINEXEN.Core.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\bin\Debug\net6.0\COINEXEN.Core.pdb
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\obj\Debug\net6.0\COINEXEN.Repository.csproj.CopyComplete
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\obj\Debug\net6.0\COINEXEN.Repository.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\obj\Debug\net6.0\refint\COINEXEN.Repository.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\obj\Debug\net6.0\COINEXEN.Repository.pdb
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\obj\Debug\net6.0\COINEXEN.Repository.genruntimeconfig.cache
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Repository\obj\Debug\net6.0\ref\COINEXEN.Repository.dll

@@ -1,3 +1,4 @@
+using COINEXEN.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSystemWebAdapters();
@@ -5,6 +6,8 @@ builder.Services.AddReverseProxy().LoadFromConfig(builder.Configuration.GetSecti
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddRepositoryServices(builder.Configuration.GetConnectionString("SqlServer"));
 
 var app = builder.Build();
 

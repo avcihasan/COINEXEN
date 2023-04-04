@@ -1,0 +1,17 @@
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\obj\Debug\net6.0\COINEXEN.Service.csproj.AssemblyReference.cache
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\obj\Debug\net6.0\COINEXEN.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\obj\Debug\net6.0\COINEXEN.Service.AssemblyInfoInputs.cache
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\obj\Debug\net6.0\COINEXEN.Service.AssemblyInfo.cs
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\obj\Debug\net6.0\COINEXEN.Service.csproj.CoreCompileInputs.cache
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\bin\Debug\net6.0\COINEXEN.Service.deps.json
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\bin\Debug\net6.0\COINEXEN.Service.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\bin\Debug\net6.0\COINEXEN.Service.pdb
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\bin\Debug\net6.0\COINEXEN.Core.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\bin\Debug\net6.0\COINEXEN.Repository.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\bin\Debug\net6.0\COINEXEN.Repository.pdb
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\bin\Debug\net6.0\COINEXEN.Core.pdb
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\obj\Debug\net6.0\COINEXEN.Service.csproj.CopyComplete
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\obj\Debug\net6.0\COINEXEN.Service.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\obj\Debug\net6.0\refint\COINEXEN.Service.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\obj\Debug\net6.0\COINEXEN.Service.pdb
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Service\obj\Debug\net6.0\ref\COINEXEN.Service.dll

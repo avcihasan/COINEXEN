@@ -1,0 +1,12 @@
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Core\bin\Debug\net6.0\COINEXEN.Core.deps.json
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Core\bin\Debug\net6.0\COINEXEN.Core.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Core\bin\Debug\net6.0\COINEXEN.Core.pdb
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Core\obj\Debug\net6.0\COINEXEN.Core.csproj.AssemblyReference.cache
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Core\obj\Debug\net6.0\COINEXEN.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Core\obj\Debug\net6.0\COINEXEN.Core.AssemblyInfoInputs.cache
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Core\obj\Debug\net6.0\COINEXEN.Core.AssemblyInfo.cs
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Core\obj\Debug\net6.0\COINEXEN.Core.csproj.CoreCompileInputs.cache
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Core\obj\Debug\net6.0\COINEXEN.Core.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Core\obj\Debug\net6.0\refint\COINEXEN.Core.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Core\obj\Debug\net6.0\COINEXEN.Core.pdb
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Core\obj\Debug\net6.0\ref\COINEXEN.Core.dll
