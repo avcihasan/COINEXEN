@@ -4,7 +4,7 @@ namespace COINEXEN.Core.Entities.BuyingAndSelling
 {
     public class SellCoin : BaseEntity
     {
-        public int CoinId { get; set; }
+        public Guid CoinId { get; set; }
         public Coin Coin { get; set; }
         public int Quantity { get; set; }
         public double CoinPrice { get; set; }

@@ -27,7 +27,7 @@ namespace COINEXEN.Repository.Repositories
             return entityEntry.State == EntityState.Deleted;
         }
 
-        public async Task<bool> RemoveByIdAsync(int id)
+        public async Task<bool> RemoveByIdAsync(string id)
         {
             T entity = await GetByIdAsync(id);
             return Remove(entity);
@@ -41,8 +41,8 @@ namespace COINEXEN.Repository.Repositories
             return entities;
         }
 
-        public async Task<T> GetByIdAsync(int id, bool tracking = true)
-            =>await GetAll(tracking).FirstOrDefaultAsync(x => x.Id == id);          
+        public async Task<T> GetByIdAsync(string id, bool tracking = true)
+            =>await GetAll(tracking).FirstOrDefaultAsync(x => x.Id == Guid.Parse(id));          
          
         public bool Update(T entity)
         {

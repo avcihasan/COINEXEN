@@ -15,7 +15,6 @@ namespace COINEXEN.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Message(Message message)
         {        
-
             return RedirectToAction("Index", "Home");
         }
 

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace COINEXEN.Repository.Contexts
 {
-    public class AppDbContext : IdentityDbContext<AppUser,AppRole,int>
+    public class AppDbContext : IdentityDbContext<AppUser,AppRole, Guid>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -23,19 +23,26 @@ namespace COINEXEN.Repository.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            modelBuilder.Entity<UserWallet>()
+                .HasKey(x => x.Id);
+
+            modelBuilder.Entity<AppUser>()
+                .HasOne(x => x.Wallet)
+                .WithOne(x => x.AppUser)
+                .HasForeignKey<UserWallet>(x => x.Id);
+
+            modelBuilder.Entity<CoinWallet>()
+                .HasKey(key => key.Id);
+
             modelBuilder.Entity<AppUser>()
                .HasOne(p => p.CoinWallet)
                .WithOne(p => p.AppUser)
                .HasForeignKey<CoinWallet>(p => p.Id);
 
-            modelBuilder.Entity<AppUser>()
-               .HasOne(p => p.Wallet)
-               .WithOne(p => p.AppUser)
-               .HasForeignKey<UserWallet>(p => p.Id);
-
-            modelBuilder.SeedDatas();
-            modelBuilder.SeedRoles();
-            modelBuilder.SeedUsers();
+            //modelBuilder.SeedDatas();
+            //modelBuilder.SeedRoles();
+            //modelBuilder.SeedUsers();
 
             base.OnModelCreating(modelBuilder);
         }

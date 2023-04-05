@@ -7,7 +7,7 @@ namespace COINEXEN.Core.Entities
         public string AppUserId { get; set; }
         public AppUser AppUser { get; set; }
 
-        public int CoinId { get; set; }
+        public Guid CoinId { get; set; }
         public Coin Coin { get; set; }
         public int Quantity { get; set; }
     }

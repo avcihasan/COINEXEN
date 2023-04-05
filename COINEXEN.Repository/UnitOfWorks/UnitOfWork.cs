@@ -7,6 +7,9 @@ namespace COINEXEN.Repository.UnitOfWorks
 {
     public class UnitOfWork : IUnitOfWork
     {
+        public IUserWalletRepository UserWalletRepository { get; private set; }
+        public AppDbContext Context { get; private set; }
+        public ICoinWalletRepository CoinWalletRepository { get; private set; }
         public ICoinRepository CoinRepository { get; private set; }
 
         readonly AppDbContext _context;
@@ -15,6 +18,10 @@ namespace COINEXEN.Repository.UnitOfWorks
         {
             _context = context;
             CoinRepository = new CoinRepository(_context);
+            UserWalletRepository = new UserWalletRepository(_context);
+            CoinWalletRepository =new CoinWalletRepository(_context);
+            Context = context;
+
         }
 
 

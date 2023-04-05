@@ -17,7 +17,6 @@ namespace COINEXEN.Controllers
         }
         public ActionResult Register()
             =>View();
-     
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -26,19 +25,15 @@ namespace COINEXEN.Controllers
             if (ModelState.IsValid)
             {
                bool result= await _userService.CreateUserAsync(model);
-
                 if (result)
                     return RedirectToAction("Login", "Account");
-
-                else
-                    ModelState.AddModelError("RegisterUserError", "Kullanıcı oluşturulamadı!");        
             }
             return View(model);
         }
+
         public ActionResult Login()
             => View();
-        
-
+ 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string ReturnUrl)
@@ -52,8 +47,6 @@ namespace COINEXEN.Controllers
                         return Redirect(ReturnUrl);
                     return RedirectToAction("Index", "Home");
                 }
-                else
-                    ModelState.AddModelError("LoginUserError", "Kullanıcı Bulunamadı!");
             }
             return View(model);
         }

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace COINEXEN.Core.Entities.Identity
 {
-    public class AppUser : IdentityUser<int>
+    public class AppUser : IdentityUser<Guid>
     {
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -12,10 +12,8 @@ namespace COINEXEN.Core.Entities.Identity
         public Gender Gender { get; set; }
         public string Birthday { get; set; }
 
-        public int CoinWalletId { get; set; }
-        public CoinWallet CoinWallet { get; set; }
 
-        public string UserWalletId { get; set; }
+        public CoinWallet CoinWallet { get; set; }
         public UserWallet Wallet { get; set; }
     }
 }

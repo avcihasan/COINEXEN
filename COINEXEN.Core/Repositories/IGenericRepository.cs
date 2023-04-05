@@ -7,8 +7,8 @@ namespace COINEXEN.Core.Repositories
         Task<bool> CreateAsync(T entity);
         bool Update(T entity);
         bool Remove(T entity);
-        Task<bool> RemoveByIdAsync(int id);
-        Task<T> GetByIdAsync(int id, bool tracking = true);
+        Task<bool> RemoveByIdAsync(string id);
+        Task<T> GetByIdAsync(string id, bool tracking = true);
         IQueryable<T> GetAll(bool tracking= true);
 
     }

@@ -24,20 +24,18 @@ namespace COINEXEN.Repository.Migrations
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Basket", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("AppUserId1")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("AppUserId1")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CoinId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CoinId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -53,20 +51,21 @@ namespace COINEXEN.Repository.Migrations
 
             modelBuilder.Entity("COINEXEN.Core.Entities.BuyingAndSelling.BuyCoin", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("AppUserId1")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("AppUserId1")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("CoinId")
                         .HasColumnType("int");
+
+                    b.Property<Guid?>("CoinId1")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("CoinPrice")
                         .HasColumnType("float");
@@ -81,27 +80,25 @@ namespace COINEXEN.Repository.Migrations
 
                     b.HasIndex("AppUserId1");
 
-                    b.HasIndex("CoinId");
+                    b.HasIndex("CoinId1");
 
                     b.ToTable("BuyCoins");
                 });
 
             modelBuilder.Entity("COINEXEN.Core.Entities.BuyingAndSelling.SellCoin", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("AppUserId1")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("AppUserId1")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CoinId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CoinId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("CoinPrice")
                         .HasColumnType("float");
@@ -123,11 +120,9 @@ namespace COINEXEN.Repository.Migrations
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -138,62 +133,16 @@ namespace COINEXEN.Repository.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            Name = "Sanat"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            Name = "Spor"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            Name = "Teknoloji"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            Name = "Bilim"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            Name = "Ticaret"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            Name = "Müzik"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            Name = "Seyehat"
-                        });
                 });
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Coin", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -218,247 +167,13 @@ namespace COINEXEN.Repository.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Coins");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryId = 1,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "A",
-                            Name = "Acoin",
-                            Price = 1.2,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryId = 2,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "B",
-                            Name = "Bcoin",
-                            Price = 1.8999999999999999,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CategoryId = 3,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "C",
-                            Name = "Ccoin",
-                            Price = 2.3999999999999999,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CategoryId = 1,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "D",
-                            Name = "Dcoin",
-                            Price = 5.4000000000000004,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CategoryId = 5,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "E",
-                            Name = "Ecoin",
-                            Price = 15.4,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CategoryId = 6,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "F",
-                            Name = "Fcoin",
-                            Price = 6.4000000000000004,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CategoryId = 2,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "G",
-                            Name = "Gcoin",
-                            Price = 1.4299999999999999,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 8,
-                            CategoryId = 1,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "H",
-                            Name = "Hcoin",
-                            Price = 1.55,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 9,
-                            CategoryId = 6,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "I",
-                            Name = "Icoin",
-                            Price = 1.98,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 10,
-                            CategoryId = 1,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "J",
-                            Name = "Jcoin",
-                            Price = 11.24,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 11,
-                            CategoryId = 2,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "K",
-                            Name = "Kcoin",
-                            Price = 1.24,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 12,
-                            CategoryId = 5,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "L",
-                            Name = "Lcoin",
-                            Price = 12.4,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 13,
-                            CategoryId = 5,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "M",
-                            Name = "Mcoin",
-                            Price = 31.399999999999999,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 14,
-                            CategoryId = 2,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "N",
-                            Name = "Ncoin",
-                            Price = 16.399999999999999,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 15,
-                            CategoryId = 3,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "O",
-                            Name = "Ocoin",
-                            Price = 1.9399999999999999,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 16,
-                            CategoryId = 3,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "P",
-                            Name = "Pcoin",
-                            Price = 1.49,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 17,
-                            CategoryId = 4,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "R",
-                            Name = "Rcoin",
-                            Price = 1.3999999999999999,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 18,
-                            CategoryId = 3,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "S",
-                            Name = "Scoin",
-                            Price = 31.399999999999999,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 19,
-                            CategoryId = 1,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "T",
-                            Name = "Tcoin",
-                            Price = 13.43,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 20,
-                            CategoryId = 1,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "U",
-                            Name = "Ucoin",
-                            Price = 15.4,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 21,
-                            CategoryId = 6,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "V",
-                            Name = "Vcoin",
-                            Price = 1.4399999999999999,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 22,
-                            CategoryId = 5,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "Y",
-                            Name = "Ycoin",
-                            Price = 1.3999999999999999,
-                            Stock = 10000000
-                        },
-                        new
-                        {
-                            Id = 23,
-                            CategoryId = 4,
-                            Description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium??",
-                            KısaKod = "Z",
-                            Name = "Zcoin",
-                            Price = 1.3999999999999999,
-                            Stock = 10000000
-                        });
                 });
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Identity.AppRole", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -480,29 +195,13 @@ namespace COINEXEN.Repository.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ConcurrencyStamp = "1494a227-b5f3-479a-a240-e6654ac10a2b",
-                            Name = "admin"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ConcurrencyStamp = "ccc93892-9f7e-41c6-8597-0eb32110fc05",
-                            Name = "user"
-                        });
                 });
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Identity.AppUser", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
@@ -511,9 +210,6 @@ namespace COINEXEN.Repository.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("City")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CoinWalletId")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -569,9 +265,6 @@ namespace COINEXEN.Repository.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("UserWalletId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -583,57 +276,13 @@ namespace COINEXEN.Repository.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AccessFailedCount = 0,
-                            Birthday = "11/07/1999",
-                            City = 33,
-                            CoinWalletId = 0,
-                            ConcurrencyStamp = "2e9091ec-a367-43c3-87c1-882b4e86a7a4",
-                            Email = "hsnavci7@gmail.com",
-                            EmailConfirmed = false,
-                            Gender = 0,
-                            LockoutEnabled = false,
-                            Name = "Hasan",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGjk8fuzISEoF0KXJU7NUm9M1zTBQNNs0QuenujkfkFiK3UGdO+W00hgxZGHhjA35w==",
-                            PhoneNumber = "5380614193",
-                            PhoneNumberConfirmed = false,
-                            Surname = "Avcı",
-                            TwoFactorEnabled = false,
-                            UserName = "hasanavci"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AccessFailedCount = 0,
-                            Birthday = "11/07/1999",
-                            City = 33,
-                            CoinWalletId = 0,
-                            ConcurrencyStamp = "563300e8-dda4-4c79-a4ad-e7870be7767e",
-                            Email = "hsnavci7@gmail.com",
-                            EmailConfirmed = false,
-                            Gender = 0,
-                            LockoutEnabled = false,
-                            Name = "Hasan1",
-                            PasswordHash = "AQAAAAEAACcQAAAAENLi8jcuMeLNw6aAPMhW0V/cEUcrcRKYYA1Es740INh5P6deJ0DdlNk9/wukey/TQg==",
-                            PhoneNumber = "5380614193",
-                            PhoneNumberConfirmed = false,
-                            Surname = "Avcı",
-                            TwoFactorEnabled = false,
-                            UserName = "hasanavci1"
-                        });
                 });
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Message", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("City")
                         .HasColumnType("int");
@@ -669,11 +318,8 @@ namespace COINEXEN.Repository.Migrations
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Wallet.CoinWallet", b =>
                 {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -682,17 +328,15 @@ namespace COINEXEN.Repository.Migrations
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Wallet.CoinWalletLine", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<Guid>("CoinId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CoinId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CoinWalletId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CoinWalletId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -708,11 +352,8 @@ namespace COINEXEN.Repository.Migrations
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Wallet.UserWallet", b =>
                 {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("Balance")
                         .HasColumnType("float");
@@ -722,7 +363,7 @@ namespace COINEXEN.Repository.Migrations
                     b.ToTable("UserWallets");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -736,8 +377,8 @@ namespace COINEXEN.Repository.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -746,7 +387,7 @@ namespace COINEXEN.Repository.Migrations
                     b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -760,8 +401,8 @@ namespace COINEXEN.Repository.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -770,7 +411,7 @@ namespace COINEXEN.Repository.Migrations
                     b.ToTable("AspNetUserClaims", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
                     b.Property<string>("LoginProvider")
                         .HasColumnType("nvarchar(450)");
@@ -781,8 +422,8 @@ namespace COINEXEN.Repository.Migrations
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -791,13 +432,13 @@ namespace COINEXEN.Repository.Migrations
                     b.ToTable("AspNetUserLogins", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -806,10 +447,10 @@ namespace COINEXEN.Repository.Migrations
                     b.ToTable("AspNetUserRoles", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("LoginProvider")
                         .HasColumnType("nvarchar(450)");
@@ -850,9 +491,7 @@ namespace COINEXEN.Repository.Migrations
 
                     b.HasOne("COINEXEN.Core.Entities.Coin", "Coin")
                         .WithMany()
-                        .HasForeignKey("CoinId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CoinId1");
 
                     b.Navigation("AppUser");
 
@@ -928,7 +567,7 @@ namespace COINEXEN.Repository.Migrations
                     b.Navigation("AppUser");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("COINEXEN.Core.Entities.Identity.AppRole", null)
                         .WithMany()
@@ -937,7 +576,7 @@ namespace COINEXEN.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
                     b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", null)
                         .WithMany()
@@ -946,7 +585,7 @@ namespace COINEXEN.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
                     b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", null)
                         .WithMany()
@@ -955,7 +594,7 @@ namespace COINEXEN.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
                     b.HasOne("COINEXEN.Core.Entities.Identity.AppRole", null)
                         .WithMany()
@@ -970,7 +609,7 @@ namespace COINEXEN.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
                     b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", null)
                         .WithMany()
