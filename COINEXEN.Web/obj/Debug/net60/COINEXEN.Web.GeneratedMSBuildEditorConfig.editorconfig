@@ -40,6 +40,42 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5QYW5lbFxNZXNzYWdlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/AlSat/GetCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxTYXRcR2V0Q2F0ZWdvcmllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/AlSat/GetCategoriesMobile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxTYXRcR2V0Q2F0ZWdvcmllc01vYmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/AlSat/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxTYXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Cart/CartDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDYXJ0RGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Cart/CartDetailsDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDYXJ0RGV0YWlsc0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Cart/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDaGVja291dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Cart/Complated.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDb21wbGF0ZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Cart/DeleteSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxEZWxldGVTdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

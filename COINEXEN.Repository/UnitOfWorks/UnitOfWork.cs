@@ -8,6 +8,8 @@ namespace COINEXEN.Repository.UnitOfWorks
     public class UnitOfWork : IUnitOfWork
     {
         public IUserWalletRepository UserWalletRepository { get; private set; }
+        public IBasketRepository BasketRepository { get; private set; }
+        public ICategoryRepository CategoryRepository { get; private set; }
         public ICoinWalletRepository CoinWalletRepository { get; private set; }
         public ICoinRepository CoinRepository { get; private set; }
         public IMessageRepository MessageRepository { get; private set; }
@@ -21,7 +23,8 @@ namespace COINEXEN.Repository.UnitOfWorks
             UserWalletRepository = new UserWalletRepository(_context);
             CoinWalletRepository =new CoinWalletRepository(_context);
             MessageRepository = new MessageRepository(_context);
-
+            CategoryRepository=new CategoryRepository(_context);
+            BasketRepository = new BasketRepository(_context);
         }
 
 

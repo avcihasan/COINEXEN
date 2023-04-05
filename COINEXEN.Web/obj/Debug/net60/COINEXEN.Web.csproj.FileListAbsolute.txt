@@ -108,3 +108,4 @@ C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\runtime
 C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\AutoMapper.dll
 C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\Newtonsoft.Json.dll

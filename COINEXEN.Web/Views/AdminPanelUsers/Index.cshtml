@@ -1,16 +1,13 @@
-﻿@model IEnumerable<COINEXEN.Identity.ApplicationUser>
+﻿@model IEnumerable<AppUser>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <title>Üyeler</title>
 <div>
-
     <div class="text-center py-3" style="color:black">
         <h2>Üye Listesi</h2>
     </div>
-
-   
     <table class="table  table-striped mb-5">
         <thead class="table-light">
             <tr>
@@ -23,76 +20,56 @@
                 <th>
                     Soyad
                 </th>
-
                 <th class="responsive-none">
-
                     E-posta
                 </th>
                 <th class="responsive-none">
-
                     Telefon Numarası
                 </th>
                 <th class="responsive-none">
                     Doğum Tarihi
                 </th>
                 <th class="responsive-none">
-
-                    @Html.DisplayNameFor(model => model.Bakiye)
-
+                    @Html.DisplayNameFor(model => model.Wallet.Balance)
                 </th>
                 <th class="responsive-none">
-
                     Hesap Değeri
-
                 </th>
             </tr>
-
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td class="col-md">
-                    @Html.DisplayFor(modelItem => item.UserName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
+                <tr>
+                    <td class="col-md">
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Surname)
+                    </td>
+                    <td class="responsive-none">
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td class=" responsive-none">
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td class="responsive-none">
+                        @Html.DisplayFor(modelItem => item.Birthday)
+                    </td>
+                    <td class="text-center responsive-none">
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Surname)
-                </td>
-
-
-
-                <td class="responsive-none">
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td class=" responsive-none">
-                    @Html.DisplayFor(modelItem => item.PhoneNumber)
-                </td>
-                <td class="responsive-none">
-                    @Html.DisplayFor(modelItem => item.Birthday)
-                </td>
-                <td class="text-center responsive-none">
-
-                    @Html.DisplayFor(modelItem => item.Bakiye) <i class="fa fa-try" aria-hidden="true"></i>
-
-
-
-                </td>
-                <td class="text-center responsive-none">
-
-                    @Html.DisplayFor(modelItem => item.HesapDeger) <i class="fa fa-try" aria-hidden="true"></i>
-
-
-
-                </td>
-            </tr>
+                        @Html.DisplayFor(modelItem => item.Wallet.Balance) <i class="fa fa-try" aria-hidden="true"></i>
+                    </td>
+                    <td class="text-center responsive-none">
+                        @*todo*@
+                        @Html.DisplayFor(modelItem => item.Wallet.Balance) <i class="fa fa-try" aria-hidden="true"></i>
+                    </td>
+                </tr>
             }
         </tbody>
-       
-
     </table>
 
 </div>

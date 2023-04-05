@@ -2,21 +2,15 @@
     @{ 
     ViewBag.Title = "Register";
 }
-
-
 <title>Kayıt Ol</title>
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
 <div class="form-horizontal py-5 container">
     <div class="text-center text-white">
-
         <div class="text-end">
             @Html.ActionLink("Giriş Yap", "Login", null, new { @class = "btn btn-warning" })
         </div>
-
         <h4 style="display:inline-block">Kayıt Ol</h4>
     </div>
     <hr />
@@ -29,7 +23,6 @@
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group col-md-6  ">
             @Html.LabelFor(model => model.Surname, htmlAttributes: new { @class = "control-label px-5 my-2 text-white" })
             <div class="px-5">
@@ -37,8 +30,6 @@
                 @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
             </div>
         </div>
-
-
         <div class="form-group col-md-6">
             @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label px-5 my-2 text-white" })
             <div class="px-5">
@@ -46,7 +37,6 @@
                 @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group col-md-6 ">
             @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label px-5 my-2 text-white" })
             <div class="px-5">
@@ -54,8 +44,6 @@
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </div>
         </div>
-
-
         <div class="form-group col-md-6 ">
             @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label px-5 my-2 text-white" })
             <div class="px-5">
@@ -63,8 +51,6 @@
                 @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
             </div>
         </div>
-
-
        @* <div class="form-group col-md-6 ">
             @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label px-5 my-2 text-white" })
             <div class="px-5">
@@ -83,7 +69,6 @@
                     @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
                 </div>
             </div>
-
         <div class="form-group col-md-6 ">
             @Html.LabelFor(model => model.Birthday, htmlAttributes: new { @class = "control-label px-5 my-2 text-white" })
             <div class="px-5">
@@ -91,7 +76,6 @@
                 @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group col-md-6 ">
             @*@Html.LabelFor(model => model.Sex, htmlAttributes: new { @class = "control-label px-5 my-2 text-white" })*@
             <div class="px-5">
@@ -109,7 +93,6 @@
                 @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control psw" } })
                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
             </div>
-
         </div>
         <div class="form-group col-md-6">
             @Html.LabelFor(model => model.RePassword, htmlAttributes: new { @class = "control-label px-5 my-2 text-white" })
@@ -118,24 +101,16 @@
                 @Html.ValidationMessageFor(model => model.RePassword, "", new { @class = "text-danger" })
             </div>
         </div>
-
-
         <div class="form-group col-md-12 my-5">
           
                 <div class="col-md-offset-12 col-md-12 text-center">
                     <input type="submit" value="Kayıt Ol" class="btn btn-success" />
                 </div>
-         
         </div>
 
     </div>
-
-
-
-
     </div>
 }
-
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

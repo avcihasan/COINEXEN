@@ -5,12 +5,9 @@
 }
 <title>Mesajlar</title>
 <div>
-
-    <div class="text-center py-3" style="color:black">
+   <div class="text-center py-3" style="color:black">
         <h2>Mesajlar</h2>
     </div>
-
-
     <table class="table  table-striped mb-5">
         <thead class="table-light">
             <tr>
@@ -27,13 +24,11 @@
                     Gönderim Tarihi
                 </th>
             </tr>
-
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
             <tr>
-
                 @if (item.UserName == null)
                 {
                     <td class="col-md">
@@ -46,27 +41,18 @@
                             @Html.DisplayFor(modelItem => item.UserName)
                     </td>
                 }
-
-
                 <td>
                     <a href="/AdminPanel/MessageDetails/@item.Id"> @Html.DisplayFor(modelItem => item.Name) </a>
 
                 <td>
                     @Html.DisplayFor(modelItem => item.Surname)
                 </td>
-
-
-
                 <td class="responsive-none">
                     @Html.DisplayFor(modelItem => item.SendingDate)
                 </td>
-
             </tr>
             }
         </tbody>
-
-
     </table>
-
 </div>
 

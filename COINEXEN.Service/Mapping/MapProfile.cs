@@ -1,11 +1,7 @@
 ﻿using AutoMapper;
+using COINEXEN.Core.Entities;
 using COINEXEN.Core.Entities.Identity;
 using COINEXEN.Core.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace COINEXEN.Service.Mapping
 {
@@ -14,6 +10,7 @@ namespace COINEXEN.Service.Mapping
         public MapProfile()
         {
             CreateMap<RegisterViewModel, AppUser>();
+            CreateMap<Coin, CoinViewModel>();
         }
     }
 }

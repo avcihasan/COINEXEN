@@ -10,7 +10,7 @@ namespace COINEXEN.Core.Entities.BuyingAndSelling
         public double CoinPrice { get; set; }
         public DateTime DateOfSell { get; set; }
 
-        public string AppUserId { get; set; }
+        public Guid AppUserId { get; set; }
         public AppUser AppUser { get; set; }
     }
 }

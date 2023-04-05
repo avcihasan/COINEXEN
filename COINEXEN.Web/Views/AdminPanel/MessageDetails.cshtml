@@ -3,7 +3,6 @@
     ViewBag.Title = "MessageDetails";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
 <title>Mesaj Detayı</title>
 <div class="text-center  pt-5" style="color:black">
     <h2>Mesajlar</h2>
@@ -13,14 +12,10 @@
 </div>
 <hr />
 <div class="py-3">
-
-
     <dl class="dl-horizontal  px-5">
-
         <dt>
             Kullanıcı Adı
         </dt>
-
         @if (Model.UserName == null)
         {
             <dd style="color:grey">
@@ -32,60 +27,38 @@
         {
             <dd style="color:grey">
                 @Html.DisplayFor(model => model.UserName)
-
-
             </dd>
         }
-
         <dt>
             Ad Soyad
         </dt>
-
         <dd style="color:grey">
             @Html.DisplayFor(model => model.Name)
             @Html.DisplayFor(model => model.Surname)
-
         </dd>
-
         <dt>
             Telefon Numarası
         </dt>
-
         <dd style="color:grey">
             @Html.DisplayFor(model => model.PhoneNumber)
-
-
         </dd>
-
-
         <dt>
             E-Posta
         </dt>
-
         <dd style="color:grey">
             @Html.DisplayFor(model => model.EMail)
-
-
         </dd>
-
         <dt>
             Şehir
         </dt>
-
         <dd style="color:grey">
             @Html.DisplayFor(model => model.City)
-
-
         </dd>
-
         <dt>
             Mesaj
         </dt>
-
         <dd style="color:grey">
             @Html.DisplayFor(model => model.Details)
-
-
         </dd>
 
     </dl>
