@@ -1,0 +1,440 @@
+﻿@model COINEXEN.Identity.ApplicationUser
+<title>Ayarlar</title>
+<div class="container my-4">
+    <div class="row p-2">
+        <div class="col-md-4 p-1 ayarlar-bilgi">
+            <div class="container p-4 ">
+                <img src="~/coinexen_Proje/img/no-avatar.png" alt="">
+
+            </div>
+
+            <div id="ayarlar-mobilBilgi" class="container text-center mb-5">
+                <hr>
+                <span>Hasan Avcı  </span><button id="profilGoster"
+                                                 type="button"
+                                                 class="btn btn-sm">
+                    . . .
+                </button>
+            </div>
+
+
+            <div id="ayarlar-profilBilgi" class="container">
+                <hr />
+                <div id="profilBilgi-kapatma">
+                    <button id="profilKapat"
+                            type="button"
+                            class="btn btn-lg">
+                        X
+                    </button>
+                </div>
+                <h5 class="mt-1">
+                    <i class="fa fa-user" aria-hidden="true"></i> İsim
+                </h5>
+                <span>@Model.Name</span>
+                <h5>
+                    <i class="fa fa-user" aria-hidden="true"></i> Soyisim
+                </h5>
+                <span>@Model.Surname</span>
+                <h5>
+                    <i class="fa fa-envelope" aria-hidden="true"></i> E-posta Adresi
+                </h5>
+                <span>@Model.Email</span>
+                <h5>
+                    <i class="fa fa-mobile" aria-hidden="true"></i> Telefon Numarası
+                </h5>
+                <span>@Model.PhoneNumber</span>
+
+
+                <h5 class="mt-5">
+                    <i class="fa fa-qrcode" aria-hidden="true"></i> Kimlik Onayı
+                </h5>
+                <span>Doğrulandı</span>
+                <h5>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> Adres Onayı
+                </h5>
+                <span>Doğrulandı</span>
+                <h5>
+                    <i class="fa fa-pencil" aria-hidden="true"></i> Müşteri Tanıma
+                    Formu
+                </h5>
+                <span>Doğrulandı</span>
+                <h5>
+                    <i class="fa fa-camera" aria-hidden="true"></i> Selfie Onayı
+                </h5>
+                <span>Doğrulandı</span>
+            </div>
+        </div>
+        <div class="col-md-8 p-1">
+            <div class="my-3 ayarlar-header">
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item text-white px-1"><button class="btn text-white " id="goster1">Hesap Ayarları</button></li>
+                    <li class="list-group-item text-white px-1 ">  <button class="btn text-white  " id="goster2" style="padding-left: 0; padding-right:0">Erişim Ayarları</button></li>
+                    <li class="list-group-item text-white px-1 "><button class="btn text-white  " id="goster3">Onay & Bildirim Ayarları</button></li>
+                    <li class="list-group-item text-white px-1"><button class="btn text-white  " id="goster4">İletişim Ayarları</button></li>
+                </ul>
+                <hr style="background-color: yellow" />
+
+            </div>
+
+            <div id="first-div">
+                <img src="~/coinexen_Proje/img/COINEXEN-removebg-preview.png"
+                     alt="" />
+            </div>
+
+            <div id="hesap-ayarlari">
+
+                <h3 class="mt-4">Hesap Ayarları</h3>
+                <div>
+                    <h5><i class="fa fa-user" aria-hidden="true"></i> İsim</h5>
+                    <span>@Model.Name</span>
+                    <h5><i class="fa fa-user" aria-hidden="true"></i> Soyisim</h5>
+                    <span>@Model.Surname</span>
+                    <h5>
+                        <i class="fa fa-envelope" aria-hidden="true"></i> E-posta Adresi
+                    </h5>
+                    <span>@Model.Email</span>
+                    <button type="button"
+                            class="btn btn-warning">
+                        Değiştir
+                    </button>
+                    <h5>
+                        <i class="fa fa-mobile" aria-hidden="true"></i> Telefon Numarası
+                    </h5>
+                    <span>@Model.PhoneNumber</span>
+                    <button type="button"
+                            class="btn btn-warning">
+                        Değiştir
+                    </button>
+                </div>
+
+
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <h5>
+                            <i class="fa fa-qrcode" aria-hidden="true"></i> Kimlik Onayı
+                        </h5>
+                        <span>Doğrulandı</span>
+                    </div>
+                    <div class="col-md-2">
+                        <h5>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> Adres
+                            Onayı
+                        </h5>
+                        <span>Doğrulandı</span>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>
+                            <i class="fa fa-pencil" aria-hidden="true"></i> Müşteri Tanıma
+                            Formu
+                        </h5>
+                        <span>Doğrulandı</span>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>
+                            <i class="fa fa-camera" aria-hidden="true"></i> Selfie Onayı
+                        </h5>
+                        <span>Doğrulandı</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="erisim-ayarlari">
+                <h3 class="mt-4">Erişim Ayarları</h3>
+                <div>
+                    <div class="mt-3">
+                        <h5 class="erisim-sifre ">Şifre</h5>
+                        <button type="button"
+                                class="btn btn-warning">
+                            Değiştir
+                        </button>
+                    </div>
+
+                    <h5>2 Aşamalı Doğrulama</h5>
+                    <span>
+                        Para çekim işlemi yapabilmek için 2 aşamalı doğrulama
+                        tanımlanmış olmalıdır.
+                    </span>
+
+                    <h5>Google Authenticator (Önerilen)</h5>
+                    <span>
+                        İki aşamalı güvenli giriş için Google Authenticator ile kod
+                        üretin.
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+
+                    <h5>SMS</h5>
+                    <span>
+                        İki aşamalı güvenli giriş için SMS ile kod alın.
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                    <h5>Mobil Onay</h5>
+                    <span>
+                        İki aşamalı güvenli giriş için Bitexen mobil uygulaması
+                        üzerinden onay verin.
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+
+                    <h5>Mobil Erişim Durumu</h5>
+                    <span>1 adet mobil cihaz erişiminiz var</span>
+                </div>
+
+                <div class="yellow-border ps-2 py-2 mt-5 pb-4">
+                    <h5>
+                        <i class="fa fa-mobile fa-lg" aria-hidden="true"></i> Güvenlik
+                        kodunuz giriş esnasında kayıtlı telefon numaranıza
+                        gönderilecektir.
+                    </h5>
+                    <span>@Model.PhoneNumber</span>
+                </div>
+
+
+
+
+                <div class="green-border ps-2 py-2 mt-5 pb-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>
+                                <i class="fa fa-mobile fa-lg" aria-hidden="true"></i>
+                                Android
+                            </h5>
+                            <span>xxxxxxxxxxxxxxxxxxxx</span>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Oluşturma Tarihi</h5>
+                            <span>09.01.2022 11:49</span>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <a href="#">
+                                <span class="text-danger">
+                                    Sil
+                                    <i class="fa fa-trash"
+                                       aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 api">
+                    <h5>API Erişimi</h5>
+                    <span>
+                        Kayıtlı API erişiminiz yoktur
+                    </span>
+                    <a href="#">
+                        <i class="fa fa-plus" aria-hidden="true"></i> API Erişimi
+                        oluştur
+                    </a>
+                </div>
+            </div>
+
+            <div id="onay-bildirim">
+                <h3 class="mt-4">Onay Ayarları</h3>
+                <div>
+                    <h5>Kayıtlı adreslere çekim yapmak için e-posta onayı</h5>
+                    <span>
+                        Kayıtlı olmayan adresler için e-posta her zaman gönderilir
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                    <h5>Yeni cihazdan giriş için e-posta onayı</h5>
+                    <span>
+                        Yeni cihazdan yapılan girişlere e-posta onayı olmadan izin verme
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                    <h5>İç Transfer</h5>
+                    <span>
+                        Bitexen hesapları arasında, ağ işlemi gerektirmeyen İç Transfer
+                        özelliğini etkinleştir
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                </div>
+
+
+
+
+                <h3 class="mt-5">
+                    E-posta Bildirim Ayarları
+                </h3>
+                <div>
+                    <h5>Para çekme</h5>
+                    <span>
+                        Hesabınızdan para çekme işlemleri tamamlandığında e-posta ile
+                        bildirim alabilirsiniz
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                    <h5>Para yatırma</h5>
+                    <span>
+                        Hesabınıza para yatırma işlemleri tamamlandığında e-posta ile
+                        bildirim alabilirsiniz
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                    <h5>Yeni cihazdan girişleri</h5>
+                    <span>
+                        Yeni bir cihazdan giriş yapıldığında e-posta ile bildirim
+                        alabilirsiniz
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                </div>
+
+
+
+
+                <h3 style="font-weight: bold; color: yellow; margin-top: 50px">
+                    Bildirim Ayarları
+                </h3>
+                <div style="padding: 10px 0">
+                    <h5>Para çekme</h5>
+                    <span>
+                        Hesabınızdan para çekme işlemleri tamamlandığında bildirim
+                        alabilirsiniz
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                    <h5>Para yatırma</h5>
+                    <span>
+                        Hesabınıza para yatırma işlemleri tamamlandığında bildirim
+                        alabilirsiniz
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                    <h5>Yeni emir girişi</h5>
+                    <span>
+                        Hesabınıza yeni emir giriş işlemleri tamamlandığında bildirim
+                        alabilirsiniz
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                    <h5>Kısmi emir gerçekleşmesi</h5>
+                    <span>
+                        Hesabınıza kısmi emir işlemleri tamamlandığında bildirim
+                        alabilirsiniz
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                    <h5>Emir gerçekleşmesi</h5>
+                    <span>
+                        Hesabınıza kısmi emir işlemleri tamamlandığında bildirim
+                        alabilirsiniz
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                    <h5>Emir İptali</h5>
+                    <span>
+                        Hesabınıza emir iptal işlemleri tamamlandığında bildirim
+                        alabilirsiniz
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                    <h5>Alarm</h5>
+                    <span>
+                        Hesabınızda alarm işlemleri gerçekleştiğinde bildirim
+                        alabilirsiniz
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+
+            <div id="iletisim-ayarlari">
+                <h3 class="mt-4">İletişim Ayarları</h3>
+                <div>
+                    <h5>Telefonla Arama / Otomatik Arama</h5>
+                    <span>
+                        Bitexen Teknoloji Anonim Şirketi kampanyalarla ilgili sizinle
+                        telefon görüşmesi yapabilir.
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                    <h5>SMS</h5>
+                    <span>
+                        Bitexen Teknoloji Anonim Şirketi kampanyalarla ilgili size sms
+                        gönderebilir.
+                    </span>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                    <h5>E-Posta</h5>
+                    <span>
+                        Bitexen Teknoloji Anonim Şirketi kampanyalarla ilgili size
+                        e-posta gönderebilir.
+                    </span>
+                    <input style="right: 20px"
+                           class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="flexCheckDefault" />
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="~/coinexen_Proje/js/js.js"></script>

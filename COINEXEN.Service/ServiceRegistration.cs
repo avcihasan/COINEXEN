@@ -18,6 +18,7 @@ namespace COINEXEN.Service
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IWalletService, WalletService>();
+            services.AddScoped<IMessageService, MessageService>();
 
             services.AddAutoMapper(Assembly.GetAssembly(typeof(MapProfile)));
         }

@@ -2,7 +2,7 @@
 using COINEXEN.Core.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace COINEXEN.Controllers
+namespace COINEXEN.Web.Controllers
 {
     public class AccountController : Controller
     {
@@ -20,7 +20,7 @@ namespace COINEXEN.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -31,12 +31,12 @@ namespace COINEXEN.Controllers
             return View(model);
         }
 
-        public ActionResult Login()
+        public IActionResult Login()
             => View();
  
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string ReturnUrl)
+        public async Task<IActionResult> Login(LoginViewModel model, string ReturnUrl)
         {
             if (ModelState.IsValid)
             {

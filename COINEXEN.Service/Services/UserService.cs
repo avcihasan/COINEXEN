@@ -7,24 +7,24 @@ using COINEXEN.Core.UnitOfWorks;
 using COINEXEN.Core.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace COINEXEN.Service.Services
 {
     public class UserService : IUserService
     {
-        readonly IUnitOfWork _unitOfWork;
-        readonly IHttpContextAccessor _httpContextAccesor;
         readonly UserManager<AppUser> _userManager;
         readonly IMapper _mapper;
         readonly IWalletService _walletService;
+        readonly IHttpContextAccessor _httpContextAccesor;
 
-        public UserService(IHttpContextAccessor httpContextAccesor, UserManager<AppUser> userManager, IMapper mapper, IUnitOfWork unitOfWork, IWalletService walletService)
+
+        public UserService(UserManager<AppUser> userManager, IMapper mapper, IWalletService walletService, IHttpContextAccessor httpContextAccesor)
         {
-            _httpContextAccesor = httpContextAccesor;
             _userManager = userManager;
             _mapper = mapper;
-            _unitOfWork = unitOfWork;
             _walletService = walletService;
+            _httpContextAccesor = httpContextAccesor;
         }
         public async Task<bool> CreateUserAsync(RegisterViewModel registerViewModel)
         {
@@ -35,48 +35,18 @@ namespace COINEXEN.Service.Services
                 await _walletService.CreateWalletsAsync(user);
             return result.Succeeded;
         }
-        public async Task SendingMessage(string userName, Message message)
+
+        public async Task<List<AppUser>> GetAllUserAsync()
+            =>await _userManager.Users.OrderBy(i => i.Name).ToListAsync();
+
+        public async Task<AppUser> GetOnlineUserAsync()
         {
-            //if (_httpContextAccesor.HttpContext.User.Identity.IsAuthenticated)
-            //{
-            //    AppUser user = await _userManager.FindByNameAsync(userName);
-            //    if (user != null)
-            //    {
-            //        Message mesaj = new()
-            //        {
-            //            Name = user.Name,
-            //            Surname = user.Surname,
-            //            EMail = user.Email,
-            //            UserName = user.UserName,
-            //            PhoneNumber = user.PhoneNumber,
-            //            TopicTitle = message.TopicTitle,
-            //            Details = message.Details,
-            //            SendingDate = DateTime.Now
-            //        };
-
-            //    }
-            //}
-            //else
-            //{
-            //    if (ModelState.IsValid)
-            //    {
-                    
-            //        var mesaj = new Message();
-            //        mesaj.Name = message.Name;
-            //        mesaj.Surname = message.Surname;
-            //        mesaj.EMail = message.EMail;
-            //        mesaj.UserName = message.UserName;
-            //        mesaj.PhoneNumber = message.PhoneNumber;
-            //        mesaj.TopicTitle = message.TopicTitle;
-            //        mesaj.Details = message.Details;
-            //        mesaj.SendingDate = DateTime.Now;
-            //        mesaj.City = message.City;
-            //    }
-            //}
-            //_context.Messages.Add(mesaj);
-            //_context.SaveChanges();
-            //return RedirectToAction("Index", "Home");
-
+            if (!_httpContextAccesor.HttpContext.User.Identity.IsAuthenticated)
+                throw new Exception("hata");
+            AppUser user= await _userManager.FindByNameAsync(_httpContextAccesor.HttpContext.User.Identity.Name);
+            if (user==null)
+                throw new Exception("hata");
+            return user;
         }
     }
 }

@@ -1,21 +1,35 @@
 ﻿using COINEXEN.Core.Entities;
+using COINEXEN.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace COINEXEN.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        readonly IMessageService _messageService;
+
+        public HomeController(IMessageService messageService)
+        {
+            _messageService = messageService;
+        }
+
+        public IActionResult Index()
             => View();
 
-        public ActionResult Message()
+        public IActionResult Message()
             =>View();
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Message(Message message)
-        {        
-            return RedirectToAction("Index", "Home");
+        public async Task<IActionResult> Message(Message message)
+        {
+            if (ModelState.IsValid)
+            {
+                bool result = await _messageService.CreateMessageAsync(message);
+                if (result)
+                    return RedirectToAction("Index", "Home");
+            }
+            return View(message);
         }
 
 
