@@ -11,6 +11,7 @@ namespace COINEXEN.Core.UnitOfWorks
         public IMessageRepository MessageRepository { get; }
         public IUserWalletRepository UserWalletRepository { get; }
         public ICoinRepository CoinRepository { get; }
+        public ICoinTransactionRepository CoinTransactionRepository { get; }
         void Commit();
         Task CommitAsync(); 
     }

@@ -1,5 +1,4 @@
 ﻿using COINEXEN.Core.Entities;
-using COINEXEN.Core.Entities.BuyingAndSelling;
 using COINEXEN.Core.Entities.Identity;
 using COINEXEN.Core.Entities.Wallet;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -15,8 +14,7 @@ namespace COINEXEN.Repository.Contexts
         public DbSet<Category> Categories { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Basket> Baskets { get; set; }
-        public DbSet<SellCoin> SellCoins { get; set; }
-        public DbSet<BuyCoin> BuyCoins { get; set; }
+        public DbSet<CoinTransaction> CoinTransactions { get; set; }
         public DbSet<CoinWallet> CoinWallets { get; set; }
         public DbSet<CoinWalletLine> CoinWalletLines { get; set; }
         public DbSet<UserWallet> UserWallets { get; set; }

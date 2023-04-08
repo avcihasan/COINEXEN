@@ -5,6 +5,7 @@ namespace COINEXEN.Core.Services
 {
     public interface ICoinService:IGenericService<Coin>
     {
-        Task<List<CoinViewModel>> GetCoinsAsync(string id=null);
+        Task<CoinViewModel> GetCoinByIdAsync(string id);
+        Task<List<CoinViewModel>> GetAllCoinsAsync();
     }
 }

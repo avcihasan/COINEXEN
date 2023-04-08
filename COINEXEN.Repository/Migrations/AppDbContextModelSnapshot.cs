@@ -49,72 +49,6 @@ namespace COINEXEN.Repository.Migrations
                     b.ToTable("Baskets");
                 });
 
-            modelBuilder.Entity("COINEXEN.Core.Entities.BuyingAndSelling.BuyCoin", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("AppUserId1")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("CoinId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("CoinId1")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("CoinPrice")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("DateOfBuy")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId1");
-
-                    b.HasIndex("CoinId1");
-
-                    b.ToTable("BuyCoins");
-                });
-
-            modelBuilder.Entity("COINEXEN.Core.Entities.BuyingAndSelling.SellCoin", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AppUserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CoinId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("CoinPrice")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("DateOfSell")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.HasIndex("CoinId");
-
-                    b.ToTable("SellCoins");
-                });
-
             modelBuilder.Entity("COINEXEN.Core.Entities.Category", b =>
                 {
                     b.Property<Guid>("Id")
@@ -164,6 +98,39 @@ namespace COINEXEN.Repository.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Coins");
+                });
+
+            modelBuilder.Entity("COINEXEN.Core.Entities.CoinTransaction", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AppUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CoinId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("CoinPrice")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("DateOfTransaction")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Transaction")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("CoinId");
+
+                    b.ToTable("CoinTransactions");
                 });
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Identity.AppRole", b =>
@@ -480,22 +447,18 @@ namespace COINEXEN.Repository.Migrations
                     b.Navigation("Coin");
                 });
 
-            modelBuilder.Entity("COINEXEN.Core.Entities.BuyingAndSelling.BuyCoin", b =>
+            modelBuilder.Entity("COINEXEN.Core.Entities.Coin", b =>
                 {
-                    b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("AppUserId1");
+                    b.HasOne("COINEXEN.Core.Entities.Category", "Category")
+                        .WithMany("Coins")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("COINEXEN.Core.Entities.Coin", "Coin")
-                        .WithMany()
-                        .HasForeignKey("CoinId1");
-
-                    b.Navigation("AppUser");
-
-                    b.Navigation("Coin");
+                    b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("COINEXEN.Core.Entities.BuyingAndSelling.SellCoin", b =>
+            modelBuilder.Entity("COINEXEN.Core.Entities.CoinTransaction", b =>
                 {
                     b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", "AppUser")
                         .WithMany()
@@ -512,17 +475,6 @@ namespace COINEXEN.Repository.Migrations
                     b.Navigation("AppUser");
 
                     b.Navigation("Coin");
-                });
-
-            modelBuilder.Entity("COINEXEN.Core.Entities.Coin", b =>
-                {
-                    b.HasOne("COINEXEN.Core.Entities.Category", "Category")
-                        .WithMany("Coins")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Wallet.CoinWallet", b =>

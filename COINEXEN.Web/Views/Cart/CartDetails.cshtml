@@ -1,4 +1,4 @@
-﻿@*@model Coin
+﻿@model CoinViewModel
 @{
     ViewBag.Title = "CartDetails";
 }
@@ -22,7 +22,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>@Model.KısaKod</td>
+                    <td>@Model.ShortName</td>
                     <td>@Model.Name</td>
                     <td>@Model.Stock</td>
                     @{
@@ -46,7 +46,8 @@
                 <h5>Almak İstediğiniz Adet</h5>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.ValidationMessageFor(model=>model.Stock, "", new { @class = "text-danger" })
-                @Html.TextBoxFor(i => i.Stock, new { htmlAttributes = new { @class = "form-control text-center" }, autocomplete = "off" })
+                @Html.TextBoxFor(model=>model.Stock, new { htmlAttributes = new { @class = "form-control text-center" }, autocomplete = "off" })
+                @*alimsayısı*@
             </div>
             <div class="col-md-4">
                 <h5>Güncel Fiyat</h5>
@@ -65,6 +66,7 @@
         </div>
     </div>
 }
+
 <script type="text/javascript">
     function carpma() {
         var AlimSayisi = document.getElementById("AlimSayisi").value;
@@ -81,4 +83,4 @@
 </script>
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

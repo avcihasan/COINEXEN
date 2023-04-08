@@ -11,5 +11,7 @@ namespace COINEXEN.Core.Services
     public interface IWalletService
     {
         Task CreateWalletsAsync(AppUser user);
+        Task<UserWallet> GetUserWalletAsync(AppUser user);
+        Task<CoinWallet> GetCoinWalletAsync(AppUser user);
     }
 }

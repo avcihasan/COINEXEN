@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CoinTransaction>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<title>Coin Alımlar</title>
+
+<div class="row son-islemler py-3" style="color:black">
+    <div
+         class="text-center py-2"><h2>Alım İşlemleri</h2></div>
+
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">İşlem Yapan</th>
+                    <th  scope="col">Coin Adı</th>
+                    <th  scope="col">Adet</th>
+                    <th class="responsive-none" scope="col">İşlem Adet Fiyat</th>
+                    <th class="responsive-none" scope="col">Saat</th>
+                    <th  scope="col">Toplam Fiyat</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.AppUser.UserName</td>
+
+                    <td>@item.Coin.Name</td>
+                    <td>@item.Quantity</td>
+                    <td class="responsive-none">@item.CoinPrice</td>
+
+                    <td class="responsive-none">@item.DateOfTransaction</td>
+
+
+
+                    @{
+                        string fiyat = Convert.ToString(item.Quantity*item.CoinPrice);
+                        if (fiyat.Length > 7)
+                        {
+                            <td>
+                                @fiyat.Substring(0, 7)
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                    @item.Quantity*item.CoinPrice
+                            </td>
+                        }
+                    }
+                </tr>
+                        }
+            </tbody>
+
+        </table>
+
+    </div>
+</div>

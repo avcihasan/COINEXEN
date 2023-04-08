@@ -2,7 +2,11 @@
 using COINEXEN.Core.Entities.Identity;
 using COINEXEN.Core.Services;
 using COINEXEN.Core.ViewModels;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace COINEXEN.Service.Services
 {
@@ -22,10 +26,19 @@ namespace COINEXEN.Service.Services
         public async Task<bool> LoginAsync(LoginViewModel loginViewModel)
         {
             AppUser user = await _userManager.FindByNameAsync(loginViewModel.UserName);
-            if (user == null)
-                return false;
-            SignInResult result= await _signInManager.CheckPasswordSignInAsync(user, loginViewModel.Password, false);
-            return result.Succeeded;
+
+
+            //if (user == null)
+            //    return false;
+            //SignInResult result= await _signInManager.CheckPasswordSignInAsync(user, loginViewModel.Password, false);
+            //if (result.Succeeded)
+            //{
+            //    await _userManager.ResetAccessFailedCountAsync(user);
+            //    await _userManager.SetLockoutEndDateAsync(user, null);
+            //}
+
+            //return result.Succeeded;
+            return true;
         }
 
         

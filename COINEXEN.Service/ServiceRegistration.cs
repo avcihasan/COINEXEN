@@ -23,7 +23,8 @@ namespace COINEXEN.Service
             services.AddScoped<IMessageService, MessageService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ICoinService, CoinService>();
-            
+            services.AddScoped<IBasketService, BasketService>();
+
 
 
             services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));

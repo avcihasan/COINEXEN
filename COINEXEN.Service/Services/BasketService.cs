@@ -1,11 +1,7 @@
 ﻿using COINEXEN.Core.Entities;
-using COINEXEN.Core.Entities.BuyingAndSelling;
-using COINEXEN.Core.Entities.Identity;
 using COINEXEN.Core.Services;
 using COINEXEN.Core.UnitOfWorks;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
 namespace COINEXEN.Service.Services

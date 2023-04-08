@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace COINEXEN.Web.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class CartController : Controller
     {
         readonly IUserService _userService;
@@ -27,14 +27,14 @@ namespace COINEXEN.Web.Controllers
         }
 
         public async Task<IActionResult> CartDetails(string id)
-            => View(await _coinService.GetCoinsAsync(id));
+            => View(await _coinService.GetCoinByIdAsync(id));
 
         public async Task<IActionResult> CartDetailsDelete(string id)
-            => View(await _coinService.GetCoinsAsync(id));
+            => View(await _coinService.GetCoinByIdAsync(id));
 
-        public async Task<IActionResult> AddToCart(string coinId, int alimSayisi)
+        public async Task<IActionResult> AddToCart(string Id, int Stock)
         {
-            await _basketService.AddCoinToBasketAsync(HttpContext, coinId, alimSayisi);
+            await _basketService.AddCoinToBasketAsync(HttpContext, Id, Stock);
             return RedirectToAction("Index");
         }
 

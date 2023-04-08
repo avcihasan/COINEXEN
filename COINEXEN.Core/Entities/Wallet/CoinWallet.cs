@@ -6,7 +6,7 @@ namespace COINEXEN.Core.Entities.Wallet
     {
         public AppUser AppUser { get; set; }
 
-        public List<CoinWalletLine> CoinWalletLines { get; set; }
+        public List<CoinWalletLine> CoinWalletLines { get; set; } = new();
 
     }
 }

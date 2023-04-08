@@ -116,8 +116,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29pbkRldGF5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Hakkimizda/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFra2ltaXpkYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/OnSatisDetay/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25TYXRpc0RldGF5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/OnSatis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT25TYXRpc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Order/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Order/Satis.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcU2F0aXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Shared/_AdminLayout.cshtml]
@@ -130,6 +150,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/UyeAyarlar/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXllQXlhcmxhclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/UyeHesapOzet/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXllSGVzYXBPemV0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/_ViewImports.cshtml]

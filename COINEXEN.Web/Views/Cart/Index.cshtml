@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Basket
+@{
     ViewBag.Title = "Index";
 }
 <title>Coin</title>
@@ -15,14 +16,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.CartLines)
-            {
+            
                 <tr>
-                    <td>@item.Coin.KısaKod</td>
-                    <td class="responsive-none">@item.Coin.Name</td>
-                    <td>@item.Quantity</td>
+                <td>@Model.Coin.ShortName</td>
+                    <td class="responsive-none">@Model.Coin.Name</td>
+                    <td>@Model.Quantity</td>
                     @{
-                        string fiyat = Convert.ToString(item.Coin.Price);
+                        string fiyat = Convert.ToString(Model.Coin.Price);
                         if (fiyat.Length > 7)
                         {
                             <td>
@@ -31,11 +31,11 @@
                         }
                         else
                         {
-                            <td>@item.Coin.Price <i class="fa fa-try" aria-hidden="true"></i></td>
+                            <td>@Model.Coin.Price <i class="fa fa-try" aria-hidden="true"></i></td>
                         }
                     }
                     @{
-                        string fiyat1 = Convert.ToString(item.Coin.Price * item.Quantity);
+                        string fiyat1 = Convert.ToString(Model.Coin.Price * Model.Quantity);
                         if (fiyat.Length > 7)
                         {
                             <td>
@@ -44,31 +44,32 @@
                         }
                         else
                         {
-                            <td>@(item.Coin.Price * item.Quantity) <i class="fa fa-try" aria-hidden="true"></i></td>
+                            <td>@(Model.Coin.Price * Model.Quantity) <i class="fa fa-try" aria-hidden="true"></i></td>
                         }
                     }
                 </tr>
                 <tr>
                     <td colspan="5">
                         @{
-                            var x = 0;
-                            if (ViewBag.user.Bakiye < (item.Coin.Price * item.Quantity))
+                        var x = 0;
+                        AppUser user = ViewBag.user as AppUser;
+                        if (user.Wallet.Balance < (Model.Coin.Price * Model.Quantity))
                             {
                                 x = 1;
                                 <div style="color:red" class="alert alert-danger" role="alert"> Bakiyeniz yetersiz </div>
                             }
 
-                            if (item.Coin.Stock == 0)
+                        if (Model.Coin.Stock == 0)
                             {
                                 x = 1;
-                                <div class="alert alert-warning mx-5" role="alert">@item.Coin.Name Satışta Yok!</div>
+                            <div class="alert alert-warning mx-5" role="alert">@Model.Coin.Name Satışta Yok!</div>
                             }
                             else
                             {
-                                if (item.Coin.Stock < item.Quantity)
+                            if (Model.Coin.Stock < Model.Quantity)
                                 {
                                     x = 1;
-                                    <div class="alert alert-warning mx-5" role="alert">Maksimum <strong>@item.Coin.Stock </strong>adet @item.Coin.Name alabilirsiniz!</div>
+                                <div class="alert alert-warning mx-5" role="alert">Maksimum <strong>@Model.Coin.Stock </strong>adet @Model.Coin.Name alabilirsiniz!</div>
                                 }
                             }
                             <a href="/AlSat" class="btn btn-primary m-2">
@@ -82,7 +83,6 @@
                         }
                     </td>
                 </tr>
-            }
         </tbody>
     </table>
     <br />
@@ -91,6 +91,7 @@
     <br />
     <br />
     <div class="text-white">
+        total fonk
         @*@Model.Total()*@
     </div>
 </div>

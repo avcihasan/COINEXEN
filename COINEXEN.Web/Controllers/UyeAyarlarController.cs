@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace COINEXEN.Web.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class UyeAyarlarController : Controller
     {
         readonly IUserService _userService;

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace COINEXEN.Web.Controllers
 {
-    [Authorize(Roles = "admin")]
+    //[Authorize(Roles = "admin")]
     public class AdminPanelController : Controller
     {
         readonly IMessageService _messageService;

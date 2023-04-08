@@ -1,4 +1,5 @@
 ﻿using COINEXEN.Core.Entities;
+using COINEXEN.Core.Entities.Identity;
 using COINEXEN.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 

@@ -39,5 +39,13 @@ namespace COINEXEN.Service.Services
             bool result = await _unitOfWork.CoinWalletRepository.CreateAsync(wallet);
             return result;
         }
+
+        public async Task<UserWallet> GetUserWalletAsync(AppUser user)
+            => await _unitOfWork.UserWalletRepository.GetUserWallatByUserIdAsync(user.Id.ToString());
+        
+
+        public async Task<CoinWallet> GetCoinWalletAsync(AppUser user)
+            => await _unitOfWork.CoinWalletRepository.GetCoinWallatByUserIdAsync(user.Id.ToString());
+        
     }
 }

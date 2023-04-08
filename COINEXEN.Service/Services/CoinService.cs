@@ -17,13 +17,16 @@ namespace COINEXEN.Service.Services
             _mapper = mapper;
         }
 
-        public async Task<List<CoinViewModel>> GetCoinsAsync(string id=null)
+        public async Task<List<CoinViewModel>> GetAllCoinsAsync()
         {
-            List<Coin> coins =await _unitOfWork.CoinRepository.GetAllCoinWithCategories().ToListAsync();
-            if (id != null)
-                if (coins.FirstOrDefault(x => x.Id == Guid.Parse(id))!=null)
-                    return _mapper.Map<List<CoinViewModel>>(coins.FirstOrDefault(x=>x.Id==Guid.Parse(id)));
+            List<Coin> coins = await _unitOfWork.CoinRepository.GetAllCoinWithCategories().ToListAsync();
             return _mapper.Map<List<CoinViewModel>>(coins);
+        }
+
+        public async Task<CoinViewModel> GetCoinByIdAsync(string id)
+        {  
+            Coin coin =await _unitOfWork.CoinRepository.GetCoinByIdWithCategoryAsync(id);
+            return _mapper.Map<CoinViewModel>(coin);
         }
     }
 }
