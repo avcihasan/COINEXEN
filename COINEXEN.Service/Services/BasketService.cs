@@ -13,12 +13,10 @@ namespace COINEXEN.Service.Services
     public class BasketService : IBasketService
     {
         readonly IUnitOfWork _unitOfWork;
-        readonly UserManager<AppUser> _userManager;
 
-        public BasketService(IUnitOfWork unitOfWork, UserManager<AppUser> userManager)
+        public BasketService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _userManager = userManager;
         }
 
         public Basket GetBasket(HttpContext httpContext)
@@ -51,9 +49,9 @@ namespace COINEXEN.Service.Services
         }
 
 
-        public async Task<bool> RemoveCoinFromBasketAsync(HttpContext httpContext, string id, int alimSayisi, string userName)
-        {
-            return true;
-        }
+        //public  bool RemoveCoinFromBasketAsync(HttpContext httpContext, string id, int alimSayisi, string userName)
+        //{
+        //    return true;
+        //}
     }
 }

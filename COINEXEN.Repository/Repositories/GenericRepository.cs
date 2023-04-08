@@ -34,7 +34,7 @@ namespace COINEXEN.Repository.Repositories
         }
 
         public IQueryable<T> GetAll(bool tracking = true)
-        {
+        {    
             IQueryable<T> entities = _dbSet.AsQueryable();
             if (!tracking)
                 entities.AsNoTracking();

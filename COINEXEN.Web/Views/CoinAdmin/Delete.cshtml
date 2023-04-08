@@ -1,0 +1,85 @@
+﻿@model Coin
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<title> Coin Sil</title>
+<div class="text-center pt-5" style="color:black">
+    <h2 >Coin Silme</h2>
+</div>
+
+<h3 class=" px-5" style="color:black">Coini Silmek İçin Emin misiniz?</h3>
+<div class="pb-5 px-5">
+   
+    <hr />
+    <dl class="dl-horizontal ">
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoPath)
+        </dt>
+
+        <dd style="color:grey">
+            @Html.DisplayFor(model => model.PhotoPath)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortName)
+        </dt>
+
+        <dd style="color:grey">
+            @Html.DisplayFor(model => model.ShortName)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd style="color:grey">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd style="color:grey">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+
+        <dd style="color:grey">
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd style="color:grey">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd style="color:grey">
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color text-center">
+            <input type="submit" value="Sil" class="btn btn-danger" /> 
+            @Html.ActionLink("Coin Listesine Dön", "Index",null,new { @class = "btn btn-warning" })
+        </div>
+    }
+</div>

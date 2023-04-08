@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using COINEXEN.Core.Entities;
+using COINEXEN.Core.Repositories;
 using COINEXEN.Core.Services;
 using COINEXEN.Core.UnitOfWorks;
 using COINEXEN.Core.ViewModels;
@@ -7,14 +8,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace COINEXEN.Service.Services
 {
-    public class CoinService : ICoinService
+    public class CoinService :GenericService<Coin>, ICoinService
     {
-        readonly IUnitOfWork _unitOfWork;
         readonly IMapper _mapper;
 
-        public CoinService(IUnitOfWork unitOfWork, IMapper mapper)
+        public CoinService(IGenericRepository<Coin> repo, IUnitOfWork unitOfWork, IMapper mapper) : base(repo, unitOfWork)
         {
-            _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 

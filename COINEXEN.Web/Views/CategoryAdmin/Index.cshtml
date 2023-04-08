@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Category>
+
+@{
+    ViewBag.Title = "Index";
+     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<title> Kategoriler</title>
+
+<div class="text-center py-4" style="color:black">
+    <h2>Kategoriler</h2>
+</div>
+<hr />
+
+<table class="table table-striped py-2">
+    <thead class="table-light">
+        <tr>
+            <th class="responsive-none">
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th class="responsive-none">
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="responsive-none">
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td class="responsive-none">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
+
+                    @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+   
+
+</table>
+<div class="text-center py-2">
+    <p>
+        @Html.ActionLink("Yeni Kategori Oluştur", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+</div>
+
+
+
+
+

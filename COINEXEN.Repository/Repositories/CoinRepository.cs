@@ -11,6 +11,9 @@ namespace COINEXEN.Repository.Repositories
 
         public IQueryable<Coin> GetAllCoinWithCategories()
             => GetAll().Include(x => x.Category);
-        
+        public async Task<Coin> GetCoinByIdWithCategoryAsync(string id)
+            => await GetAll().Include(x => x.Category).FirstOrDefaultAsync(x=>x.Id==Guid.Parse(id));
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using COINEXEN.Core.Repositories;
+﻿using COINEXEN.Core.Entities;
+using COINEXEN.Core.Repositories;
 using COINEXEN.Core.UnitOfWorks;
 using COINEXEN.Repository.Contexts;
 using COINEXEN.Repository.Repositories;

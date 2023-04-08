@@ -1,4 +1,5 @@
-﻿using COINEXEN.Core.Repositories;
+﻿using COINEXEN.Core.Entities;
+using COINEXEN.Core.Repositories;
 
 namespace COINEXEN.Core.UnitOfWorks
 {

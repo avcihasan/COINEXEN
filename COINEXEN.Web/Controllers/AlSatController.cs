@@ -3,7 +3,7 @@ using COINEXEN.Core.UnitOfWorks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace COINEXEN.Controllers
+namespace COINEXEN.Web.Controllers
 {
     public class AlSatController : Controller
     {
@@ -15,7 +15,7 @@ namespace COINEXEN.Controllers
             _unitOfWork = unitOfWork;
             _coinService = coinService;
         }
-        public async Task<IActionResult> Index(string? id)
+        public async Task<IActionResult> Index(string id)
             =>View(await _coinService.GetCoinsAsync(id)); 
 
         public async Task<PartialViewResult> GetCategories()

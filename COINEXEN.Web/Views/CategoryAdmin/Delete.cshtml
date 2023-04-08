@@ -1,0 +1,45 @@
+﻿@model Category
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<title>Kategori Sil</title>
+
+<div class="text-center pt-5 pe-5 ps-5" style="color:black">
+    <h4>Kategori Silme</h4>
+</div>
+
+<h3 class=" mt-2" style="color:black">Kategoriyi Silmeye Emin misiniz?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal ">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd style="color:grey">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd style="color:grey">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color text-center">
+            <input type="submit" value="Sil" class="btn btn-danger" />
+            @Html.ActionLink("Kategori Listesine Dön", "Index", null, new { @class = "btn btn-warning" })
+        </div>
+    }
+</div>

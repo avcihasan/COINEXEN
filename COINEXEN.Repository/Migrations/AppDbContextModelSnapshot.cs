@@ -91,10 +91,7 @@ namespace COINEXEN.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("AppUserId1")
+                    b.Property<Guid>("AppUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("CoinId")
@@ -111,7 +108,7 @@ namespace COINEXEN.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AppUserId1");
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("CoinId");
 
@@ -147,9 +144,6 @@ namespace COINEXEN.Repository.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("KısaKod")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -158,6 +152,9 @@ namespace COINEXEN.Repository.Migrations
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
+
+                    b.Property<string>("ShortName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");
@@ -502,7 +499,9 @@ namespace COINEXEN.Repository.Migrations
                 {
                     b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", "AppUser")
                         .WithMany()
-                        .HasForeignKey("AppUserId1");
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("COINEXEN.Core.Entities.Coin", "Coin")
                         .WithMany()

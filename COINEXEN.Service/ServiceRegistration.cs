@@ -1,4 +1,6 @@
-﻿using COINEXEN.Core.Services;
+﻿using COINEXEN.Core.Repositories;
+using COINEXEN.Core.Services;
+using COINEXEN.Repository.Repositories;
 using COINEXEN.Service.Mapping;
 using COINEXEN.Service.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +21,12 @@ namespace COINEXEN.Service
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IWalletService, WalletService>();
             services.AddScoped<IMessageService, MessageService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICoinService, CoinService>();
+            
+
+
+            services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
 
             services.AddAutoMapper(Assembly.GetAssembly(typeof(MapProfile)));
         }

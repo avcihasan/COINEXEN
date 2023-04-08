@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json.Serialization;
 
-namespace COINEXEN.Controllers
+namespace COINEXEN.Web.Controllers
 {
     [Authorize]
     public class CartController : Controller
