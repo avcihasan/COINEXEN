@@ -17,9 +17,6 @@ namespace COINEXEN.Web.Controllers
         public IActionResult Index()
             => View();
 
-        public IActionResult Message()
-            =>View();
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Message(Message message)

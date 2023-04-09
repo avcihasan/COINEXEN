@@ -27,6 +27,7 @@ builder.Services.AddAuthorization(opts =>
     });
    
 });
+builder.Services.AddSession();
 CookieBuilder cookieBuilder = new CookieBuilder();
 
 cookieBuilder.Name = "MyBlog";
@@ -58,6 +59,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseSession();
 app.UseSystemWebAdapters();
 
 app.MapDefaultControllerRoute();

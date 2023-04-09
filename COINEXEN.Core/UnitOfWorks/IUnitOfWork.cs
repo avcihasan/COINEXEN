@@ -5,6 +5,7 @@ namespace COINEXEN.Core.UnitOfWorks
 {
     public interface IUnitOfWork
     {
+        public IUserRepository UserRepository { get; }
         public IBasketRepository BasketRepository { get; }
         public ICoinWalletRepository CoinWalletRepository { get; }
         public ICategoryRepository CategoryRepository { get; }

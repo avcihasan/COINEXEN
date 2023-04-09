@@ -17,14 +17,16 @@ namespace COINEXEN.Service.Services
         readonly IMapper _mapper;
         readonly IWalletService _walletService;
         readonly IHttpContextAccessor _httpContextAccesor;
+        readonly IUnitOfWork _unitOfWork;
 
 
-        public UserService(UserManager<AppUser> userManager, IMapper mapper, IWalletService walletService, IHttpContextAccessor httpContextAccesor)
+        public UserService(UserManager<AppUser> userManager, IMapper mapper, IWalletService walletService, IHttpContextAccessor httpContextAccesor, IUnitOfWork unitOfWork)
         {
             _userManager = userManager;
             _mapper = mapper;
             _walletService = walletService;
             _httpContextAccesor = httpContextAccesor;
+            _unitOfWork = unitOfWork;
         }
         public async Task<bool> CreateUserAsync(RegisterViewModel registerViewModel)
         {
@@ -43,7 +45,7 @@ namespace COINEXEN.Service.Services
         {
             if (!_httpContextAccesor.HttpContext.User.Identity.IsAuthenticated)
                 throw new Exception("hata");
-            AppUser user= await _userManager.FindByNameAsync(_httpContextAccesor.HttpContext.User.Identity.Name);
+            AppUser user = await _unitOfWork.UserRepository.GetUserWithPropertiesAsync(_httpContextAccesor.HttpContext.User.Identity.Name); 
             if (user==null)
                 throw new Exception("hata");
             return user;

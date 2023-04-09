@@ -16,7 +16,10 @@ namespace COINEXEN.Web.Controllers
             _coinService = coinService;
         }
         public async Task<IActionResult> Index(string id)
-            =>View(await _coinService.GetAllCoinsAsync()); 
+        {
+            ViewBag.kategoriler =_unitOfWork.CategoryRepository.GetAll();
+            return View(await _coinService.GetAllCoinsAsync());
+        }
 
         public async Task<PartialViewResult> GetCategories()
             =>PartialView(await _unitOfWork.CategoryRepository.GetAll().ToListAsync());

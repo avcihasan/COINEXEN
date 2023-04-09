@@ -30,102 +30,36 @@ namespace COINEXEN.Web.Controllers
             => View(await _coinService.GetCoinByIdAsync(id));
 
         public async Task<IActionResult> CartDetailsDelete(string id)
-            => View(await _coinService.GetCoinByIdAsync(id));
+            => View(await _coinService.GetCoinByIdAsync(id));   
 
         public async Task<IActionResult> AddToCart(string Id, int Stock)
-        {
+        { 
             await _basketService.AddCoinToBasketAsync(HttpContext, Id, Stock);
             return RedirectToAction("Index");
         }
 
-        public ActionResult RemoveFromCart(int Id, int AlimSayisi, string UserName)
+        public async Task<IActionResult> RemoveFromCart(string Id, int Stock, string UserName)
         {
-           // var uye = _idb.Users.Where(a => a.UserName == UserName).FirstOrDefault();
-           // var order = _context.OrderLines.Where(i => i.Coin.Id == Id && i.Username == UserName).FirstOrDefault();
-           // var cuzdansatis = new CuzdanSatis();
-
-           // var cuzdanline=_context.CoinCuzdanLines.Where(i => i.Coin.Id == Id && i.UserName == UserName).FirstOrDefault();
-
-           // if (order == null)
-           // {
-           //     return RedirectToAction("Index", "AlSat");
-           // }
-
-
-           // if (order.Quantity > AlimSayisi)
-           // {
-           //     cuzdansatis.CoinName = order.Coin.Name;
-
-           //     cuzdansatis.Quantity = AlimSayisi;
-           //     cuzdansatis.UserName = UserName;
-           //     cuzdansatis.SatisDate = DateTime.Now;
-           //     cuzdansatis.CoinPrice = order.Coin.Price;
-           //     cuzdansatis.TotalPrice = order.Coin.Price * AlimSayisi;
-
-           //     _context.CuzdanSatiss.Add(cuzdansatis);
-
-           //     cuzdanline.Quantity=cuzdanline.Quantity - AlimSayisi;
-           //     order.Quantity = order.Quantity - AlimSayisi;
-           //     uye.HesapDeger = uye.HesapDeger - (order.Coin.Price * AlimSayisi);
-           //     uye.Bakiye = uye.Bakiye + (order.Coin.Price * AlimSayisi);
-
-
-           // }
-           // else if (order.Quantity == AlimSayisi)
-           // {
-           //     cuzdansatis.CoinName = order.Coin.Name;
-           //     cuzdansatis.Quantity = AlimSayisi;
-           //     cuzdansatis.UserName = UserName;
-           //     cuzdansatis.SatisDate = DateTime.Now;
-           //     cuzdansatis.CoinPrice = order.Coin.Price;
-           //     cuzdansatis.TotalPrice = order.Coin.Price * AlimSayisi;
-
-
-           //     _context.CuzdanSatiss.Add(cuzdansatis);
-
-           //     uye.HesapDeger = uye.HesapDeger - (order.Coin.Price * AlimSayisi);
-           //     uye.Bakiye = uye.Bakiye + (order.Coin.Price * AlimSayisi);
-           //     _context.OrderLines.Remove(order);
-           //     _context.CoinCuzdanLines.Remove(cuzdanline);
-           // }
-           //else if (order.Quantity < AlimSayisi)
-           // {
-           //     return RedirectToAction("Index", "AlSat");
-
-           // }
-           // var coin = _context.Coin.Where(i => i.Id == Id).FirstOrDefault();
-           // coin.Stock = coin.Stock + AlimSayisi;
-
-           // _idb.SaveChanges();
-           // _context.SaveChanges();
-
+            bool result =await _basketService.SellCoinAsync(Id, Stock, UserName);
+            if (!result)
+                return RedirectToAction("Index", "AlSat");
             return View("DeleteSuccess");
 
         }
 
-        //public ActionResult Checkout()
-        //{
-        //    return View(GetCart());
-        //}
+        public ActionResult Checkout()
+            =>View(_basketService.GetBasket(HttpContext));
+        
 
-        //[HttpPost]
-        //public ActionResult Checkout(string UserName)
-        //{
-        //    var cart = GetCart();
-
-
-
-        //    if (cart.CartLines.Count == 0)
-        //    {
-        //        ModelState.AddModelError("coinyok", "Sepette coin yok");
-        //    }
-
-        //    SaveOrder(cart, UserName);
-
-        //    cart.Clear();
-
-        //    return View("Complated");
-        //}
+        [HttpPost]
+        public async Task<IActionResult> Checkout(string UserName)
+        {
+            var cart = _basketService.GetBasket(HttpContext);
+            if (cart.Coin == null)
+                ModelState.AddModelError("coinyok", "Sepette coin yok");
+            await _basketService.SaveOrderAsync(cart,UserName,Core.Enums.Transaction.Buy);
+            return View("Complated");
+        }
 
     }
 

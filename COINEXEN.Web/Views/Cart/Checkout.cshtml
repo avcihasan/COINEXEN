@@ -1,12 +1,11 @@
-﻿@*@{
+﻿@model Basket
+@{
     ViewBag.Title = "Checkout";
 }
 <title>Coin  Alım</title>
 <div class="text-center container py-5">
-    @foreach (var item in Model.CartLines)
-    {
-        <h2 class="text-white mb-5">@item.Coin.Name Alma İşleminizi Tamamlamak İstiyor musunuz?</h2>
-    }
+        <h2 class="text-white mb-5">@Model.Coin.Name Alma İşleminizi Tamamlamak İstiyor musunuz?</h2>
+
     @using (Html.BeginForm("Checkout", "Cart"))
     {
         @Html.Hidden("UserName", User.Identity.Name);
@@ -21,4 +20,4 @@
             <i class="fa fa-arrow-left fa-lg"  aria-hidden="true">  Satın Alma Sayfasına Dön </i>
         </a>
     </div>
-</div>*@
+</div>

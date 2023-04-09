@@ -15,6 +15,7 @@ namespace COINEXEN.Repository.UnitOfWorks
         public ICoinRepository CoinRepository { get; private set; }
         public IMessageRepository MessageRepository { get; private set; }
         public ICoinTransactionRepository CoinTransactionRepository { get; private set; }
+        public IUserRepository UserRepository { get; private set; }
 
         readonly AppDbContext _context;
 
@@ -28,6 +29,7 @@ namespace COINEXEN.Repository.UnitOfWorks
             CategoryRepository=new CategoryRepository(_context);
             BasketRepository = new BasketRepository(_context);
             CoinTransactionRepository = new CoinTransactionRepository(_context);
+            UserRepository = new UserRepository(_context);
         }
 
 

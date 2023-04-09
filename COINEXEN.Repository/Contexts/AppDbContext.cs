@@ -44,5 +44,6 @@ namespace COINEXEN.Repository.Contexts
 
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }

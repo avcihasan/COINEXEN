@@ -1,10 +1,10 @@
-﻿@*@model Coin
+﻿@model CoinViewModel
 @{
     ViewBag.Title = "CartDetailsDelete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <title>@Model.Name Satış</title>
-@using (Html.BeginForm("RemoveToCart", "Cart"))
+@using (Html.BeginForm("RemoveFromCart", "Cart"))
 {
     @Html.AntiForgeryToken()
     <div class="form-horizontal py-5 container">
@@ -23,7 +23,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>@Model.KısaKod</td>
+                    <td>@Model.ShortName</td>
                     <td>@Model.Name</td>
                     <td>@Model.Stock</td>
                     @{
@@ -45,9 +45,9 @@
         </table>
         <div class="form-group text-white text-center row mt-5">
             <div class="col-md-4">
-                <h5>Almak İstediğiniz Adet</h5>
+                <h5>Satmak İstediğiniz Adet</h5>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.ValidationMessageFor(Model => model.Stock, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(Model => Model.Stock, "", new { @class = "text-danger" })
 
                 @Html.TextBoxFor(i => i.Stock, new { htmlAttributes = new { @class = "form-control text-center" }, autocomplete = "off" })
             </div>
@@ -86,4 +86,4 @@
 </script>
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

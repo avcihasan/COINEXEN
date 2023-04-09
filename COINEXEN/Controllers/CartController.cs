@@ -47,9 +47,7 @@ namespace COINEXEN.Controllers
 
             if (coin != null)
             {
-
                 GetCart().AddCoin(coin, AlimSayisi);
-
             }
 
             return RedirectToAction("Index");
