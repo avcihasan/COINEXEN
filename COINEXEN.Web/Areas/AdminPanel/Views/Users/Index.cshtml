@@ -1,0 +1,74 @@
+﻿@model IEnumerable<AppUser>
+@{
+    ViewBag.Title = "Index";
+}
+<title>Üyeler</title>
+<div>
+    <div class="text-center py-3" style="color:black">
+        <h2>Üye Listesi</h2>
+    </div>
+    <table class="table  table-striped mb-5">
+        <thead class="table-light">
+            <tr>
+                <th>
+                    Kullanıcı Adı
+                </th>
+                <th>
+                    Ad
+                </th>
+                <th>
+                    Soyad
+                </th>
+                <th class="responsive-none">
+                    E-posta
+                </th>
+                <th class="responsive-none">
+                    Telefon Numarası
+                </th>
+                <th class="responsive-none">
+                    Doğum Tarihi
+                </th>
+                <th class="responsive-none">
+                    @*<span asp-for="@item.Surname"></span>*@
+                    @Html.DisplayNameFor(model => model.Wallet.Balance)
+                </th>
+                <th class="responsive-none">
+                    Hesap Değeri
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="col-md">
+                        <span asp-for="@item.UserName"></span>
+                    </td>
+                    <td>
+                        <span asp-for="@item.Name"></span>
+                    </td>
+                    <td>
+                        <span asp-for="@item.Surname"></span>
+                    </td>
+                    <td class="responsive-none">
+                        <span asp-for="@item.Email"></span>
+                    </td>
+                    <td class=" responsive-none">
+                        <span asp-for="@item.PhoneNumber"></span>
+                    </td>
+                    <td class="responsive-none">
+                        <span asp-for="@item.Birthday"></span>
+                    </td>
+                    <td class="text-center responsive-none">
+                        <span asp-for="@item..Wallet.Balance"></span>
+                    </td>
+                    <td class="text-center responsive-none">
+                        @*todo*@
+                        <span asp-for="@item..Wallet.Balance"></span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

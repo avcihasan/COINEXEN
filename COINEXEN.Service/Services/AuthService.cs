@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Azure;
 using COINEXEN.Core.Entities.Identity;
 using COINEXEN.Core.Services;
 using COINEXEN.Core.ViewModels;
@@ -26,21 +27,16 @@ namespace COINEXEN.Service.Services
         public async Task<bool> LoginAsync(LoginViewModel loginViewModel)
         {
             AppUser user = await _userManager.FindByNameAsync(loginViewModel.UserName);
-
-
-            //if (user == null)
-            //    return false;
-            //SignInResult result= await _signInManager.CheckPasswordSignInAsync(user, loginViewModel.Password, false);
-            //if (result.Succeeded)
-            //{
-            //    await _userManager.ResetAccessFailedCountAsync(user);
-            //    await _userManager.SetLockoutEndDateAsync(user, null);
-            //}
-
-            //return result.Succeeded;
-            return true;
+            await _signInManager.SignOutAsync();
+            SignInResult result = await _signInManager.PasswordSignInAsync(user, loginViewModel.Password, true, false);
+            await _userManager.ResetAccessFailedCountAsync(user);
+            return result.Succeeded;
         }
 
-        
+        public async Task LogoutAsync(HttpContext httpContext)
+        {
+            httpContext.Response.Cookies.Delete("MyBlog");
+            await _signInManager.SignOutAsync();
+        }
     }
 }

@@ -1,0 +1,114 @@
+﻿@using COINEXEN.Core.Entities;
+@model IEnumerable<Coin>
+
+@{
+    ViewBag.Title = "Index";
+}
+<title>Coinler</title>
+<div>
+
+    <div class="text-center pt-5" style="color:black">
+        <h2>Coin Listesi</h2>
+    </div>
+
+    <p>
+        <a asp-action="Create" asp-controller="Coins" class="btn btn-primary">Coin Oluştur</a>
+    </p>
+    <table class="table  table-striped mb-5">
+        <thead class="table-light">
+            @{
+                Coin c = Model.FirstOrDefault();
+                <tr>
+
+                    <th class="responsive-none">
+                        <label asp-for="@c.ShortName"></label>
+                    </th>
+                    <th>
+                        <label asp-for="@c.Name"></label>
+                    </th>
+
+                    <th class="responsive-none">
+                        <label asp-for="@c.Stock"></label>
+                    </th>
+                    <th>
+                        <label asp-for="@c.Price"></label>
+                    </th>
+                    <th class="responsive-none">
+                        <label asp-for="@c.Category.Name"></label>
+                    </th>
+                    <th></th>
+                </tr>
+            }
+
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td class="responsive-none">
+                        @item.ShortName
+                    </td>
+
+                    <td>
+                        @item.Name
+                    </td>
+
+
+                    <td class="responsive-none">
+                        @item.Stock
+                    </td>
+
+                    @{
+
+                        string sayi = Convert.ToString(@item.Price);
+                        if (sayi.Length < 2)
+                        {
+                            sayi = sayi.Substring(0, 1);
+
+                        }
+                        else if (sayi.Length < 3)
+                        {
+                            sayi = sayi.Substring(0, 2);
+
+                        }
+                        else if (sayi.Length < 4)
+                        {
+                            sayi = sayi.Substring(0, 3);
+
+                        }
+                        else if (sayi.Length < 5)
+                        {
+                            sayi = sayi.Substring(0, 4);
+
+                        }
+
+                        else
+                        {
+                            sayi = sayi.Substring(0, 5);
+
+                        }
+
+                        <td>@sayi <i class="fa fa-try" aria-hidden="true"></i></td>
+
+                    }
+                    @*@Html.DisplayFor(modelItem => item.Price)*@
+
+                    <td class="responsive-none">
+
+                        @item.Category.Name
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-controller="Coins" asp-route-id="@item.Id" class="btn btn-warning btn-sm my-1">Düzenle</a>
+                        <a asp-action="Details" asp-controller="Coins" asp-route-id="@item.Id" class="btn btn-info btn-sm">Detay</a>
+                        <a asp-action="Delete" asp-controller="Coins" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+
+    </table>
+
+</div>

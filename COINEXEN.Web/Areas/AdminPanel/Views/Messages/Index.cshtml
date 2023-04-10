@@ -1,0 +1,57 @@
+﻿@using COINEXEN.Core.Entities;
+@model IEnumerable<Message>
+    @{
+        ViewBag.Title = "Messages";
+    }
+    <title>Mesajlar</title>
+    <div>
+        <div class="text-center py-3" style="color:black">
+            <h2>Mesajlar</h2>
+        </div>
+        <table class="table  table-striped mb-5">
+            <thead class="table-light">
+                <tr>
+                    <th>
+                        Kullanıcı Adı
+                    </th>
+                    <th>
+                        Ad
+                    </th>
+                    <th>
+                        Soyad
+                    </th>
+                    <th class="responsive-none">
+                        Gönderim Tarihi
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @if (item.UserName == null)
+                        {
+                            <td class="col-md">
+                                Kullanıcı Kayıtlı Değil
+                            </td>
+                        }
+                        else
+                        {
+                            <td class="col-md">
+                                <span asp-for="@item.UserName"></span>
+                            </td>
+                        }
+                        <td>
+                            <a asp-action="MessageDetails" asp-controller="Messages" asp-route-id="@item.Id"><span asp-for="@item.Name"></span></a>
+                        <td>
+                            <span asp-for="@item.Surname"></span>
+                        </td>
+                        <td class="responsive-none">
+                            <span asp-for="@item.SendingDate"></span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+

@@ -1,0 +1,38 @@
+﻿@using COINEXEN.Core.Entities;
+@model Category
+
+@{
+    ViewBag.Title = "Details";
+}
+<title> @Model.Name Detay</title>
+<div class="text-center  pt-5" style="color:black">
+    <h2>Details</h2>
+</div>
+<div class="px-5">
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" })
+</div>
+<hr />
+<div>
+
+
+    <dl class="dl-horizontal  px-5">
+        <dt>
+            @Model.Name
+        </dt>
+
+        <dd style="color:grey">
+            @Model.Name
+        </dd>
+        <dt>
+            @Model.Description
+        </dt>
+        <dd style="color:grey">
+            @Model.Description
+        </dd>
+
+
+    </dl>
+</div>
+<p class="text-center mb-5 mt-2 ">
+    <a asp-action="Index" asp-controller="Coins" class="btn btn-warning">Coin Listesine Dön</a>
+</p>

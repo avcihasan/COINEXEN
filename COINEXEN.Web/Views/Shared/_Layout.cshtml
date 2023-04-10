@@ -33,7 +33,7 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li class="nav-item">
-                            <a class="nav-link nav-mobil" href="/UyeHesapOzet">Hesap Özeti</a>
+                            <a class="nav-link nav-mobil" href="/Members/AccountStatement">Hesap Özeti</a>
                         </li>
                     }
                     <li class="nav-item">
@@ -46,7 +46,7 @@
                         <a class="nav-link yellow-hover" href="/AlSat">Al/Sat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link yellow-hover" href="/OnSatis">Ön Satış</a>
+                        <a class="nav-link yellow-hover" href="/CoinSales/PreSale">Ön Satış</a>
                     </li>
                     @if (User.Identity.IsAuthenticated)
                     {
@@ -57,7 +57,7 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li class="nav-item">
-                            <a class="nav-link nav-mobil" href="/UyeAyarlar">Ayarlar</a>
+                            <a class="nav-link nav-mobil" href="/Members/Settings">Ayarlar</a>
                         </li>
                     }
                     <li class="nav-item">
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 ">
-                                <a type="button" class="btn btn-outline-warning btn-sm mx-1 nav-link nav-mobil" href="/Account/Logout" style="font-weight:normal">
+                                <a type="button" class="btn btn-outline-warning btn-sm mx-1 nav-link nav-mobil" href="/Auth/Logout" style="font-weight:normal">
                                     Çıkış Yap
                                 </a>
                             </div>
@@ -77,10 +77,10 @@
                         else
                         {
                             <div class="text-center">
-                                <a type="button" class="btn btn-outline-success btn-sm m-2 nav-link nav-mobil" href="/Account/Login">
+                                <a type="button" class="btn btn-outline-success btn-sm m-2 nav-link nav-mobil" href="/Auth/Login">
                                     Giriş Yap
                                 </a>
-                                <a type="button" class="btn btn-outline-info btn-sm m-2 nav-link nav-mobil" href="/Account/Register">
+                                <a type="button" class="btn btn-outline-info btn-sm m-2 nav-link nav-mobil" href="/Auth/Register">
                                     Kayıt Ol
                                 </a>
                             </div>
@@ -127,13 +127,13 @@
                 <li class="list-group-item py-3 offcanvasItem"><a href="/" class="yellow-hover">Ana Sayfa</a></li>
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <li class="list-group-item py-3  offcanvasItem"><a href="/UyeHesapOzet" class="yellow-hover">Hesap Özeti</a></li>
+                    <li class="list-group-item py-3  offcanvasItem"><a href="/Members/AccountStatement" class="yellow-hover">Hesap Özeti</a></li>
                 }
                 <li class="list-group-item py-3 offcanvasItem"><a href="/Hakkimizda" class="yellow-hover">Hakkımızda</a></li>
                 <li class="list-group-item py-3 offcanvasItem"><a href="limitler-kurallar.html" class="yellow-hover">Limitler ve Kurallar</a></li>
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <li class="list-group-item py-3 offcanvasItem"><a href="/UyeAyarlar" class="yellow-hover">Ayarlar</a></li>
+                    <li class="list-group-item py-3 offcanvasItem"><a href="/Members/Settings" class="yellow-hover">Ayarlar</a></li>
                 }
                 <li class="list-group-item py-3 offcanvasItem mt-1">
 
@@ -145,17 +145,17 @@
                             </div>
                         </div>
                         <div class="col-md-12 ">
-                            <a type="button" class="btn btn-outline-warning btn-sm mx-1" href="/Account/Logout" style="font-weight:normal">
+                            <a type="button" class="btn btn-outline-warning btn-sm mx-1" href="/Auth/Logout" style="font-weight:normal">
                                 Çıkış Yap
                             </a>
                         </div>
                     }
                     else
                     {
-                        <a type="button" class="btn btn-outline-success btn-sm m-2" href="/Account/Login">
+                        <a type="button" class="btn btn-outline-success btn-sm m-2" href="/Auth/Login">
                             Giriş Yap
                         </a>
-                        <a type="button" class="btn btn-outline-info btn-sm m-2" href="/Account/Register">
+                        <a type="button" class="btn btn-outline-info btn-sm m-2" href="/Auth/Register">
                             Kayıt Ol
                         </a>
                     }

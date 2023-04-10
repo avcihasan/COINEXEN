@@ -1,0 +1,92 @@
+﻿@using COINEXEN.Core.Entities;
+@model Coin
+
+@{
+    ViewBag.Title = "Edit";
+}
+<title>Coin Düzenle </title>
+<div class="text-center  pt-5" style="color:black" >
+    <h2>Coin Düzenle</h2>
+</div>
+
+<hr />
+<form asp-action="Edit" asp-controller="Coins" method="post">
+    <div class="form-horizontal ">
+
+        <input type="hidden" asp-for="@Model.Id"/>
+        <div class="form-group  ">
+            <label asp-for="@Model.Name" class="control-label col-md-12  px-5 my-2"></label>
+            <div class="col-md-12 px-5">
+                <input type="text" asp-for="@Model.Name" class="form-control" />
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <label asp-for="@Model.PhotoPath" class="control-label col-md-12  px-5 my-2"></label>
+            <div class="col-md-12  px-5">
+                <input type="text" asp-for="@Model.PhotoPath" class="form-control" />
+                <span asp-validation-for="@Model.PhotoPath" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group  ">
+            <label asp-for="@Model.Description" class="control-label col-md-12  px-5 my-2"></label>
+            <div class="col-md-12  px-5">
+                <textarea asp-for="@Model.Description" class="form-control"></textarea>
+                <span asp-validation-for="@Model.Description" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <label asp-for="@Model.Stock" class="control-label col-md-12  px-5 my-2"></label>
+            <div class="col-md-12  px-5">
+                <input type="text" asp-for="@Model.Stock" class="form-control" />
+                <span asp-validation-for="@Model.Stock" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="@Model.Price" class="control-label col-md-12  px-5 my-2"></label>
+            <div class="col-md-12  px-5">
+                <input type="text" asp-for="@Model.Price" class="form-control" />
+                <span asp-validation-for="@Model.Price" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="@Model.ShortName" class="control-label col-md-12  px-5 my-2"></label>
+            <div class="col-md-12  px-5">
+                <input type="text" asp-for="@Model.ShortName" class="form-control" />
+                <span asp-validation-for="@Model.ShortName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <label asp-for="@Model.CategoryId" class="control-label col-md-12 my-2  px-5"></label>
+            <div class="col-md-12  px-5">
+                <select asp-for="@Model.CategoryId" asp-items="@ViewBag.CategoryId" class="form-control">
+                    <option>Kategory</option>
+                </select>
+                <span asp-validation-for="@Model.CategoryId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group mt-3">
+            <div class="col-md-offset-2 col-md-12 text-center">
+                <button class="btn btn-success">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<div class=" mb-5 text-center mt-2">
+    <div class="px-5">
+        <a asp-action="Index" asp-controller="Coins" class="btn btn-warning">Coin Listesine Dön</a>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -62,6 +62,11 @@ app.UseAuthorization();
 app.UseSession();
 app.UseSystemWebAdapters();
 
+app.MapControllerRoute(
+    name: "adminPanel",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+    );
+
 app.MapDefaultControllerRoute();
 app.MapReverseProxy();
 

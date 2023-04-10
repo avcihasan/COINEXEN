@@ -1,0 +1,42 @@
+﻿@using COINEXEN.Core.Entities;
+@model Category
+
+@{
+    ViewBag.Title = "Delete";
+}
+<title>Kategori Sil</title>
+
+<div class="text-center pt-5 pe-5 ps-5" style="color:black">
+    <h4>Kategori Silme</h4>
+</div>
+
+<h3 class=" mt-2" style="color:black">Kategoriyi Silmeye Emin misiniz?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal ">
+        <dt>
+            <span asp-for="@Model.Name"></span>
+        </dt>
+
+        <dd style="color:grey">
+            <span asp-for="@Model.Name"></span>
+        </dd>
+
+        <dt>
+            <span asp-for="@Model.Description"></span>
+        </dt>
+
+        <dd style="color:grey">
+            <span asp-for="@Model.Description"></span>
+        </dd>
+
+    </dl>
+
+    <form asp-action="Delete" asp-controller="CategoryAdmin" method="post">
+        <div class="form-actions no-color text-center">
+            <input type="submit" value="Sil" class="btn btn-danger" />
+            <a asp-action="Index" asp-controller="CategoryAdmin" class="btn btn-warning">Kategori Listesine Dön</a>
+        </div>
+    </form>
+</div>

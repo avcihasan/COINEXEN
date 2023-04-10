@@ -72,7 +72,7 @@
                     }
                 </td>
                 <td class="text-center">
-                        <a asp-action="Index" asp-controller="CoinDetay" asp-route-id="@coin.Id"  type="button" class="btn btn-light">PRO</a>
+                        <a asp-action="CoinDetails" asp-controller="AlSat" asp-route-id="@coin.Id"  type="button" class="btn btn-light">PRO</a>
                         <a asp-action="CartDetails" asp-controller="Cart" asp-route-id="@coin.Id" type="button" class="btn btn-primary">AL</a>
                         <a asp-action="CartDetailsDelete" asp-controller="Cart" asp-route-id="@coin.Id" type="button" class="btn btn-danger">SAT</a>
                 </td>
@@ -167,7 +167,7 @@
                             }
                         }
                         <div class="col-md-12 text-end">
-                                <a asp-action="Index" asp-controller="CoinDetay" asp-route-id="@coin.Id" type="button" class="btn btn-light btn-sm">PRO</a>
+                                <a asp-action="CoinDetails" asp-controller="AlSat" asp-route-id="@coin.Id" type="button" class="btn btn-light btn-sm">PRO</a>
                                 <form asp-action="CartDetails" asp-controller="Cart" method="post" class="display:inline">
                                     <input type="hidden" asp-for="@coin.Id">
                                     <button class="btn btn-primary btn-sm">AL</button>

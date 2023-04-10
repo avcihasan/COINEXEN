@@ -1,0 +1,89 @@
+﻿@using COINEXEN.Core.Entities;
+@model Coin
+
+@{
+    ViewBag.Title = "Delete";
+}
+<title> Coin Sil</title>
+<div class="text-center pt-5" style="color:black">
+    <h2>Coin Silme</h2>
+</div>
+
+<h3 class=" px-5" style="color:black">Coini Silmek İçin Emin misiniz?</h3>
+<div class="pb-5 px-5">
+
+    <hr />
+    <dl class="dl-horizontal ">
+        <dt>
+            <span asp-for="@Model.PhotoPath"></span>
+
+            @*@Html.DisplayNameFor(model => model.PhotoPath) *@
+
+        </dt>
+
+        <dd style="color:grey">
+            <span asp-for="@Model.PhotoPath"></span>
+
+            @*@Html.DisplayFor(model => model.PhotoPath)*@
+        </dd>
+        <dt>
+            <span asp-for="@Model.ShortName"></span>
+
+            @*@Html.DisplayNameFor(model => model.ShortName)*@
+        </dt>
+
+        <dd style="color:grey">
+            <span asp-for="@Model.ShortName"></span>
+        </dd>
+
+
+        <dt>
+            <span asp-for="@Model.Name"></span>
+        </dt>
+
+        <dd style="color:grey">
+            <span asp-for="@Model.Name"></span>
+        </dd>
+
+
+
+        <dt>
+            <span asp-for="@Model.Description"></span>
+        </dt>
+
+        <dd style="color:grey">
+            <span asp-for="@Model.Description"></span>
+        </dd>
+
+        <dt>
+            <span asp-for="@Model.Stock"></span>
+        </dt>
+
+        <dd style="color:grey">
+            <span asp-for="@Model.Stock"></span>
+        </dd>
+
+        <dt>
+            <span asp-for="@Model.Price"></span>
+        </dt>
+
+        <dd style="color:grey">
+            <span asp-for="@Model.Price"></span>
+        </dd>
+        <dt>
+            <span asp-for="@Model.Category.Name"></span>
+        </dt>
+
+        <dd style="color:grey">
+            <span asp-for="@Model.Category.Name"></span>
+        </dd>
+
+
+    </dl>
+    <form asp-action="Delete" asp-controller="Coins" method="post">
+        <div class="form-actions no-color text-center">
+            <input type="submit" value="Sil" class="btn btn-danger" />
+            <a asp-action="Index" asp-controller="Coins" class="btn btn-warning">Coin Listesine Dön</a>
+        </div>
+    </form>
+</div>

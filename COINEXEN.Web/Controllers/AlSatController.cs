@@ -1,7 +1,9 @@
-﻿using COINEXEN.Core.Services;
+﻿using COINEXEN.Core.Entities;
+using COINEXEN.Core.Services;
 using COINEXEN.Core.UnitOfWorks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace COINEXEN.Web.Controllers
 {
@@ -21,10 +23,21 @@ namespace COINEXEN.Web.Controllers
             return View(await _coinService.GetAllCoinsAsync());
         }
 
-        public async Task<PartialViewResult> GetCategories()
+        public async Task<IActionResult> GetCategories()
             =>PartialView(await _unitOfWork.CategoryRepository.GetAll().ToListAsync());
 
-        public async Task<PartialViewResult> GetCategoriesMobile()
+        public async Task<IActionResult> GetCategoriesMobile()
             => PartialView(await _unitOfWork.CategoryRepository.GetAll().ToListAsync());
+
+
+        public async Task<IActionResult> CoinDetails(string id)
+        {
+            if (id == null)
+                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
+            Coin coin = await _unitOfWork.CoinRepository.GetCoinByIdWithCategoryAsync(id);
+            if (coin == null)
+                return NotFound();
+            return View(coin);
+        }
     }
 }
