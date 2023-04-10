@@ -17,67 +17,61 @@
 
     <dl class="dl-horizontal  px-5">
         <dt>
-            @Html.DisplayNameFor(model => model.PhotoPath)
+           @Model.PhotoPath
         </dt>
 
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.PhotoPath)
+           @Model.PhotoPath
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Category.Name)
+            @Model.Category.Name
         </dt>
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.Category.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd style="color:grey">
-            @Html.DisplayFor(model => model.Name)
+            @Model.Category.Name
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ShortName)
+            @Model.Name
         </dt>
 
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.ShortName)
-        </dd>
-
-
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd style="color:grey">
-            @Html.DisplayFor(model => model.Description)
+           @Model.Name
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Stock)
+            @Model.ShortName
         </dt>
 
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.Stock)
+            @Model.ShortName
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Price)
+            @Model.Description
         </dt>
 
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.Price)
+            @Model.Description
         </dd>
 
+        <dt>
+            @Model.Stock
+        </dt>
 
+        <dd style="color:grey">
+            @Model.Stock
+        </dd>
 
+        <dt>
+            @Model.Price
+        </dt>
+
+        <dd style="color:grey">
+            @Model.Price
+        </dd>
 
     </dl>
 </div>
 <p class="text-center mb-5 mt-2 ">
-
-    @Html.ActionLink("Coin Listesine Dön", "Index", null, new { @class = "btn btn-warning" })
+    <a asp-action="Index" asp-controller="CoinAdmin" class="btn btn-warning">Coin Listesine Dön</a>
 </p>

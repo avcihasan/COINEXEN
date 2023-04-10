@@ -2,7 +2,8 @@
 
 @{
     ViewBag.Title = "Index";
-     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
 }
 
 <title> Kategoriler</title>
@@ -14,36 +15,39 @@
 
 <table class="table table-striped py-2">
     <thead class="table-light">
-        <tr>
+        @{
+            Category c=Model.FirstOrDefault();
+<tr>
             <th class="responsive-none">
-                @Html.DisplayNameFor(model => model.Id)
+                <label asp-for="@c.Id"></label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                <label asp-for="@c.Name"></label>
             </th>
             <th class="responsive-none">
-                @Html.DisplayNameFor(model => model.Description)
+                <label asp-for="@c.Description"></label>
             </th>
             <th></th>
         </tr>
+        }
+        
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
                 <td class="responsive-none">
-                    @Html.DisplayFor(modelItem => item.Id)
+                    @item.Id
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Name)
+                    @item.Name
                 </td>
                 <td class="responsive-none">
-                    @Html.DisplayFor(modelItem => item.Description)
+                    @item.Description
                 </td>
                 <td>
-                    @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })
-
-                    @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                    <a asp-action="Edit" asp-controller="CategoryAdmin" asp-route-id="@item.Id" class="btn btn-warning btn-sm ">Düzenle</a>
+                    <a asp-action="Delete" asp-controller="CategoryAdmin" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Sil</a>
                 </td>
             </tr>
         }
@@ -53,7 +57,7 @@
 </table>
 <div class="text-center py-2">
     <p>
-        @Html.ActionLink("Yeni Kategori Oluştur", "Create", null, new { @class = "btn btn-primary" })
+        <a asp-action="Create" asp-controller="CategoryAdmin" class="btn btn-primary">Yeni Kategori Oluştur</a>
     </p>
 </div>
 

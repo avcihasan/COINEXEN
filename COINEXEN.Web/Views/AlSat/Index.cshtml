@@ -13,8 +13,7 @@
             </form>
         </div>
         <div class="col-md-12 pt-3 px-3">
-            @Html.Partial("GetCategories", ViewBag.kategoriler as IEnumerable<Category>);
-            
+            <partial name="GetCategories" model="ViewBag.kategoriler as IEnumerable<Category>"></partial>
         </div>
     </div>
     <table class="table text-white  my-1">
@@ -73,24 +72,23 @@
                     }
                 </td>
                 <td class="text-center">
-                    <a href="/CoinDetay/Index/@coin.Id" type="button" class="btn btn-light">PRO</a>
-                        @using (Html.BeginForm("CartDetails", "Cart", FormMethod.Post, new { style = "display:inline" }))
-                    {
-                        @Html.Hidden("Id", coin.Id)
-                        <button type="submit" class="btn btn-primary ">AL</button>
-                    }
-                        @using (Html.BeginForm("CartDetailsDelete", "Cart", FormMethod.Post, new { style = "display:inline" }))
-                    {
-                        @Html.Hidden("Id", coin.Id)
-                        <button type="submit" class="btn btn-danger">SAT</button>
-                    }
+                        <a asp-action="Index" asp-controller="CoinDetay" asp-route-id="@coin.Id"  type="button" class="btn btn-light">PRO</a>
+                        <a asp-action="CartDetails" asp-controller="Cart" asp-route-id="@coin.Id" type="button" class="btn btn-primary">AL</a>
+                        <a asp-action="CartDetailsDelete" asp-controller="Cart" asp-route-id="@coin.Id" type="button" class="btn btn-danger">SAT</a>
                 </td>
             </tr>
             }
-
         </tbody>
     </table>
 </div>
+
+
+
+
+
+
+
+
 <div class="container my-5 hizli-satisMobil ">
     <div class="row">
         <div class="col-md-12">
@@ -103,6 +101,7 @@
             </form>
         </div>
         <div class="col-md-12 pt-3 px-3">
+            @*<a asp-action="GetCategoriesMobile" asp-controller="AlSat"></a>*@
             @Html.ActionLink("GetCategoriesMobile", "AlSat")
         </div>
     </div>
@@ -168,23 +167,18 @@
                             }
                         }
                         <div class="col-md-12 text-end">
-                            <a href="/CoinDetay/Index/@coin.Id" type="button" class="btn btn-light btn-sm">PRO</a>
-                            @using (Html.BeginForm("CartDetails", "Cart", FormMethod.Post, new { style = "display:inline" }))
-                            {
-                                @Html.Hidden("Id", coin.Id)
-
-                                <button type="submit" class="btn btn-primary  btn-sm">AL</button>
-                            }
-                            @using (Html.BeginForm("CartDetailsDelete", "Cart", FormMethod.Post, new { style = "display:inline" }))
-                            {
-                                @Html.Hidden("Id", coin.Id)
-
-                                <button type="submit" class="btn btn-danger  btn-sm">SAT</button>
-                            }
+                                <a asp-action="Index" asp-controller="CoinDetay" asp-route-id="@coin.Id" type="button" class="btn btn-light btn-sm">PRO</a>
+                                <form asp-action="CartDetails" asp-controller="Cart" method="post" class="display:inline">
+                                    <input type="hidden" asp-for="@coin.Id">
+                                    <button class="btn btn-primary btn-sm">AL</button>
+                                </form>
+                                <form asp-action="CartDetailsDelete" asp-controller="Cart" method="post" class="display:inline">
+                                    <input type="hidden" asp-for="@coin.Id">
+                                    <button class="btn btn-danger btn-sm">SAT</button>
+                                </form>
                         </div>
                     </div>
                     </td>
-
                 </tr>
             }
         </tbody>

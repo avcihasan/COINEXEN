@@ -6,15 +6,14 @@
 <div class="text-center container py-5">
         <h2 class="text-white mb-5">@Model.Coin.Name Alma İşleminizi Tamamlamak İstiyor musunuz?</h2>
 
-    @using (Html.BeginForm("Checkout", "Cart"))
-    {
-        @Html.Hidden("UserName", User.Identity.Name);
+    <form asp-action="Checkout" asp-controller="Cart" method="post">
+        <input type="hidden" asp-for="@User.Identity.Name" />
         <div class="my-2">
             <button type="submit" class="btn btn-success px-4">
                 <i class="fa fa-check fa-lg" aria-hidden="true">  İşemi Tamamla</i>
             </button>
         </div>
-    }
+        </form>
     <div class="my-2">
         <a type="button" href="/AlSat" class="btn btn-primary px-4">
             <i class="fa fa-arrow-left fa-lg"  aria-hidden="true">  Satın Alma Sayfasına Dön </i>

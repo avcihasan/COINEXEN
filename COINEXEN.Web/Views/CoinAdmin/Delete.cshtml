@@ -15,71 +15,75 @@
     <hr />
     <dl class="dl-horizontal ">
         <dt>
-            @Html.DisplayNameFor(model => model.PhotoPath)
+            <span asp-for="@Model.PhotoPath"></span>
+
+            @*@Html.DisplayNameFor(model => model.PhotoPath) *@
+
         </dt>
 
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.PhotoPath)
+            <span asp-for="@Model.PhotoPath"></span>
+
+            @*@Html.DisplayFor(model => model.PhotoPath)*@
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.ShortName)
+            <span asp-for="@Model.ShortName"></span>
+
+            @*@Html.DisplayNameFor(model => model.ShortName)*@
         </dt>
 
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.ShortName)
-        </dd>
-
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd style="color:grey">
-            @Html.DisplayFor(model => model.Name)
+            <span asp-for="@Model.ShortName"></span>
         </dd>
 
 
-
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            <span asp-for="@Model.Name"></span>
         </dt>
 
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.Description)
+            <span asp-for="@Model.Name"></span>
+        </dd>
+
+
+
+        <dt>
+            <span asp-for="@Model.Description"></span>
+        </dt>
+
+        <dd style="color:grey">
+            <span asp-for="@Model.Description"></span>
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Stock)
+            <span asp-for="@Model.Stock"></span>
         </dt>
 
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.Stock)
+            <span asp-for="@Model.Stock"></span>
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Price)
+            <span asp-for="@Model.Price"></span>
         </dt>
 
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.Price)
+            <span asp-for="@Model.Price"></span>
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Category.Name)
+            <span asp-for="@Model.Category.Name"></span>
         </dt>
 
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.Category.Name)
+            <span asp-for="@Model.Category.Name"></span>
         </dd>
 
 
     </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
+    <form asp-action="Delete" asp-controller="CoinAdmin" method="post">
         <div class="form-actions no-color text-center">
-            <input type="submit" value="Sil" class="btn btn-danger" /> 
-            @Html.ActionLink("Coin Listesine Dön", "Index",null,new { @class = "btn btn-warning" })
+            <input type="submit" value="Sil" class="btn btn-danger" />
+            <a asp-action="Index" asp-controller="CoinAdmin" class="btn btn-warning">Coin Listesine Dön</a>
         </div>
-    }
+    </form>
 </div>

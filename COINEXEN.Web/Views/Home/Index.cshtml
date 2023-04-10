@@ -93,24 +93,18 @@
     </div>
     @if (User.Identity.IsAuthenticated)
     {
-        using (Html.BeginForm("Message", "Home", FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
+
+         <form asp-action="Message" asp-controller="Home" method="post">
             <div class="row">
 
                 <div class="col-md-7 px-2 pt-4 text-center" style="color:#f4e185; font-size:20px">
                     Sayın <strong>@User.Identity.Name</strong>, mesaj konunuzu ve mesaj içeriğini giriniz!
                 </div>
                 <div class="col-md-5 px-2">
-                    <label for="validationDefault04" class="form-label">Mesaj Konunuz</label>
-
-                    @Html.DropDownList("KonuBaslik",
-            new SelectList(Enum.GetValues(typeof(TopicTitle))),
-            "Konu Başlığı Seç",
-            new { @class = "form-control" })
-
-
-
+                    <label name="TopicTitle" class="control-label  my-2 text-white px-5"></label>
+                    <select name="TopicTitle" asp-items="@new SelectList(Enum.GetValues(typeof(TopicTitle)))" class="form-control">
+                        <option>Konu Başlığı</option>
+                    </select>
                 </div>
 
                 <div class="col-md-12 px-2">
@@ -126,15 +120,12 @@
                 </div>
 
             </div>
-        }
 
-
+         </form>
     }
     else
     {
-        using (Html.BeginForm("Message", "Home", FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
+        <form asp-action="Message" asp-controller="Home" method="post">
             <div class="row">
                 <div class="col-md-4 px-2">
                     <label for="validationDefault01" class="form-label">Adınız</label>
@@ -158,19 +149,16 @@
 
                 </div>
                 <div class="col-md-3 px-2">
-                    <label for="validationDefault04" class="form-label">Yaşadığınız Şehir</label>
-
-                    @Html.DropDownList("City",
-            new SelectList(Enum.GetValues(typeof(City))),
-            "Şehir Seç",
-            new { @class = "form-control" })
+                    <label name="City" class="control-label  my-2 text-white px-5"></label>
+                        <select name="City" asp-items="@new SelectList(Enum.GetValues(typeof(City)))" class="form-control">
+                            <option>Şehir</option>
+                        </select>
                 </div>
                 <div class="col-md-5 px-2">
-                    <label for="validationDefault04" class="form-label">Mesaj Konunuz</label>
-                    @Html.DropDownList("TopicTitle",
-            new SelectList(Enum.GetValues(typeof(TopicTitle))),
-            "Konu Başlığı Seç",
-            new { @class = "form-control" })
+                    <label name="TopicTitle" class="control-label  my-2 text-white px-5"></label>
+                    <select name="TopicTitle" asp-items="@new SelectList(Enum.GetValues(typeof(TopicTitle)))" class="form-control">
+                        <option>Konu Başlığı</option>
+                    </select>
                 </div>
                 <div class="col-md-12 px-2">
                     <label for="validationTextarea" class="form-label">Mesajınız</label>
@@ -181,7 +169,10 @@
                     <input type="submit" value="Gönder" class="btn btn-outline-warning btn-lg px-5 py-2" />
                 </div>
             </div>
-        }
+
+        </form>
+
+       
     }
 </div>
 <script>

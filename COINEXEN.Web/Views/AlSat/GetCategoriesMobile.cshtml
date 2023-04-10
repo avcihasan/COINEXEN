@@ -15,12 +15,12 @@
         </div>
     </div>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="/AlSat">Tüm Kategoriler</a></li>
-
+        <li>
+            <a asp-action="Index" asp-controller="AlSat" class="dropdown-item">Tüm Kategoriler</a>
+        </li>
         @foreach (var kategoriler in Model)
         {
-
-            <li><a class="dropdown-item" href="/AlSat/Index/@kategoriler.Id">@kategoriler.Name</a></li>
+            <a asp-action="Index" asp-controller="AlSat" asp-route-id="@kategoriler.Id" class="dropdown-item" type="button" type="button">@kategoriler.Name</a>
         }
     </ul>
 </div>

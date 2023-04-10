@@ -30,9 +30,9 @@ namespace COINEXEN.Web.Controllers
                 return NotFound();
             return View(coin);
         }
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            ViewBag.CategoryId = new SelectList(_unitOfWork.CategoryRepository.GetAll(), "Id", "Name");
+            ViewBag.CategoryId = new SelectList(await _unitOfWork.CategoryRepository.GetAll().ToListAsync(), "Id", "Name");
             return View();
         }
         [HttpPost]
@@ -42,7 +42,7 @@ namespace COINEXEN.Web.Controllers
             if (ModelState.IsValid)
                 if(await _coinService.CreateAsync(coin))
                     return RedirectToAction("Index");
-            ViewBag.CategoryId = new SelectList(_unitOfWork.CategoryRepository.GetAll(), "Id", "Name", coin.CategoryId);
+            ViewBag.CategoryId = new SelectList(await _unitOfWork.CategoryRepository.GetAll().ToListAsync(), "Id", "Name", coin.CategoryId);
             return View(coin);
         }
 

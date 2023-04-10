@@ -30,6 +30,7 @@
                     Doğum Tarihi
                 </th>
                 <th class="responsive-none">
+                    @*<span asp-for="@item.Surname"></span>*@
                     @Html.DisplayNameFor(model => model.Wallet.Balance)
                 </th>
                 <th class="responsive-none">
@@ -42,30 +43,29 @@
             {
                 <tr>
                     <td class="col-md">
-                        @Html.DisplayFor(modelItem => item.UserName)
+                        <span asp-for="@item.UserName"></span>
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Name)
+                        <span asp-for="@item.Name"></span>
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Surname)
+                        <span asp-for="@item.Surname"></span>
                     </td>
                     <td class="responsive-none">
-                        @Html.DisplayFor(modelItem => item.Email)
+                        <span asp-for="@item.Email"></span>
                     </td>
                     <td class=" responsive-none">
-                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        <span asp-for="@item.PhoneNumber"></span>
                     </td>
                     <td class="responsive-none">
-                        @Html.DisplayFor(modelItem => item.Birthday)
+                        <span asp-for="@item.Birthday"></span>
                     </td>
                     <td class="text-center responsive-none">
-
-                        @Html.DisplayFor(modelItem => item.Wallet.Balance) <i class="fa fa-try" aria-hidden="true"></i>
+                        <span asp-for="@item..Wallet.Balance"></span>
                     </td>
                     <td class="text-center responsive-none">
                         @*todo*@
-                        @Html.DisplayFor(modelItem => item.Wallet.Balance) <i class="fa fa-try" aria-hidden="true"></i>
+                        <span asp-for="@item..Wallet.Balance"></span>
                     </td>
                 </tr>
             }

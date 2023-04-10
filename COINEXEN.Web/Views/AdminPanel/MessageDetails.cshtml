@@ -20,51 +20,49 @@
         {
             <dd style="color:grey">
                 Kullanıcı Kayıtlı Değil
-
             </dd>
         }
         else
         {
             <dd style="color:grey">
-                @Html.DisplayFor(model => model.UserName)
+                <span asp-for="@Model.UserName"></span>
             </dd>
         }
         <dt>
             Ad Soyad
         </dt>
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.Name)
-            @Html.DisplayFor(model => model.Surname)
+            <span asp-for="@Model.Name"></span>
+            <span asp-for="@Model.Surname"></span>
         </dd>
         <dt>
             Telefon Numarası
         </dt>
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.PhoneNumber)
+            <span asp-for="@Model.PhoneNumber"></span>
         </dd>
         <dt>
             E-Posta
         </dt>
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.EMail)
+            <span asp-for="@Model.EMail"></span>
         </dd>
         <dt>
             Şehir
         </dt>
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.City)
+            <span asp-for="@Model.City"></span>
         </dd>
         <dt>
             Mesaj
         </dt>
         <dd style="color:grey">
-            @Html.DisplayFor(model => model.Details)
+            <span asp-for="@Model.Details"></span>
         </dd>
 
     </dl>
     <p class="text-center mb-5 mt-2 ">
-
-        @Html.ActionLink("Mesajlara Dön", "Messages", "AdminPanel", null, new { @class = "btn btn-warning" })
+        <a asp-action="Messages" asp-controller="AdminPanel" class="btn btn-warning">Mesajlara Dön</a>
     </p>
 </div>
 

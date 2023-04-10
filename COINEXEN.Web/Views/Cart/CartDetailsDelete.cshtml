@@ -4,9 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <title>@Model.Name Satış</title>
-@using (Html.BeginForm("RemoveFromCart", "Cart"))
-{
-    @Html.AntiForgeryToken()
+<form asp-action="RemoveFromCart" asp-controller="Cart" method="post">
+
     <div class="form-horizontal py-5 container">
         <div class="text-center text-white">
             <h2 style="display:inline-block">Coin Satış</h2>
@@ -46,10 +45,9 @@
         <div class="form-group text-white text-center row mt-5">
             <div class="col-md-4">
                 <h5>Satmak İstediğiniz Adet</h5>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.ValidationMessageFor(Model => Model.Stock, "", new { @class = "text-danger" })
-
-                @Html.TextBoxFor(i => i.Stock, new { htmlAttributes = new { @class = "form-control text-center" }, autocomplete = "off" })
+                <input type="number" name="Stock" class="form-control text-center" id="AlimSayisi" />
+                <span asp-validation-for="Stock" class="text-danger"></span>
+              
             </div>
             <div class="col-md-4">
                 <h5>Güncel Fiyat</h5>
@@ -60,16 +58,19 @@
                 <input type="text" name="sonuc" id="sonuc" />
             </div>
         </div>
-        @Html.Hidden("UserName",User.Identity.Name)
-
         <div class="form-group col-md-12 p-5 text-center text-white">
-            @Html.HiddenFor(i => i.Id)
+            <input type="hidden" name="Id" asp-for="@Model.Id" />
+
             <button type="submit" class="btn btn-success px-4">
                 <i class="fa fa-money fa-lg" aria-hidden="true"> Sat</i>
             </button>
         </div>
     </div>
-}
+
+</form>
+
+
+
 <script type="text/javascript">
     function carpma() {
         var AlimSayisi = document.getElementById("AlimSayisi").value;
