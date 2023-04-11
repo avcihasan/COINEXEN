@@ -1,5 +1,4 @@
-﻿@using COINEXEN.Core.Entities;
-@model Coin
+﻿@model Coin
 
 @{
     ViewBag.Title = "Details";
@@ -9,7 +8,7 @@
     <h2>Details</h2>
 </div>
 <div class="px-5">
-    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" })
+    <a asp-action="Edit" asp-controller="Coins" asp-route-id="@Model.Id" asp-area="adminPanel" class="btn btn-info">Düzenle</a>
 </div>
 <hr />
 <div>
@@ -37,5 +36,5 @@
     </dl>
 </div>
 <p class="text-center mb-5 mt-2 ">
-    <a asp-action="Index" asp-controller="Coins" class="btn btn-warning">Coin Listesine Dön</a>
+    <a asp-action="Index" asp-controller="Coins" asp-area="adminPanel" class="btn btn-warning">Coin Listesine Dön</a>
 </p>

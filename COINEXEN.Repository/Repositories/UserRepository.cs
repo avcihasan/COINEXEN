@@ -7,16 +7,21 @@ namespace COINEXEN.Repository.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        readonly DbSet<AppUser> _appUsers;
+        readonly DbSet<AppUser> _appUser;
         public UserRepository(AppDbContext context)
         {
-            _appUsers=context.Set<AppUser>();
+            _appUser=context.Set<AppUser>();
         }
         public async Task<AppUser> GetUserWithPropertiesAsync(string userName)
-            =>await _appUsers
+            =>await _appUser
             .Include(x => x.Wallet)
             .Include(x => x.CoinWallet).ThenInclude(x=>x.CoinWalletLines).ThenInclude(x=>x.Coin).ThenInclude(x=>x.Category)
             .FirstOrDefaultAsync();
-        
+
+        public async Task<List<AppUser>> GetAllUsersWithPropertiesAsync()
+            => await _appUser
+            .Include(x => x.Wallet)
+            .Include(x => x.CoinWallet).ThenInclude(x => x.CoinWalletLines).ThenInclude(x => x.Coin).ThenInclude(x => x.Category)
+            .ToListAsync();
     }
 }

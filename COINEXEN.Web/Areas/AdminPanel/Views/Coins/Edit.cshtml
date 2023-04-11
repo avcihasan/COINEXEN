@@ -1,5 +1,4 @@
-﻿@using COINEXEN.Core.Entities;
-@model Coin
+﻿@model Coin
 
 @{
     ViewBag.Title = "Edit";
@@ -10,7 +9,7 @@
 </div>
 
 <hr />
-<form asp-action="Edit" asp-controller="Coins" method="post">
+<form asp-action="Edit" asp-controller="Coins" asp-area="adminPanel" method="post">
     <div class="form-horizontal ">
 
         <input type="hidden" asp-for="@Model.Id"/>
@@ -83,7 +82,7 @@
 
 <div class=" mb-5 text-center mt-2">
     <div class="px-5">
-        <a asp-action="Index" asp-controller="Coins" class="btn btn-warning">Coin Listesine Dön</a>
+        <a asp-action="Index" asp-controller="Coins" asp-area="adminPanel" class="btn btn-warning">Coin Listesine Dön</a>
     </div>
 </div>
 

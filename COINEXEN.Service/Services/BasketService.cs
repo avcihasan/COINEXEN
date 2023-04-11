@@ -85,7 +85,7 @@ namespace COINEXEN.Service.Services
         }
 
 
-        public async Task SaveOrderAsync(Basket basket, string userName, Transaction transaction)
+        public async Task BuyCoinAsync(Basket basket, string userName, Transaction transaction)
         {
             AppUser user = await _unitOfWork.UserRepository.GetUserWithPropertiesAsync(userName);
             CoinTransaction coinTransaction = new()

@@ -8,7 +8,7 @@ namespace COINEXEN.Core.Services
     {
         Basket GetBasket(HttpContext httpContext);
         Task AddCoinToBasketAsync(HttpContext httpContext, string coinId, int alimSayisi);
-        Task SaveOrderAsync(Basket basket, string userName, Transaction transaction);
+        Task BuyCoinAsync(Basket basket, string userName, Transaction transaction);
         Task<bool> SellCoinAsync(string Id, int AlimSayisi, string UserName);
     }
 }

@@ -28,7 +28,7 @@ namespace COINEXEN.Web.Controllers
             {
                 bool result = await _userService.CreateUserAsync(model);
                 if (result)
-                    return RedirectToAction("Login", "Account");
+                    return RedirectToAction("Login", "Auth");
             }
             return View(model);
         }

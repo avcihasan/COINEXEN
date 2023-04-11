@@ -1,5 +1,4 @@
-﻿@using COINEXEN.Core.Entities;
-@model Category
+﻿@model Category
 
 @{
     ViewBag.Title = "Delete";
@@ -33,10 +32,10 @@
 
     </dl>
 
-    <form asp-action="Delete" asp-controller="CategoryAdmin" method="post">
+    <form asp-action="Delete" asp-controller="Categories" asp-area="adminPanel" method="post">
         <div class="form-actions no-color text-center">
             <input type="submit" value="Sil" class="btn btn-danger" />
-            <a asp-action="Index" asp-controller="CategoryAdmin" class="btn btn-warning">Kategori Listesine Dön</a>
+            <a asp-action="Index" asp-controller="Categories" asp-area="adminPanel" class="btn btn-warning">Kategori Listesine Dön</a>
         </div>
     </form>
 </div>

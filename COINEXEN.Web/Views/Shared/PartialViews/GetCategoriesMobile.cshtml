@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Category>
 
 @{
-    var selectedCategory = Url.ActionContext.RouteData.Values["id"];
+    var selectedCategory = Url.ActionContext.RouteData.Values["Id"];
 }
 <div class="btn-group dropend satisKategori-Mobil">
     <div class="row">
@@ -11,16 +11,15 @@
             </button>
         </div>
         <div class="col-md-3">
-
         </div>
     </div>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <li>
-            <a asp-action="Index" asp-controller="AlSat" class="dropdown-item">Tüm Kategoriler</a>
+            <a asp-action="CoinList" asp-controller="Coins" class="dropdown-item">Tüm Kategoriler</a>
         </li>
         @foreach (var kategoriler in Model)
         {
-            <a asp-action="Index" asp-controller="AlSat" asp-route-id="@kategoriler.Id" class="dropdown-item" type="button" type="button">@kategoriler.Name</a>
+            <a asp-action="CoinList" asp-controller="Coins" asp-route-id="@kategoriler.Id" class="dropdown-item" type="button" type="button">@kategoriler.Name</a>
         }
     </ul>
 </div>

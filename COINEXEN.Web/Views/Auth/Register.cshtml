@@ -3,11 +3,11 @@
     ViewBag.Title = "Register";
 }
 <title>Kayıt Ol</title>
-<form asp-action="Register" asp-controller="Account" method="post">
+<form asp-action="Register" asp-controller="Auth" method="post">
     <div class="form-horizontal py-5 container">
         <div class="text-center text-white">
             <div class="text-end">
-                <a asp-action="Login" asp-controller="Account" class="btn btn-warning">Giriş Yap</a>
+                <a asp-action="Login" asp-controller="Auth" class="btn btn-warning">Giriş Yap</a>
             </div>
             <h4 style="display:inline-block">Kayıt Ol</h4>
         </div>
@@ -83,7 +83,7 @@
             <div class="form-group col-md-6">
                 <label asp-for="@Model.RePassword" class="control-label  my-2 text-white px-5"></label>
                 <div class="px-5">
-                    <input type="text" asp-for="@Model.RePassword" class="form-control " />
+                    <input type="password" asp-for="@Model.RePassword" class="form-control " />
                     <span asp-validation-for="@Model.RePassword" class="text-danger"></span>
                 </div>
             </div>

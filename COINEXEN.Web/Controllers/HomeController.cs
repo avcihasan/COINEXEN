@@ -16,6 +16,8 @@ namespace COINEXEN.Web.Controllers
 
         public IActionResult Index()
             => View();
+        public IActionResult AboutUs()
+            => View();
 
         [HttpPost]
         [ValidateAntiForgeryToken]

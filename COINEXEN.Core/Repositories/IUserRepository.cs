@@ -5,5 +5,6 @@ namespace COINEXEN.Core.Repositories
     public interface IUserRepository
     {
         Task<AppUser> GetUserWithPropertiesAsync(string userName);
+        Task<List<AppUser>> GetAllUsersWithPropertiesAsync();
     }
 }

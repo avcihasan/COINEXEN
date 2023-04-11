@@ -1,5 +1,4 @@
-﻿@using COINEXEN.Core.Entities;
-@model IEnumerable<Message>
+﻿@model IEnumerable<Message>
     @{
         ViewBag.Title = "Messages";
     }
@@ -42,7 +41,7 @@
                             </td>
                         }
                         <td>
-                            <a asp-action="MessageDetails" asp-controller="Messages" asp-route-id="@item.Id"><span asp-for="@item.Name"></span></a>
+                            <a asp-action="MessageDetails" asp-controller="Messages" asp-area="adminPanel" asp-route-id="@item.Id"><span asp-for="@item.Name"></span></a>
                         <td>
                             <span asp-for="@item.Surname"></span>
                         </td>

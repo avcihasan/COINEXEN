@@ -2,6 +2,7 @@
 using COINEXEN.Core.Enums;
 using COINEXEN.Core.Repositories;
 using COINEXEN.Repository.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace COINEXEN.Repository.Repositories
 {
@@ -14,8 +15,8 @@ namespace COINEXEN.Repository.Repositories
         public IQueryable<CoinTransaction> GetCoinTransactions(Transaction transaction)
         {
             if (transaction == Transaction.BuyAndSell)
-                return GetAll();
-            return GetAll().Where(x => x.Transaction == transaction);
+                return GetAll().Include(x => x.AppUser).Include(x => x.Coin);
+            return GetAll().Where(x => x.Transaction == transaction).Include(x=>x.AppUser).Include(x=>x.Coin);
         }
     }
 }

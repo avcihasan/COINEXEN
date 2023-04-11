@@ -1,14 +1,13 @@
 ﻿@model CoinViewModel
 @{
-    ViewBag.Title = "CartDetailsDelete";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "BasketDetails";
 }
-<title>@Model.Name Satış</title>
-<form asp-action="RemoveFromCart" asp-controller="Cart" method="post">
+<title>@Model.Name Alım</title>
+<form asp-action="AddToBasket" asp-controller="Baskets" method="post">
 
     <div class="form-horizontal py-5 container">
         <div class="text-center text-white">
-            <h2 style="display:inline-block">Coin Satış</h2>
+            <h2 style="display:inline-block">Coin Alım</h2>
         </div>
         <hr />
         <table class="table text-white text-center">
@@ -39,15 +38,13 @@
                         }
                     }
                 </tr>
-
             </tbody>
         </table>
         <div class="form-group text-white text-center row mt-5">
             <div class="col-md-4">
-                <h5>Satmak İstediğiniz Adet</h5>
+                <h5>Almak İstediğiniz Adet</h5>
                 <input type="number" name="Stock" class="form-control text-center" id="AlimSayisi" />
-                <span asp-validation-for="Stock" class="text-danger"></span>
-              
+                <span asp-validation-for="Stock"></span>
             </div>
             <div class="col-md-4">
                 <h5>Güncel Fiyat</h5>
@@ -61,14 +58,13 @@
         <div class="form-group col-md-12 p-5 text-center text-white">
             <input type="hidden" name="Id" asp-for="@Model.Id" />
 
-            <button type="submit" class="btn btn-success px-4">
-                <i class="fa fa-money fa-lg" aria-hidden="true"> Sat</i>
+            <button class="btn btn-success px-4">
+                <i class="fa fa-money fa-lg" aria-hidden="true"> Al</i>
             </button>
         </div>
     </div>
 
 </form>
-
 
 
 <script type="text/javascript">

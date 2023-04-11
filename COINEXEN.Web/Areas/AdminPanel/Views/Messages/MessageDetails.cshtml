@@ -1,5 +1,4 @@
-﻿@using COINEXEN.Core.Entities;
-@model Message
+﻿@model Message
 @{
     ViewBag.Title = "MessageDetails";
 }
@@ -62,7 +61,7 @@
 
     </dl>
     <p class="text-center mb-5 mt-2 ">
-        <a asp-action="Index" asp-controller="Messages" class="btn btn-warning">Mesajlara Dön</a>
+        <a asp-action="Index" asp-controller="Messages" asp-area="adminPanel" class="btn btn-warning">Mesajlara Dön</a>
     </p>
 </div>
 

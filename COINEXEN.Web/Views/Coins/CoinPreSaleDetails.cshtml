@@ -1,33 +1,14 @@
-﻿@model Coin
-
-<style>
-
-    .coinBilgi a {
-        border-radius: 20px;
-        border: 1px solid #0F2C67;
-        background-color: #f4e185;
-        color: #0F2C67;
-        font-weight: bold;
-    }
-
-        .coinBilgi a:hover {
-            border: 1px solid #f4e185;
-            background-color: #0F2C67;
-            color: #f4e185;
-        }
-</style>
-
-<title>@Model.Name Detay</title>
+﻿<title>Ön Satış Detaylar</title>
 
 <div class="container px-3 ">
     <div class="onSatis-detayHeader">
         <div class="row">
             <div class="col-md-6 p-5">
                 <div class="mt-4">
-                    <h3>@Model.Name</h3>
+                    <h3>ACOIN</h3>
                 </div>
                 <div>
-                    <span>@Model.Name sadece ve sadece COINEXEN'de!</span>
+                    <span>Acoin sadece ve sadece COINEXEN'de!</span>
                 </div>
             </div>
             <div class="col-md-6 text-end mt-3">
@@ -36,7 +17,7 @@
         </div>
     </div>
     <div class="text-center my-2 onSatis-durum p-2">
-        <span><strong>@Model.Name</strong></span>
+        <span>ACOIN ön satışı tamamlanmıştır. Yoğun ilginiz için teşekkür ederiz!</span>
     </div>
 </div>
 
@@ -47,14 +28,14 @@
                 <table class="table table-borderless text-white">
                     <thead>
                         <tr>
-                            <th colspan="2" class="text-center">@Model.Name</th>
+                            <th colspan="2" class="text-center">ACoin</th>
                         </tr>
 
                     </thead>
                     <tbody>
                         <tr>
                             <th> Ön Satış Arzı:</th>
-                            <td>@Model.Stock @Model.Name</td>
+                            <td>150,000,000 Acoin</td>
                         </tr>
                         <tr>
 
@@ -69,7 +50,7 @@
                         <tr>
 
                             <td colspan="2" class="text-center">
-                                <a href="/Cart/CartDetails/@Model.Id" type="button" class="btn px-4">Al/Sat</a>
+                                <button onclick="window.location.href='/onSatis-detay.html'" type="button" class="btn px-4">Al/Sat</button>
                             </td>
                         </tr>
                     </tbody>
@@ -78,25 +59,127 @@
         </div>
         <div class="col-md-8 mt-3 py-3">
             <p>
-                @Model.Description
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi modi eaque ducimus cum reiciendis, sint hic voluptatem maiores laborum quia eius cumque. Illum aut fuga adipisci illo nihil repellendus magni accusantium deleniti eveniet quam quod placeat doloremque deserunt eligendi praesentium, velit odio. Enim officia mollitia, voluptatem ducimus at aliquid!
             </p>
             <p>
-                @Model.Description
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo magnam itaque non tenetur nam perferendis quidem sed commodi corrupti animi omnis, recusandae quia eveniet cum. Illum suscipit veritatis, necessitatibus debitis enim tempore, libero praesentium sint, quisquam pariatur quidem. Doloribus neque inventore dicta deleniti itaque consequatur iure maiores, quo molestias aspernatur!
             </p>
         </div>
         <div class="col-md-12">
-            <p>
-                @Model.Description
-            </p> <p>
-                @Model.Description
-            </p> <p>
-                @Model.Description
-            </p>
-
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae voluptate fugiat dolore. Eos deleniti iste rerum doloremque veniam, autem culpa est laborum reiciendis placeat. Cum, ullam! Quo perferendis a nemo molestiae vitae ipsum tempore corrupti nihil magnam, dignissimos officiis, enim similique. Autem laborum cupiditate repudiandae sint ipsa voluptas iusto praesentium?</p>
         </div>
-        </div>
+    </div>
 </div>
 
+<div class="container px-3 my-5 satis-secenekleri">
+    <h4>Ön Satış Seçenekleri</h4>
+    <div class="row px-4 my-3">
+        <div class="col-md-3  px-2">
+            <div class="card">
+                <div class="card-header text-center">
+                    Seçenek 1
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Toplam Arz:
+                        </div>
+                        <div class="col-md-6 text-end">
+                            50,000,000 ACOIN
+                        </div>
+                        <div class="col-md-6">
+                            IEO Fiyat:
+                        </div>
+                        <div class="col-md-6 text-end"> 0.20 TRY</div>
+                        <div class="col-md-6"> IEO Başlangıç Tarihi:</div>
+                        <div class="col-md-6 text-end"> 05/10/2022 13:00</div>
+                        <div class="col-md-6"> IEO Başlangıç Tarihi:</div>
+                        <div class="col-md-6 text-end">05/10/2022 13:00</div>
+                        <div class="col-md-6">Min. Alım Limiti:</div>
+                        <div class="col-md-6 text-end">15 ACOIN</div>
+                        <div class="col-md-6"> Maks. Alım Limiti:</div>
+                        <div class="col-md-6 text-end"> 50,000 ACOIN</div>
+                        <div class="col-md-6">Kilitli Kalma Süresi:</div>
+                        <div class="col-md-6 text-end">12 Ay</div>
+                        <div class="col-md-6">Durum:</div>
+                        <div class="col-md-6 text-end"><b>Tamamlandı</b></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 px-2 ">
+            <div class="card">
+                <div class="card-header text-center">
+                    Seçenek 2
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Toplam Arz:
+                        </div>
+                        <div class="col-md-6 text-end">
+                            50,000,000 ACOIN
+                        </div>
+                        <div class="col-md-6">
+                            IEO Fiyat:
+                        </div>
+                        <div class="col-md-6 text-end"> 0.20 TRY</div>
+                        <div class="col-md-6"> IEO Başlangıç Tarihi:</div>
+                        <div class="col-md-6 text-end"> 05/10/2022 13:00</div>
+                        <div class="col-md-6"> IEO Başlangıç Tarihi:</div>
+                        <div class="col-md-6 text-end">05/10/2022 13:00</div>
+                        <div class="col-md-6">Min. Alım Limiti:</div>
+                        <div class="col-md-6 text-end">15 ACOIN</div>
+                        <div class="col-md-6"> Maks. Alım Limiti:</div>
+                        <div class="col-md-6 text-end"> 50,000 ACOIN</div>
+                        <div class="col-md-6">Kilitli Kalma Süresi:</div>
+                        <div class="col-md-6 text-end">12 Ay</div>
+                        <div class="col-md-6">Durum:</div>
+                        <div class="col-md-6 text-end"><b>Tamamlandı</b></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3  px-2">
+            <div class="card">
+                <div class="card-header text-center">
+                    Seçenek 3
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Toplam Arz:
+                        </div>
+                        <div class="col-md-6 text-end">
+                            50,000,000 ACOIN
+                        </div>
+                        <div class="col-md-6">
+                            IEO Fiyat:
+                        </div>
+                        <div class="col-md-6 text-end"> 0.20 TRY</div>
+                        <div class="col-md-6"> IEO Başlangıç Tarihi:</div>
+                        <div class="col-md-6 text-end"> 05/10/2022 13:00</div>
+                        <div class="col-md-6"> IEO Başlangıç Tarihi:</div>
+                        <div class="col-md-6 text-end">05/10/2022 13:00</div>
+                        <div class="col-md-6">Min. Alım Limiti:</div>
+                        <div class="col-md-6 text-end">15 ACOIN</div>
+                        <div class="col-md-6"> Maks. Alım Limiti:</div>
+                        <div class="col-md-6 text-end"> 50,000 ACOIN</div>
+                        <div class="col-md-6">Kilitli Kalma Süresi:</div>
+                        <div class="col-md-6 text-end">12 Ay</div>
+                        <div class="col-md-6">Durum:</div>
+                        <div class="col-md-6 text-end"><b>Tamamlandı</b></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <div class="container px-3 my-5 sik-sorulanlar">

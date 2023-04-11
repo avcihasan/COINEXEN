@@ -1,22 +1,22 @@
 ﻿@model Basket
 @{
-    ViewBag.Title = "Checkout";
+    ViewBag.Title = "BuyCoin";
 }
 <title>Coin  Alım</title>
 <div class="text-center container py-5">
-        <h2 class="text-white mb-5">@Model.Coin.Name Alma İşleminizi Tamamlamak İstiyor musunuz?</h2>
+    <h2 class="text-white mb-5">@Model.Coin.Name Alma İşleminizi Tamamlamak İstiyor musunuz?</h2>
 
-    <form asp-action="Checkout" asp-controller="Cart" method="post">
+    <form asp-action="BuyCoin" asp-controller="Coins" method="post">
         <input type="hidden" asp-for="@User.Identity.Name" />
         <div class="my-2">
             <button type="submit" class="btn btn-success px-4">
                 <i class="fa fa-check fa-lg" aria-hidden="true">  İşemi Tamamla</i>
             </button>
         </div>
-        </form>
+    </form>
     <div class="my-2">
-        <a type="button" href="/AlSat" class="btn btn-primary px-4">
-            <i class="fa fa-arrow-left fa-lg"  aria-hidden="true">  Satın Alma Sayfasına Dön </i>
+        <a type="button" href="/coins/coinlist" class="btn btn-primary px-4">
+            <i class="fa fa-arrow-left fa-lg" aria-hidden="true">  Satın Alma Sayfasına Dön </i>
         </a>
     </div>
 </div>

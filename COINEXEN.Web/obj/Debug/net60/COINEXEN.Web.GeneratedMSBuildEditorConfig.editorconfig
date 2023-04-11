@@ -92,22 +92,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5QYW5lbFxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/AlSat/CoinDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxTYXRcQ29pbkRldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/AlSat/GetCategories.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxTYXRcR2V0Q2F0ZWdvcmllcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/AlSat/GetCategoriesMobile.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxTYXRcR2V0Q2F0ZWdvcmllc01vYmlsZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/AlSat/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxTYXRcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -116,40 +100,48 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Cart/CartDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDYXJ0RGV0YWlscy5jc2h0bWw=
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Baskets/BasketDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0c1xCYXNrZXREZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Cart/CartDetailsDelete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDYXJ0RGV0YWlsc0RlbGV0ZS5jc2h0bWw=
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Baskets/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Cart/Checkout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDaGVja291dC5jc2h0bWw=
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Coins/BuyCoin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29pbnNcQnV5Q29pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Cart/Complated.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDb21wbGF0ZWQuY3NodG1s
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Coins/BuySuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29pbnNcQnV5U3VjY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Cart/DeleteSuccess.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxEZWxldGVTdWNjZXNzLmNzaHRtbA==
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Coins/CoinDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29pbnNcQ29pbkRldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Cart/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Coins/CoinList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29pbnNcQ29pbkxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/CoinSales/PreSale.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29pblNhbGVzXFByZVNhbGUuY3NodG1s
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Coins/CoinPreSale.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29pbnNcQ29pblByZVNhbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/CoinSales/PreSaleDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29pblNhbGVzXFByZVNhbGVEZXRhaWxzLmNzaHRtbA==
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Coins/CoinPreSaleDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29pbnNcQ29pblByZVNhbGVEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Hakkimizda/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFra2ltaXpkYVxJbmRleC5jc2h0bWw=
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Coins/SellCoin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29pbnNcU2VsbENvaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Coins/SellSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29pbnNcU2VsbFN1Y2Nlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Home/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Home/Index.cshtml]
@@ -162,6 +154,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Members/Settings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc1xTZXR0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Shared/PartialViews/GetCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3c1xHZXRDYXRlZ29yaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Shared/PartialViews/GetCategoriesMobile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxWaWV3c1xHZXRDYXRlZ29yaWVzTW9iaWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/avcih/OneDrive/Masaüstü/COINEXEN/COINEXEN.Web/Views/Shared/_Layout.cshtml]

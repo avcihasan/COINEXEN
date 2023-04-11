@@ -1,5 +1,4 @@
-﻿@using COINEXEN.Core.Entities;
-@model IEnumerable<Coin>
+﻿@model IEnumerable<Coin>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +11,7 @@
     </div>
 
     <p>
-        <a asp-action="Create" asp-controller="Coins" class="btn btn-primary">Coin Oluştur</a>
+        <a asp-action="Create" asp-controller="Coins" asp-area="adminPanel" class="btn btn-primary">Coin Oluştur</a>
     </p>
     <table class="table  table-striped mb-5">
         <thead class="table-light">
@@ -100,9 +99,9 @@
                         @item.Category.Name
                     </td>
                     <td class="text-center">
-                        <a asp-action="Edit" asp-controller="Coins" asp-route-id="@item.Id" class="btn btn-warning btn-sm my-1">Düzenle</a>
-                        <a asp-action="Details" asp-controller="Coins" asp-route-id="@item.Id" class="btn btn-info btn-sm">Detay</a>
-                        <a asp-action="Delete" asp-controller="Coins" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Sil</a>
+                        <a asp-action="Edit" asp-controller="Coins" asp-area="adminPanel" asp-route-id="@item.Id" class="btn btn-warning btn-sm my-1">Düzenle</a>
+                        <a asp-action="Details" asp-controller="Coins" asp-area="adminPanel" asp-route-id="@item.Id" class="btn btn-info btn-sm">Detay</a>
+                        <a asp-action="Delete" asp-controller="Coins" asp-area="adminPanel" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Sil</a>
                     </td>
                 </tr>
             }

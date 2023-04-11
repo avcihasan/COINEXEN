@@ -1,5 +1,4 @@
-﻿@using COINEXEN.Core.Entities;
-@model Coin
+﻿@model Coin
 
 @{
     ViewBag.Title = "Create";
@@ -8,7 +7,7 @@
 <div class="text-center pt-5 px-5" style="color:black">
     <h2>Create</h2>
 </div>
-<form asp-action="Create" asp-controller="Coins" method="post">
+<form asp-action="Create" asp-controller="Coins"  asp-area="adminPanel" method="post">
     <div class="form-horizontal ">
         <hr />
         <div class="form-group ">
@@ -80,7 +79,7 @@
 </form>
 <div class="pb-5 text-center mt-2">
     <div class="px-5">
-        <a asp-action="Index" asp-controller="Coins" class="btn btn-warning">Coin Listesine Dön</a>
+        <a asp-action="Index" asp-controller="Coins" asp-area="adminPanel" class="btn btn-warning">Coin Listesine Dön</a>
     </div>
 </div>
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>

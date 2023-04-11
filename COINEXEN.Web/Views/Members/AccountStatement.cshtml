@@ -9,7 +9,7 @@
         }
 </style>
 
-<title>@ViewBag.Uye.UserName Hesap Özeti</title>
+<title>@ViewBag.user.UserName Hesap Özeti</title>
 <div class="container my-4 profilLinks">
     <div class="row">
         <div class="col-lg-3 px-3">
@@ -102,7 +102,7 @@
                 {
                     foreach (var item in ViewBag.coins)
                     {
-                        <strong> <a href="/AlSat/CoinDetails/@item.Coin.Id">@item.Coin.Name </a></strong>
+                        <strong> <a href="/Coins/CoinDetails/@item.Coin.Id">@item.Coin.Name </a></strong>
 
                         <span>(@item.Quantity Adet) </span>
                     }

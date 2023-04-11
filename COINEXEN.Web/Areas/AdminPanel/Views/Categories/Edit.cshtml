@@ -1,11 +1,10 @@
-﻿@using COINEXEN.Core.Entities;
-@model Category
+﻿@model Category
 
 @{
     ViewBag.Title = "Edit";
 }
 <title> Kategori Düzenle</title>
-<form asp-action="Edit" asp-controller="CategoryAdmin" method="post">
+<form asp-action="Edit" asp-controller="Categories" asp-area="adminPanel" method="post">
     <div class="form-horizontal pt-5">
         <div class="text-center " style="color:black">
             <h4>Kategori Düzenleme</h4>
@@ -34,7 +33,7 @@
     </div>
 </form>
 <div class="px-5 mt-2">
-    <a asp-action="Index" asp-controller="CategoryAdmin" class="">Kategori Listesine Dön</a>
+    <a asp-action="Index" asp-controller="Categories" asp-area="adminPanel" class="">Kategori Listesine Dön</a>
 </div>
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>

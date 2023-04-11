@@ -37,16 +37,16 @@
                         </li>
                     }
                     <li class="nav-item">
-                        <a class="nav-link nav-mobil" href="/Hakkimizda">Hakkımızda</a>
+                        <a class="nav-link nav-mobil" href="/Home/AboutUs">Hakkımızda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-mobil" href="#">Limitler ve Kurallar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link yellow-hover" href="/AlSat">Al/Sat</a>
+                        <a class="nav-link yellow-hover" href="/Coins/CoinList">Al/Sat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link yellow-hover" href="/CoinSales/PreSale">Ön Satış</a>
+                        <a class="nav-link yellow-hover" href="/Coins/CoinPreSale">Ön Satış</a>
                     </li>
                     @if (User.Identity.IsAuthenticated)
                     {
@@ -129,7 +129,7 @@
                 {
                     <li class="list-group-item py-3  offcanvasItem"><a href="/Members/AccountStatement" class="yellow-hover">Hesap Özeti</a></li>
                 }
-                <li class="list-group-item py-3 offcanvasItem"><a href="/Hakkimizda" class="yellow-hover">Hakkımızda</a></li>
+                <li class="list-group-item py-3 offcanvasItem"><a href="/Home/AboutUs" class="yellow-hover">Hakkımızda</a></li>
                 <li class="list-group-item py-3 offcanvasItem"><a href="limitler-kurallar.html" class="yellow-hover">Limitler ve Kurallar</a></li>
                 @if (User.Identity.IsAuthenticated)
                 {

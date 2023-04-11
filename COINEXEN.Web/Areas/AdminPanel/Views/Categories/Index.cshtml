@@ -1,9 +1,7 @@
-﻿@using COINEXEN.Core.Entities;
-@model IEnumerable<Category>
+﻿@model IEnumerable<Category>
 
 @{
     ViewBag.Title = "Index";
-
 }
 
 <title> Kategoriler</title>
@@ -46,8 +44,8 @@
                     @item.Description
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-controller="Categories" asp-route-id="@item.Id" class="btn btn-warning btn-sm ">Düzenle</a>
-                    <a asp-action="Delete" asp-controller="Categories" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Sil</a>
+                    <a asp-action="Edit" asp-controller="Categories" asp-area="adminPanel" asp-route-id="@item.Id" class="btn btn-warning btn-sm ">Düzenle</a>
+                    <a asp-action="Delete" asp-controller="Categories" asp-area="adminPanel" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Sil</a>
                 </td>
             </tr>
         }
@@ -57,7 +55,7 @@
 </table>
 <div class="text-center py-2">
     <p>
-        <a asp-action="Create" asp-controller="Categories" class="btn btn-primary">Yeni Kategori Oluştur</a>
+        <a asp-action="Create" asp-controller="Categories" asp-area="adminPanel" class="btn btn-primary">Yeni Kategori Oluştur</a>
     </p>
 </div>
 

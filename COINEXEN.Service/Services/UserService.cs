@@ -39,10 +39,11 @@ namespace COINEXEN.Service.Services
         }
 
         public async Task<List<AppUser>> GetAllUserAsync()
-            =>await _userManager.Users.OrderBy(i => i.Name).ToListAsync();
+            => await _unitOfWork.UserRepository.GetAllUsersWithPropertiesAsync();
 
         public async Task<AppUser> GetOnlineUserAsync()
         {
+            
             if (!_httpContextAccesor.HttpContext.User.Identity.IsAuthenticated)
                 throw new Exception("hata");
             AppUser user = await _unitOfWork.UserRepository.GetUserWithPropertiesAsync(_httpContextAccesor.HttpContext.User.Identity.Name); 
