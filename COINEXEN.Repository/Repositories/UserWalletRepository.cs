@@ -9,9 +9,9 @@ namespace COINEXEN.Repository.Repositories
     {
         public UserWalletRepository(AppDbContext context) : base(context) { }
 
-        public async Task<UserWallet> GetUserWallatByUserIdAsync(string id)
+        public async Task<UserWallet> GetUserWallatByUserNameAsync(string userName)
             =>await GetAll()
-            .Where(x => x.AppUser.Id == Guid.Parse(id))
+            .Where(x => x.AppUser.Name == userName)
             .Include(x=>x.AppUser)
             .FirstOrDefaultAsync();
         

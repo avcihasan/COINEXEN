@@ -3,6 +3,7 @@ using Azure;
 using COINEXEN.Core.Entities.Identity;
 using COINEXEN.Core.Services;
 using COINEXEN.Core.ViewModels;
+using COINEXEN.Core.ViewModels.UserVMs;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
@@ -24,11 +25,11 @@ namespace COINEXEN.Service.Services
             _signInManager = signInManager;
         }
 
-        public async Task<bool> LoginAsync(LoginViewModel loginViewModel)
+        public async Task<bool> LoginAsync(LoginVM login)
         {
-            AppUser user = await _userManager.FindByNameAsync(loginViewModel.UserName);
+            AppUser user = await _userManager.FindByNameAsync(login.UserName);
             await _signInManager.SignOutAsync();
-            SignInResult result = await _signInManager.PasswordSignInAsync(user, loginViewModel.Password, true, false);
+            SignInResult result = await _signInManager.PasswordSignInAsync(user, login.Password, true, false);
             await _userManager.ResetAccessFailedCountAsync(user);
             return result.Succeeded;
         }

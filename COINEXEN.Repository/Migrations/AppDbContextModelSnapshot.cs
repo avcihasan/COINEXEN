@@ -22,33 +22,6 @@ namespace COINEXEN.Repository.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("COINEXEN.Core.Entities.Basket", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("AppUserId1")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CoinId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId1");
-
-                    b.HasIndex("CoinId");
-
-                    b.ToTable("Baskets");
-                });
-
             modelBuilder.Entity("COINEXEN.Core.Entities.Category", b =>
                 {
                     b.Property<Guid>("Id")
@@ -272,9 +245,6 @@ namespace COINEXEN.Repository.Migrations
                     b.Property<int>("TopicTitle")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Messages");
@@ -428,23 +398,6 @@ namespace COINEXEN.Repository.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("COINEXEN.Core.Entities.Basket", b =>
-                {
-                    b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("AppUserId1");
-
-                    b.HasOne("COINEXEN.Core.Entities.Coin", "Coin")
-                        .WithMany()
-                        .HasForeignKey("CoinId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
-
-                    b.Navigation("Coin");
                 });
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Coin", b =>

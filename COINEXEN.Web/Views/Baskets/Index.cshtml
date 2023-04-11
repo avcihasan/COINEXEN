@@ -1,4 +1,4 @@
-﻿@model Basket
+﻿@model BasketVM
 @{
     ViewBag.Title = "Index";
 }
@@ -52,7 +52,7 @@
                 <td colspan="5">
                     @{
                         var x = 0;
-                        AppUser user = ViewBag.user as AppUser;
+                        GetOnlineUserVM user = ViewBag.user as GetOnlineUserVM;
                         if (user.Wallet.Balance < (Model.Coin.Price * Model.Quantity))
                         {
                             x = 1;

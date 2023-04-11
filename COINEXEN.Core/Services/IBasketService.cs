@@ -1,14 +1,14 @@
 ﻿using COINEXEN.Core.Entities;
 using COINEXEN.Core.Enums;
+using COINEXEN.Core.ViewModels.BasketVMs;
 using Microsoft.AspNetCore.Http;
 
 namespace COINEXEN.Core.Services
 {
     public interface IBasketService
     {
-        Basket GetBasket(HttpContext httpContext);
+        BasketVM GetBasket(HttpContext httpContext);
         Task AddCoinToBasketAsync(HttpContext httpContext, string coinId, int alimSayisi);
-        Task BuyCoinAsync(Basket basket, string userName, Transaction transaction);
-        Task<bool> SellCoinAsync(string Id, int AlimSayisi, string UserName);
+
     }
 }

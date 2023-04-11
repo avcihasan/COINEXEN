@@ -1,8 +1,8 @@
 ﻿using COINEXEN.Core.Enums;
 
-namespace COINEXEN.Core.ViewModels
+namespace COINEXEN.Core.ViewModels.UserVMs
 {
-    public class RegisterViewModel
+    public class RegisterVM
     {
         public string Name { get; set; }
         public string Surname { get; set; }

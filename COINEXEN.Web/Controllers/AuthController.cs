@@ -1,6 +1,7 @@
 ﻿using COINEXEN.Core.Entities.Identity;
 using COINEXEN.Core.Services;
 using COINEXEN.Core.ViewModels;
+using COINEXEN.Core.ViewModels.UserVMs;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,7 +23,7 @@ namespace COINEXEN.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(RegisterVM model)
         {
             if (ModelState.IsValid)
             {
@@ -38,7 +39,7 @@ namespace COINEXEN.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginViewModel model, string ReturnUrl)
+        public async Task<IActionResult> Login(LoginVM model, string ReturnUrl)
         {
             if (ModelState.IsValid)
             {

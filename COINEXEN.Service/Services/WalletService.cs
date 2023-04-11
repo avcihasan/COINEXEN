@@ -1,8 +1,10 @@
-﻿using COINEXEN.Core.Entities.Identity;
+﻿using AutoMapper;
+using COINEXEN.Core.Entities.Identity;
 using COINEXEN.Core.Entities.Wallet;
 using COINEXEN.Core.Repositories;
 using COINEXEN.Core.Services;
 using COINEXEN.Core.UnitOfWorks;
+using COINEXEN.Core.ViewModels.WalletVm;
 using Microsoft.AspNetCore.Identity;
 using System.Security.AccessControl;
 
@@ -11,10 +13,11 @@ namespace COINEXEN.Service.Services
     public class WalletService : IWalletService
     {
         readonly IUnitOfWork _unitOfWork;
-
-        public WalletService(IUnitOfWork unitOfWork)
+        readonly IMapper _mapper;
+        public WalletService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         public async Task CreateWalletsAsync(AppUser user)
@@ -40,12 +43,13 @@ namespace COINEXEN.Service.Services
             return result;
         }
 
-        public async Task<UserWallet> GetUserWalletAsync(AppUser user)
-            => await _unitOfWork.UserWalletRepository.GetUserWallatByUserIdAsync(user.Id.ToString());
+        public async Task<UserWalletVM> GetUserWalletAsync(string userName)//todo
+            =>_mapper.Map<UserWalletVM>(await _unitOfWork.UserWalletRepository.GetUserWallatByUserNameAsync(userName));
         
 
-        public async Task<CoinWallet> GetCoinWalletAsync(AppUser user)
-            => await _unitOfWork.CoinWalletRepository.GetCoinWallatByUserIdAsync(user.Id.ToString());
+        public async Task<CoinWalletVM> GetCoinWalletAsync(string userName)
+            => _mapper.Map<CoinWalletVM>(await _unitOfWork.CoinWalletRepository.GetCoinWallatByUserNameAsync(userName));
         
+
     }
 }

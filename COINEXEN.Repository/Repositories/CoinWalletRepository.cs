@@ -10,11 +10,11 @@ namespace COINEXEN.Repository.Repositories
         public CoinWalletRepository(AppDbContext context) : base(context)
         {
         }
-        public async Task<CoinWallet> GetCoinWallatByUserIdAsync(string id)
+        public async Task<CoinWallet> GetCoinWallatByUserNameAsync(string userName)
             => await GetAll()
-            .Where(x => x.AppUser.Id == Guid.Parse(id))
+            .Where(x => x.AppUser.UserName == userName)
             .Include(x=>x.AppUser)
-            .Include(x=>x.CoinWalletLines)
+            .Include(x=>x.CoinWalletLines).ThenInclude(x=>x.Coin)
             .FirstOrDefaultAsync();
     }
 }

@@ -6,7 +6,6 @@ namespace COINEXEN.Core.Entities
     {
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string UserName { get; set; }
         public string PhoneNumber { get; set; }
         public City City { get; set; }
         public string EMail { get; set; }

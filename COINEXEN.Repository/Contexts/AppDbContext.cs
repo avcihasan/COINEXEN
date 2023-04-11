@@ -13,7 +13,6 @@ namespace COINEXEN.Repository.Contexts
         public DbSet<Coin> Coins { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Message> Messages { get; set; }
-        public DbSet<Basket> Baskets { get; set; }
         public DbSet<CoinTransaction> CoinTransactions { get; set; }
         public DbSet<CoinWallet> CoinWallets { get; set; }
         public DbSet<CoinWalletLine> CoinWalletLines { get; set; }

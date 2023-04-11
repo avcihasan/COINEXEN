@@ -1,6 +1,7 @@
 ﻿using COINEXEN.Core.Entities;
 using COINEXEN.Core.Entities.Identity;
 using COINEXEN.Core.Services;
+using COINEXEN.Core.ViewModels.MessageVMs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace COINEXEN.Web.Controllers
@@ -21,7 +22,7 @@ namespace COINEXEN.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Message(Message message)
+        public async Task<IActionResult> Message(SetMessageVM message)
         {
             if (ModelState.IsValid)
             {

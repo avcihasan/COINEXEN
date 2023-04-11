@@ -23,11 +23,11 @@ namespace COINEXEN.Web.Controllers
 
         public async Task<IActionResult> AccountStatement()
         {
-            ViewBag.user = await _userService.GetOnlineUserAsync(); ;
+            ViewBag.user = await _userService.GetOnlineUserAsync();
 
-            ViewBag.coins = (await _walletService.GetCoinWalletAsync(ViewBag.user)).CoinWalletLines;
+            ViewBag.coins = (await _walletService.GetCoinWalletAsync(HttpContext.User.Identity.Name)).CoinWalletLines;//todo
 
-            ViewBag.transactions= await _unitOfWork.CoinTransactionRepository.GetCoinTransactions().Where(i => i.AppUser.UserName == User.Identity.Name).OrderByDescending(x => x.DateOfTransaction).ToListAsync();
+            ViewBag.transactions= await _unitOfWork.CoinTransactionRepository.GetCoinTransactions().Where(i => i.AppUser.UserName == User.Identity.Name).OrderByDescending(x => x.DateOfTransaction).ToListAsync();//todo
 
             return View();
         }

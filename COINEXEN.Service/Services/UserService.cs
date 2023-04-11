@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
-using COINEXEN.Core.Entities;
 using COINEXEN.Core.Entities.Identity;
-using COINEXEN.Core.Entities.Wallet;
 using COINEXEN.Core.Services;
 using COINEXEN.Core.UnitOfWorks;
-using COINEXEN.Core.ViewModels;
+using COINEXEN.Core.ViewModels.UserVMs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 
 namespace COINEXEN.Service.Services
 {
@@ -28,20 +25,20 @@ namespace COINEXEN.Service.Services
             _httpContextAccesor = httpContextAccesor;
             _unitOfWork = unitOfWork;
         }
-        public async Task<bool> CreateUserAsync(RegisterViewModel registerViewModel)
+        public async Task<bool> CreateUserAsync(RegisterVM register)
         {
-            AppUser user = _mapper.Map<AppUser>(registerViewModel);
+            AppUser user = _mapper.Map<AppUser>(register);
             user.Id = Guid.NewGuid();
-            IdentityResult result = await _userManager.CreateAsync(user, registerViewModel.Password);
+            IdentityResult result = await _userManager.CreateAsync(user, register.Password);
             if (result.Succeeded)
                 await _walletService.CreateWalletsAsync(user);
             return result.Succeeded;
         }
 
-        public async Task<List<AppUser>> GetAllUserAsync()
-            => await _unitOfWork.UserRepository.GetAllUsersWithPropertiesAsync();
+        public async Task<List<GetUserVM>> GetAllUserAsync()
+            => _mapper.Map<List<GetUserVM>>(await _unitOfWork.UserRepository.GetAllUsersWithPropertiesAsync());
 
-        public async Task<AppUser> GetOnlineUserAsync()
+        public async Task<GetOnlineUserVM> GetOnlineUserAsync()
         {
             
             if (!_httpContextAccesor.HttpContext.User.Identity.IsAuthenticated)
@@ -49,7 +46,7 @@ namespace COINEXEN.Service.Services
             AppUser user = await _unitOfWork.UserRepository.GetUserWithPropertiesAsync(_httpContextAccesor.HttpContext.User.Identity.Name); 
             if (user==null)
                 throw new Exception("hata");
-            return user;
+            return _mapper.Map<GetOnlineUserVM>(user);
         }
     }
 }

@@ -39,18 +39,13 @@ namespace COINEXEN.Web.Controllers
                 return NotFound();
             return View(coin);
         }
-
-
-
-
-
         public async Task<IActionResult> SellCoin(string id)
          => View(await _coinService.GetCoinByIdAsync(id));
 
         [HttpPost]
         public async Task<IActionResult> SellCoin(string Id, int Stock, string UserName)
         {
-            bool result = await _basketService.SellCoinAsync(Id, Stock, UserName);
+            bool result = await _coinService.SellCoinAsync(Id, Stock, UserName);
             if (!result)
                 return RedirectToAction("CoinList", "Coins");
             return View("SellSuccess");
@@ -62,10 +57,10 @@ namespace COINEXEN.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> BuyCoin(string UserName)
         {
-            var cart = _basketService.GetBasket(HttpContext);
-            if (cart.Coin == null)
+            var Basket = _basketService.GetBasket(HttpContext);
+            if (Basket.Coin == null)
                 ModelState.AddModelError("coinyok", "Sepette coin yok");
-            await _basketService.BuyCoinAsync(cart, UserName, Core.Enums.Transaction.Buy);
+            await _coinService.BuyCoinAsync(Basket, UserName, Core.Enums.Transaction.Buy);
             return View("BuySuccess");
 
         }
