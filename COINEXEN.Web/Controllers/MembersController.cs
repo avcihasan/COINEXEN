@@ -25,9 +25,9 @@ namespace COINEXEN.Web.Controllers
         {
             ViewBag.user = await _userService.GetOnlineUserAsync();
 
-            ViewBag.coins = (await _walletService.GetCoinWalletAsync(HttpContext.User.Identity.Name)).CoinWalletLines;//todo
+            ViewBag.coinWallet = (await _walletService.GetCoinWalletAsync(HttpContext.User.Identity.Name));
 
-            ViewBag.transactions= await _unitOfWork.CoinTransactionRepository.GetCoinTransactions().Where(i => i.AppUser.UserName == User.Identity.Name).OrderByDescending(x => x.DateOfTransaction).ToListAsync();//todo
+            ViewBag.transactions= await _unitOfWork.CoinTransactionRepository.GetCoinTransactions().Where(i => i.AppUser.UserName == User.Identity.Name).OrderByDescending(x => x.DateOfTransaction).ToListAsync();//todo VM
 
             return View();
         }

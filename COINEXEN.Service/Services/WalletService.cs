@@ -43,7 +43,7 @@ namespace COINEXEN.Service.Services
             return result;
         }
 
-        public async Task<UserWalletVM> GetUserWalletAsync(string userName)//todo
+        public async Task<UserWalletVM> GetUserWalletAsync(string userName)
             =>_mapper.Map<UserWalletVM>(await _unitOfWork.UserWalletRepository.GetUserWallatByUserNameAsync(userName));
         
 

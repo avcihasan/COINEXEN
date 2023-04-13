@@ -2,6 +2,7 @@
 using COINEXEN.Core.Entities;
 using COINEXEN.Core.Entities.Identity;
 using COINEXEN.Core.Entities.Wallet;
+using COINEXEN.Core.ViewModels.CategoryVMs;
 using COINEXEN.Core.ViewModels.CoinVMs;
 using COINEXEN.Core.ViewModels.MessageVMs;
 using COINEXEN.Core.ViewModels.UserVMs;
@@ -21,7 +22,9 @@ namespace COINEXEN.Service.Mapping
             CreateMap<UserWallet, UserWalletVM>(); 
             CreateMap<AppUser, GetUserVM>(); 
             CreateMap<AppUser, GetOnlineUserVM>();
+            CreateMap<Category, GetCategoryVM>();
         }
+        
 
     }
 }

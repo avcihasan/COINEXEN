@@ -13,7 +13,7 @@
             </form>
         </div>
         <div class="col-md-12 pt-3 px-3">
-            <partial name="PartialViews/GetCategories" model="@ViewBag.categories as List<Category>"></partial>
+            <partial name="PartialViews/GetCategories" model="@ViewBag.categories as List<GetCategoryVM>"></partial>
         </div>
     </div>
     <table class="table text-white  my-1">
@@ -101,7 +101,7 @@
             </form>
         </div>
         <div class="col-md-12 pt-3 px-3">
-            <partial name="PartialViews/GetCategoriesMobile" model="ViewBag.categories as List<Category>"></partial>
+            <partial name="PartialViews/GetCategoriesMobile" model="ViewBag.categories as List<GetCategoryVM>"></partial>
 
         </div>
     </div>

@@ -75,7 +75,7 @@
             <span class="text-white">
                 @{
                     double total = 0;
-                    foreach (CoinWalletLine item in ViewBag.coins as List<CoinWalletLine>)
+                    foreach (CoinWalletLine item in ViewBag.coinWallet.CoinWalletLines as List<CoinWalletLine>)
                     {
                         total += (item.Coin.Price * item.Quantity);
                     }
@@ -92,7 +92,7 @@
 
             </span>
             <div class="text-white coinlink">
-                @if (Enumerable.Count(ViewBag.coins) == 0)
+                @if (Enumerable.Count(ViewBag.coinWallet.CoinWalletLines) == 0)
                 {
                     <div class="alert alert-warning" role="alert">
                         Sahip olduğunuz Coin Bulunmamaktadır!
@@ -100,7 +100,7 @@
                 }
                 else
                 {
-                    foreach (var item in ViewBag.coins)
+                    foreach (var item in ViewBag.coinWallet.CoinWalletLines as List<CoinWalletLine>)
                     {
                         <strong> <a href="/Coins/CoinDetails/@item.Coin.Id">@item.Coin.Name </a></strong>
 

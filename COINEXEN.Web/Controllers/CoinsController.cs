@@ -1,6 +1,7 @@
 ﻿using COINEXEN.Core.Entities;
 using COINEXEN.Core.Services;
 using COINEXEN.Core.UnitOfWorks;
+using COINEXEN.Core.ViewModels.CoinVMs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
@@ -12,21 +13,23 @@ namespace COINEXEN.Web.Controllers
         readonly IUnitOfWork _unitOfWork;
         readonly ICoinService _coinService;
         readonly IBasketService _basketService;
+        readonly ICategoryService _categoryService;
 
-        public CoinsController(IUnitOfWork unitOfWork, ICoinService coinService, IBasketService basketService)
+        public CoinsController(IUnitOfWork unitOfWork, ICoinService coinService, IBasketService basketService, ICategoryService categoryService)
         {
             _unitOfWork = unitOfWork;
             _coinService = coinService;
             _basketService = basketService;
+            _categoryService = categoryService;
         }
         public IActionResult CoinPreSale()
                  => View();
         public IActionResult CoinPreSaleDetails()
                => View();
 
-        public async Task<IActionResult> CoinList(string id)
+        public async Task<IActionResult> CoinList()
         {
-            ViewBag.categories = await _unitOfWork.CategoryRepository.GetAll().ToListAsync();
+            ViewBag.categories = await _categoryService.GetAllCategoriesAsync();
             return View(await _coinService.GetAllCoinsAsync());
         }
 
@@ -34,7 +37,8 @@ namespace COINEXEN.Web.Controllers
         {
             if (id == null)
                 return new StatusCodeResult((int)HttpStatusCode.BadRequest);
-            Coin coin = await _unitOfWork.CoinRepository.GetCoinByIdWithCategoryAsync(id);
+           
+            GetCoinVM coin = await _coinService.GetCoinByIdAsync(id);
             if (coin == null)
                 return NotFound();
             return View(coin);
@@ -52,15 +56,15 @@ namespace COINEXEN.Web.Controllers
 
         }
 
-        public ActionResult BuyCoin()
+        public IActionResult BuyCoin()
             => View(_basketService.GetBasket(HttpContext));
         [HttpPost]
         public async Task<IActionResult> BuyCoin(string UserName)
         {
-            var Basket = _basketService.GetBasket(HttpContext);
-            if (Basket.Coin == null)
+            var basket = _basketService.GetBasket(HttpContext);
+            if (basket.Coin == null)
                 ModelState.AddModelError("coinyok", "Sepette coin yok");
-            await _coinService.BuyCoinAsync(Basket, UserName, Core.Enums.Transaction.Buy);
+            await _coinService.BuyCoinAsync(basket, UserName);
             return View("BuySuccess");
 
         }
