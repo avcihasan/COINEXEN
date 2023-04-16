@@ -10,7 +10,7 @@ namespace COINEXEN.Core.Entities.Identity
         public string Surname { get; set; }
         public City City { get; set; }
         public Gender Gender { get; set; }
-        public string Birthday { get; set; }
+        public int Birthday { get; set; }
 
 
         public CoinWallet CoinWallet { get; set; }

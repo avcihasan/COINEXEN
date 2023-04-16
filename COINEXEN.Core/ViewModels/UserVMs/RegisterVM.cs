@@ -8,7 +8,7 @@ namespace COINEXEN.Core.ViewModels.UserVMs
         public string Surname { get; set; }
         public string Email { get; set; }
         public string UserName { get; set; }
-        public string Birthday { get; set; }
+        public int Birthday { get; set; }
         public Gender Gender { get; set; }
         public City City { get; set; }
         public string PhoneNumber { get; set; }

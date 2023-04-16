@@ -310,3 +310,6 @@ C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\ru\Micr
 C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\FluentValidation.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\FluentValidation.AspNetCore.dll
+C:\Users\avcih\OneDrive\Masaüstü\COINEXEN\COINEXEN.Web\bin\Debug\net60\FluentValidation.DependencyInjectionExtensions.dll

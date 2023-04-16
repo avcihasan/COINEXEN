@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6w/5cg/k3AyrMjlf65e9FsMrl//kHtzNQ+7g1ubmASRCCgKoHoDGEJqu9x1ODw+KiXjufDiGF5rOt+wRa+oGpQ==",
+  "dgSpecHash": "cJt9pXbypGe6S3ZQ/jQxhqwxLZZFJjfHaIQYYWWIzqvjUq8XQDnwfuj+IyBhFRDKCGrMahdi4TR+vytJm5CX4A==",
   "success": true,
   "projectFilePath": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Service\\COINEXEN.Service.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,9 @@
     "C:\\Users\\avcih\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\avcih\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\avcih\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.4.0\\fluentvalidation.dependencyinjectionextensions.11.4.0.nupkg.sha512",
     "C:\\Users\\avcih\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\avcih\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\avcih\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",

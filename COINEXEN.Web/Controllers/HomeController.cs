@@ -30,7 +30,7 @@ namespace COINEXEN.Web.Controllers
                 if (result)
                     return RedirectToAction("Index", "Home");
             }
-            return View(message);
+            return RedirectToAction("Index","Home", message);
         }
 
 

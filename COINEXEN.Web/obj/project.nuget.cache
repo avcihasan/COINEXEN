@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XrjPrNGaVMiisPMn6xPIuAqXbmwfIk6Eysb4We03F8Y+42j1QUJJ/j4ja3rNdYege9Pk7UxX+aAjGkELhABWow==",
+  "dgSpecHash": "9JGMOWAikRRNJzf4e8vQO0kikF/MknIIvXwP4fXUwGno/BwjSIl17lWjdYMBE88HIJcSfxV1ek/01aZogzM5jw==",
   "success": true,
   "projectFilePath": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\COINEXEN.Web.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,9 @@
     "C:\\Users\\avcih\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\avcih\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\avcih\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\avcih\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.4.0\\fluentvalidation.dependencyinjectionextensions.11.4.0.nupkg.sha512",
     "C:\\Users\\avcih\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\avcih\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\avcih\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

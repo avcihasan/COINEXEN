@@ -3,6 +3,9 @@ using COINEXEN.Core.Services;
 using COINEXEN.Repository.Repositories;
 using COINEXEN.Service.Mapping;
 using COINEXEN.Service.Services;
+using COINEXEN.Service.Validators.MessageValidators;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -25,7 +28,8 @@ namespace COINEXEN.Service
             services.AddScoped<ICoinService, CoinService>();
             services.AddScoped<IBasketService, BasketService>();
 
-
+            services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
+            services.AddValidatorsFromAssemblyContaining(typeof(SetMessageVMValidator));
 
             services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
 
