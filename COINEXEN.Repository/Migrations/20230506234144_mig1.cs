@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace COINEXEN.Repository.Migrations
 {
     /// <inheritdoc />
@@ -15,7 +17,8 @@ namespace COINEXEN.Repository.Migrations
                 name: "AspNetRoles",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -26,106 +29,17 @@ namespace COINEXEN.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Categories",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CoinWallets",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AppUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CoinWallets", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Messages",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    City = table.Column<int>(type: "int", nullable: false),
-                    EMail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TopicTitle = table.Column<int>(type: "int", nullable: false),
-                    Details = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SendingDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Messages", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AspNetRoleClaims",
+                name: "AspNetUsers",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    RoleId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AspNetRoleClaims", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
-                        column: x => x.RoleId,
-                        principalTable: "AspNetRoles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Coins",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    KısaKod = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhotoPath = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Stock = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<double>(type: "float", nullable: false),
-                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Coins", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Coins_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AspNetUsers",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     City = table.Column<int>(type: "int", nullable: false),
                     Gender = table.Column<int>(type: "int", nullable: false),
-                    Birthday = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CoinWalletId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Birthday = table.Column<int>(type: "int", nullable: false),
+                    WalletId = table.Column<int>(type: "int", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -144,36 +58,59 @@ namespace COINEXEN.Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_AspNetUsers_CoinWallets_Id",
-                        column: x => x.Id,
-                        principalTable: "CoinWallets",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "CoinWalletLines",
+                name: "Categories",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CoinId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    CoinWalletId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CoinWalletLines", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Messages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    City = table.Column<int>(type: "int", nullable: false),
+                    EMail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TopicTitle = table.Column<int>(type: "int", nullable: false),
+                    Details = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SendingDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Messages", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetRoleClaims",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RoleId = table.Column<int>(type: "int", nullable: false),
+                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetRoleClaims", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CoinWalletLines_CoinWallets_CoinWalletId",
-                        column: x => x.CoinWalletId,
-                        principalTable: "CoinWallets",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CoinWalletLines_Coins_CoinId",
-                        column: x => x.CoinId,
-                        principalTable: "Coins",
+                        name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "AspNetRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -184,7 +121,7 @@ namespace COINEXEN.Repository.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
                     ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -206,7 +143,7 @@ namespace COINEXEN.Repository.Migrations
                     LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -223,8 +160,8 @@ namespace COINEXEN.Repository.Migrations
                 name: "AspNetUserRoles",
                 columns: table => new
                 {
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    RoleId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    RoleId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -247,7 +184,7 @@ namespace COINEXEN.Repository.Migrations
                 name: "AspNetUserTokens",
                 columns: table => new
                 {
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
                     LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -264,83 +201,18 @@ namespace COINEXEN.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Baskets",
+                name: "CoinWallets",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AppUserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AppUserId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    CoinId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Baskets", x => x.Id);
+                    table.PrimaryKey("PK_CoinWallets", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Baskets_AspNetUsers_AppUserId1",
-                        column: x => x.AppUserId1,
+                        name: "FK_CoinWallets_AspNetUsers_Id",
+                        column: x => x.Id,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Baskets_Coins_CoinId",
-                        column: x => x.CoinId,
-                        principalTable: "Coins",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "BuyCoins",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CoinId = table.Column<int>(type: "int", nullable: false),
-                    CoinId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    CoinPrice = table.Column<double>(type: "float", nullable: false),
-                    DateOfBuy = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AppUserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AppUserId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BuyCoins", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BuyCoins_AspNetUsers_AppUserId1",
-                        column: x => x.AppUserId1,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_BuyCoins_Coins_CoinId1",
-                        column: x => x.CoinId1,
-                        principalTable: "Coins",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SellCoins",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CoinId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    CoinPrice = table.Column<double>(type: "float", nullable: false),
-                    DateOfSell = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AppUserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AppUserId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SellCoins", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_SellCoins_AspNetUsers_AppUserId1",
-                        column: x => x.AppUserId1,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SellCoins_Coins_CoinId",
-                        column: x => x.CoinId,
-                        principalTable: "Coins",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -349,7 +221,8 @@ namespace COINEXEN.Repository.Migrations
                 name: "UserWallets",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    AppUserId = table.Column<int>(type: "int", nullable: false),
                     Balance = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
@@ -362,6 +235,120 @@ namespace COINEXEN.Repository.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Coins",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ShortName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhotoPath = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Stock = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Coins", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Coins_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CoinTransactions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Transaction = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    CoinPrice = table.Column<double>(type: "float", nullable: false),
+                    DateOfTransaction = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AppUserId = table.Column<int>(type: "int", nullable: false),
+                    CoinId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CoinTransactions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CoinTransactions_AspNetUsers_AppUserId",
+                        column: x => x.AppUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CoinTransactions_Coins_CoinId",
+                        column: x => x.CoinId,
+                        principalTable: "Coins",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CoinWalletLines",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CoinId = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    CoinWalletId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CoinWalletLines", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CoinWalletLines_CoinWallets_CoinWalletId",
+                        column: x => x.CoinWalletId,
+                        principalTable: "CoinWallets",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CoinWalletLines_Coins_CoinId",
+                        column: x => x.CoinId,
+                        principalTable: "Coins",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "Birthday", "City", "ConcurrencyStamp", "Email", "EmailConfirmed", "Gender", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Surname", "TwoFactorEnabled", "UserName", "WalletId" },
+                values: new object[] { 1, 0, 1999, 33, "4e78ea90-adb9-4ae9-9616-53f9515f98e6", "hsnavci7@gmail.com", false, 0, false, null, "Hasan", null, null, "AQAAAAEAACcQAAAAEA2xBnfBFvhRb/Rdi9oxs+gnjknT3PBgf5/IcajQZzsKgqUEPRqLazKt9pvn9YxLUg==", "05380614193", false, null, "Avcı", false, "asanator", 1 });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Description", "Name" },
+                values: new object[,]
+                {
+                    { 1, "1-Category-Description", "1-Category" },
+                    { 2, "2-Category-Description", "2-Category" },
+                    { 3, "3-Category-Description", "3-Category" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Coins",
+                columns: new[] { "Id", "CategoryId", "Description", "Name", "PhotoPath", "Price", "ShortName", "Stock" },
+                values: new object[,]
+                {
+                    { 1, 1, "A-Description", "Acoin", "A-Photo", 1.2, "A", 10 },
+                    { 2, 3, "B-Description", "Bcoin", "B-Photo", 1.2, "A", 10 },
+                    { 3, 3, "C-Description", "Ccoin", "C-Photo", 1.2, "A", 10 },
+                    { 4, 1, "D-Description", "Dcoin", "D-Photo", 1.2, "A", 10 },
+                    { 5, 2, "E-Description", "Ecoin", "E-Photo", 1.2, "A", 10 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "UserWallets",
+                columns: new[] { "Id", "AppUserId", "Balance" },
+                values: new object[] { 1, 1, 2500.0 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -403,29 +390,19 @@ namespace COINEXEN.Repository.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Baskets_AppUserId1",
-                table: "Baskets",
-                column: "AppUserId1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Baskets_CoinId",
-                table: "Baskets",
-                column: "CoinId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_BuyCoins_AppUserId1",
-                table: "BuyCoins",
-                column: "AppUserId1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_BuyCoins_CoinId1",
-                table: "BuyCoins",
-                column: "CoinId1");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Coins_CategoryId",
                 table: "Coins",
                 column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CoinTransactions_AppUserId",
+                table: "CoinTransactions",
+                column: "AppUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CoinTransactions_CoinId",
+                table: "CoinTransactions",
+                column: "CoinId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CoinWalletLines_CoinId",
@@ -436,16 +413,6 @@ namespace COINEXEN.Repository.Migrations
                 name: "IX_CoinWalletLines_CoinWalletId",
                 table: "CoinWalletLines",
                 column: "CoinWalletId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SellCoins_AppUserId1",
-                table: "SellCoins",
-                column: "AppUserId1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SellCoins_CoinId",
-                table: "SellCoins",
-                column: "CoinId");
         }
 
         /// <inheritdoc />
@@ -467,10 +434,7 @@ namespace COINEXEN.Repository.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Baskets");
-
-            migrationBuilder.DropTable(
-                name: "BuyCoins");
+                name: "CoinTransactions");
 
             migrationBuilder.DropTable(
                 name: "CoinWalletLines");
@@ -479,13 +443,13 @@ namespace COINEXEN.Repository.Migrations
                 name: "Messages");
 
             migrationBuilder.DropTable(
-                name: "SellCoins");
-
-            migrationBuilder.DropTable(
                 name: "UserWallets");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "CoinWallets");
 
             migrationBuilder.DropTable(
                 name: "Coins");
@@ -495,9 +459,6 @@ namespace COINEXEN.Repository.Migrations
 
             migrationBuilder.DropTable(
                 name: "Categories");
-
-            migrationBuilder.DropTable(
-                name: "CoinWallets");
         }
     }
 }

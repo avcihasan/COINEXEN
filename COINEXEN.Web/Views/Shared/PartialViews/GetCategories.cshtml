@@ -9,7 +9,7 @@
     {
         if (selectedCategory != null)
         {
-            if (kategoriler.Id == Guid.Parse(selectedCategory.ToString()))
+            if (kategoriler.Id == (int)selectedCategory)
             {
                 <a asp-action="CoinList" asp-controller="Coins" asp-route-id="@kategoriler.Id" class="list-group-item list-group-item-action active-link" type="button" type="button">@kategoriler.Name</a>
             }

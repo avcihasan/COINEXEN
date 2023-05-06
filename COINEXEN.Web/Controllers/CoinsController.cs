@@ -33,7 +33,7 @@ namespace COINEXEN.Web.Controllers
             return View(await _coinService.GetAllCoinsAsync());
         }
 
-        public async Task<IActionResult> CoinDetails(string id)
+        public async Task<IActionResult> CoinDetails(int id)
         {
             if (id == null)
                 return new StatusCodeResult((int)HttpStatusCode.BadRequest);
@@ -43,11 +43,11 @@ namespace COINEXEN.Web.Controllers
                 return NotFound();
             return View(coin);
         }
-        public async Task<IActionResult> SellCoin(string id)
+        public async Task<IActionResult> SellCoin(int id)
          => View(await _coinService.GetCoinByIdAsync(id));
 
         [HttpPost]
-        public async Task<IActionResult> SellCoin(string Id, int Stock, string UserName)
+        public async Task<IActionResult> SellCoin(int Id, int Stock, string UserName)
         {
             bool result = await _coinService.SellCoinAsync(Id, Stock, UserName);
             if (!result)

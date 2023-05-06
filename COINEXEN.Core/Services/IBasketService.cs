@@ -8,7 +8,7 @@ namespace COINEXEN.Core.Services
     public interface IBasketService
     {
         BasketVM GetBasket(HttpContext httpContext);
-        Task AddCoinToBasketAsync(HttpContext httpContext, string coinId, int alimSayisi);
+        Task AddCoinToBasketAsync(HttpContext httpContext, int coinId, int alimSayisi);
 
     }
 }

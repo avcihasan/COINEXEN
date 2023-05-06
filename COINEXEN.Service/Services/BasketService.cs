@@ -36,7 +36,7 @@ namespace COINEXEN.Service.Services
         }
 
 
-        public async Task AddCoinToBasketAsync(HttpContext httpContext, string coinId, int alimSayisi)
+        public async Task AddCoinToBasketAsync(HttpContext httpContext, int coinId, int alimSayisi)
         {
             GetCoinVM coin = await _coinService.GetCoinByIdAsync(coinId);
             if (coin != null)

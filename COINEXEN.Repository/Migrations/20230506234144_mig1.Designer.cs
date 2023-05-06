@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace COINEXEN.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230405024556_mig2")]
-    partial class mig2
+    [Migration("20230506234144_mig1")]
+    partial class mig1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,107 +25,13 @@ namespace COINEXEN.Repository.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("COINEXEN.Core.Entities.Basket", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("AppUserId1")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CoinId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId1");
-
-                    b.HasIndex("CoinId");
-
-                    b.ToTable("Baskets");
-                });
-
-            modelBuilder.Entity("COINEXEN.Core.Entities.BuyingAndSelling.BuyCoin", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("AppUserId1")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("CoinId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("CoinId1")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("CoinPrice")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("DateOfBuy")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId1");
-
-                    b.HasIndex("CoinId1");
-
-                    b.ToTable("BuyCoins");
-                });
-
-            modelBuilder.Entity("COINEXEN.Core.Entities.BuyingAndSelling.SellCoin", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("AppUserId1")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CoinId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("CoinPrice")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("DateOfSell")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId1");
-
-                    b.HasIndex("CoinId");
-
-                    b.ToTable("SellCoins");
-                });
-
             modelBuilder.Entity("COINEXEN.Core.Entities.Category", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -136,21 +42,40 @@ namespace COINEXEN.Repository.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "1-Category-Description",
+                            Name = "1-Category"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "2-Category-Description",
+                            Name = "2-Category"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "3-Category-Description",
+                            Name = "3-Category"
+                        });
                 });
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Coin", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KısaKod")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -162,6 +87,9 @@ namespace COINEXEN.Repository.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
+                    b.Property<string>("ShortName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Stock")
                         .HasColumnType("int");
 
@@ -170,13 +98,107 @@ namespace COINEXEN.Repository.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Coins");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            Description = "A-Description",
+                            Name = "Acoin",
+                            PhotoPath = "A-Photo",
+                            Price = 1.2,
+                            ShortName = "A",
+                            Stock = 10
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 3,
+                            Description = "B-Description",
+                            Name = "Bcoin",
+                            PhotoPath = "B-Photo",
+                            Price = 1.2,
+                            ShortName = "A",
+                            Stock = 10
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 3,
+                            Description = "C-Description",
+                            Name = "Ccoin",
+                            PhotoPath = "C-Photo",
+                            Price = 1.2,
+                            ShortName = "A",
+                            Stock = 10
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 1,
+                            Description = "D-Description",
+                            Name = "Dcoin",
+                            PhotoPath = "D-Photo",
+                            Price = 1.2,
+                            ShortName = "A",
+                            Stock = 10
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryId = 2,
+                            Description = "E-Description",
+                            Name = "Ecoin",
+                            PhotoPath = "E-Photo",
+                            Price = 1.2,
+                            ShortName = "A",
+                            Stock = 10
+                        });
+                });
+
+            modelBuilder.Entity("COINEXEN.Core.Entities.CoinTransaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AppUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CoinId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("CoinPrice")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("DateOfTransaction")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Transaction")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("CoinId");
+
+                    b.ToTable("CoinTransactions");
                 });
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Identity.AppRole", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -202,15 +224,17 @@ namespace COINEXEN.Repository.Migrations
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Identity.AppUser", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<string>("Birthday")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Birthday")
+                        .HasColumnType("int");
 
                     b.Property<int>("City")
                         .HasColumnType("int");
@@ -268,6 +292,9 @@ namespace COINEXEN.Repository.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<int>("WalletId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -279,13 +306,37 @@ namespace COINEXEN.Repository.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccessFailedCount = 0,
+                            Birthday = 1999,
+                            City = 33,
+                            ConcurrencyStamp = "4e78ea90-adb9-4ae9-9616-53f9515f98e6",
+                            Email = "hsnavci7@gmail.com",
+                            EmailConfirmed = false,
+                            Gender = 0,
+                            LockoutEnabled = false,
+                            Name = "Hasan",
+                            PasswordHash = "AQAAAAEAACcQAAAAEA2xBnfBFvhRb/Rdi9oxs+gnjknT3PBgf5/IcajQZzsKgqUEPRqLazKt9pvn9YxLUg==",
+                            PhoneNumber = "05380614193",
+                            PhoneNumberConfirmed = false,
+                            Surname = "Avcı",
+                            TwoFactorEnabled = false,
+                            UserName = "asanator",
+                            WalletId = 1
+                        });
                 });
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Message", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("City")
                         .HasColumnType("int");
@@ -311,9 +362,6 @@ namespace COINEXEN.Repository.Migrations
                     b.Property<int>("TopicTitle")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Messages");
@@ -321,8 +369,8 @@ namespace COINEXEN.Repository.Migrations
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Wallet.CoinWallet", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -331,15 +379,17 @@ namespace COINEXEN.Repository.Migrations
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Wallet.CoinWalletLine", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("CoinId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<Guid>("CoinWalletId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("CoinId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CoinWalletId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -355,8 +405,11 @@ namespace COINEXEN.Repository.Migrations
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Wallet.UserWallet", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AppUserId")
+                        .HasColumnType("int");
 
                     b.Property<double>("Balance")
                         .HasColumnType("float");
@@ -364,9 +417,17 @@ namespace COINEXEN.Repository.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserWallets");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AppUserId = 1,
+                            Balance = 2500.0
+                        });
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -380,8 +441,8 @@ namespace COINEXEN.Repository.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -390,7 +451,7 @@ namespace COINEXEN.Repository.Migrations
                     b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -404,8 +465,8 @@ namespace COINEXEN.Repository.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -414,7 +475,7 @@ namespace COINEXEN.Repository.Migrations
                     b.ToTable("AspNetUserClaims", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
                     b.Property<string>("LoginProvider")
                         .HasColumnType("nvarchar(450)");
@@ -425,8 +486,8 @@ namespace COINEXEN.Repository.Migrations
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -435,13 +496,13 @@ namespace COINEXEN.Repository.Migrations
                     b.ToTable("AspNetUserLogins", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
                 {
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -450,10 +511,10 @@ namespace COINEXEN.Repository.Migrations
                     b.ToTable("AspNetUserRoles", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.Property<string>("LoginProvider")
                         .HasColumnType("nvarchar(450)");
@@ -469,55 +530,6 @@ namespace COINEXEN.Repository.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("COINEXEN.Core.Entities.Basket", b =>
-                {
-                    b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("AppUserId1");
-
-                    b.HasOne("COINEXEN.Core.Entities.Coin", "Coin")
-                        .WithMany()
-                        .HasForeignKey("CoinId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
-
-                    b.Navigation("Coin");
-                });
-
-            modelBuilder.Entity("COINEXEN.Core.Entities.BuyingAndSelling.BuyCoin", b =>
-                {
-                    b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("AppUserId1");
-
-                    b.HasOne("COINEXEN.Core.Entities.Coin", "Coin")
-                        .WithMany()
-                        .HasForeignKey("CoinId1");
-
-                    b.Navigation("AppUser");
-
-                    b.Navigation("Coin");
-                });
-
-            modelBuilder.Entity("COINEXEN.Core.Entities.BuyingAndSelling.SellCoin", b =>
-                {
-                    b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("AppUserId1");
-
-                    b.HasOne("COINEXEN.Core.Entities.Coin", "Coin")
-                        .WithMany()
-                        .HasForeignKey("CoinId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
-
-                    b.Navigation("Coin");
-                });
-
             modelBuilder.Entity("COINEXEN.Core.Entities.Coin", b =>
                 {
                     b.HasOne("COINEXEN.Core.Entities.Category", "Category")
@@ -527,6 +539,25 @@ namespace COINEXEN.Repository.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("COINEXEN.Core.Entities.CoinTransaction", b =>
+                {
+                    b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("COINEXEN.Core.Entities.Coin", "Coin")
+                        .WithMany()
+                        .HasForeignKey("CoinId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Coin");
                 });
 
             modelBuilder.Entity("COINEXEN.Core.Entities.Wallet.CoinWallet", b =>
@@ -570,7 +601,7 @@ namespace COINEXEN.Repository.Migrations
                     b.Navigation("AppUser");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("COINEXEN.Core.Entities.Identity.AppRole", null)
                         .WithMany()
@@ -579,7 +610,7 @@ namespace COINEXEN.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
                     b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", null)
                         .WithMany()
@@ -588,7 +619,7 @@ namespace COINEXEN.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
                     b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", null)
                         .WithMany()
@@ -597,7 +628,7 @@ namespace COINEXEN.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
                 {
                     b.HasOne("COINEXEN.Core.Entities.Identity.AppRole", null)
                         .WithMany()
@@ -612,7 +643,7 @@ namespace COINEXEN.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
                     b.HasOne("COINEXEN.Core.Entities.Identity.AppUser", null)
                         .WithMany()

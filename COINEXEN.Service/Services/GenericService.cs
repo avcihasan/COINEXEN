@@ -26,7 +26,7 @@ namespace COINEXEN.Service.Services
             return result;
         }
 
-        public async Task<bool> RemoveByIdAsync(string id)
+        public async Task<bool> RemoveByIdAsync(int id)
         {
             bool result = await _repository.RemoveByIdAsync(id);
             if(result)

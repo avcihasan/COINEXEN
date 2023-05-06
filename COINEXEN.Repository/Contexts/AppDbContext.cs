@@ -1,12 +1,14 @@
 ﻿using COINEXEN.Core.Entities;
 using COINEXEN.Core.Entities.Identity;
 using COINEXEN.Core.Entities.Wallet;
+using COINEXEN.Repository.Contexts.Configurations;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace COINEXEN.Repository.Contexts
 {
-    public class AppDbContext : IdentityDbContext<AppUser,AppRole, Guid>
+    public class AppDbContext : IdentityDbContext<AppUser,AppRole, int>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -20,27 +22,7 @@ namespace COINEXEN.Repository.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-            modelBuilder.Entity<UserWallet>()
-                .HasKey(x => x.Id);
-
-            modelBuilder.Entity<AppUser>()
-                .HasOne(x => x.Wallet)
-                .WithOne(x => x.AppUser)
-                .HasForeignKey<UserWallet>(x => x.Id);
-
-            modelBuilder.Entity<CoinWallet>()
-                .HasKey(key => key.Id);
-
-            modelBuilder.Entity<AppUser>()
-               .HasOne(p => p.CoinWallet)
-               .WithOne(p => p.AppUser)
-               .HasForeignKey<CoinWallet>(p => p.Id);
-
-            //modelBuilder.SeedDatas();
-            //modelBuilder.SeedRoles();
-            //modelBuilder.SeedUsers();
-
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(typeof(CoinConfiguration)));
             base.OnModelCreating(modelBuilder);
         }
 

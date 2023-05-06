@@ -28,21 +28,21 @@ namespace COINEXEN.Service.Services
             return _mapper.Map<List<GetCoinVM>>(coins);
         }
 
-        public async Task<GetCoinVM> GetCoinByIdAsync(string id)
+        public async Task<GetCoinVM> GetCoinByIdAsync(int id)
         {
             Coin coin = await _unitOfWork.CoinRepository.GetCoinByIdWithCategoryAsync(id);
             return _mapper.Map<GetCoinVM>(coin);
         }
 
 
-        public async Task<bool> SellCoinAsync(string Id, int satisSayisi, string UserName)
+        public async Task<bool> SellCoinAsync(int id, int satisSayisi, string UserName)
         {
             AppUser user = await _unitOfWork.UserRepository.GetUserWithPropertiesAsync(UserName);
-            Coin coin = await _unitOfWork.CoinRepository.GetByIdAsync(Id);
-            CoinWalletLine coinWalletLine = user.CoinWallet.CoinWalletLines.FirstOrDefault(x => x.Coin.Id == Guid.Parse(Id));
+            Coin coin = await _unitOfWork.CoinRepository.GetByIdAsync(id);
+            CoinWalletLine coinWalletLine = user.CoinWallet.CoinWalletLines.FirstOrDefault(x => x.Coin.Id == id);
             if (coinWalletLine.Coin == null)
                 return false;
-            bool result =await UpdateCoinStockAsync(coinWalletLine,Guid.Parse(Id), satisSayisi, Transaction.Sell);
+            bool result =await UpdateCoinStockAsync(coinWalletLine, id, satisSayisi, Transaction.Sell);
             if (!result)
                 return false;
             await CreateSellTransactionAsync(user, coin, satisSayisi);
@@ -98,8 +98,8 @@ namespace COINEXEN.Service.Services
         {
             CoinTransaction coinTransaction = new()
             {
-                AppUserId = user.Id,
-                CoinId = coin.Id,
+               AppUser = user,
+                Coin = coin,
                 CoinPrice = coin.Price,
                 DateOfTransaction = DateTime.Now,
                 Quantity = satisSayisi,
@@ -107,9 +107,9 @@ namespace COINEXEN.Service.Services
             };
             return await _unitOfWork.CoinTransactionRepository.CreateAsync(coinTransaction);
         }
-        private async Task<bool> UpdateCoinStockAsync(CoinWalletLine walletLine,Guid coinId, int islemSayisi, Transaction transaction)
+        private async Task<bool> UpdateCoinStockAsync(CoinWalletLine walletLine,int coinId, int islemSayisi, Transaction transaction)
         {
-            Coin coin = await _unitOfWork.CoinRepository.GetCoinByIdWithCategoryAsync(coinId.ToString()); 
+            Coin coin = await _unitOfWork.CoinRepository.GetCoinByIdWithCategoryAsync(coinId); 
             if (transaction == Transaction.Buy)
             {
                 if (coin.Stock < islemSayisi)

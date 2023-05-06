@@ -5,6 +5,6 @@ namespace COINEXEN.Core.Repositories
     public interface ICoinRepository:IGenericRepository<Coin>
     {
         IQueryable<Coin> GetAllCoinWithCategories();
-        Task<Coin> GetCoinByIdWithCategoryAsync(string id);
+        Task<Coin> GetCoinByIdWithCategoryAsync(int id);
     }
 }

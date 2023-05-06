@@ -5,7 +5,7 @@ namespace COINEXEN.Core.ViewModels.BasketVMs
 {
     public class BasketVM
     {
-        public Guid AppUserId { get; set; }
+        public int AppUserId { get; set; }
         public GetCoinVM Coin { get; set; }
         public int Quantity { get; set; }
        

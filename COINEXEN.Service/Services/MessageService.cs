@@ -31,7 +31,7 @@ namespace COINEXEN.Service.Services
             => _mapper.Map<List<GetMessageVM>>(await _unitOfWork.MessageRepository.GetAll().OrderByDescending(i => i.SendingDate).ToListAsync());
 
 
-        public async Task<GetMessageVM> GetMessageById(string id)
+        public async Task<GetMessageVM> GetMessageById(int id)
             => _mapper.Map<GetMessageVM>(await _unitOfWork.MessageRepository.GetByIdAsync(id));
 
 

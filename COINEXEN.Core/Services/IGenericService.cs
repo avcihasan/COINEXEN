@@ -6,6 +6,6 @@ namespace COINEXEN.Core.Services
     {
         Task<bool> CreateAsync(T entity);
         Task<bool> UpdateAsync(T entity);
-        Task<bool> RemoveByIdAsync(string id);
+        Task<bool> RemoveByIdAsync(int id);
     }
 }

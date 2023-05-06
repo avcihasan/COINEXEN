@@ -22,10 +22,10 @@ namespace COINEXEN.Web.Controllers
             return View(_basketService.GetBasket(HttpContext));
         }
 
-        public async Task<IActionResult> BasketDetails(string id)
+        public async Task<IActionResult> BasketDetails(int id)
            => View(await _coinService.GetCoinByIdAsync(id));
 
-        public async Task<IActionResult> AddToBasket(string Id, int Stock)
+        public async Task<IActionResult> AddToBasket(int Id, int Stock)
         {
             await _basketService.AddCoinToBasketAsync(HttpContext, Id, Stock);
             return RedirectToAction("Index", "Baskets");

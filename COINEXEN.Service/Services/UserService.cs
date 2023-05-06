@@ -28,7 +28,6 @@ namespace COINEXEN.Service.Services
         public async Task<bool> CreateUserAsync(RegisterVM register)
         {
             AppUser user = _mapper.Map<AppUser>(register);
-            user.Id = Guid.NewGuid();
             IdentityResult result = await _userManager.CreateAsync(user, register.Password);
             if (result.Succeeded)
                 await _walletService.CreateWalletsAsync(user);

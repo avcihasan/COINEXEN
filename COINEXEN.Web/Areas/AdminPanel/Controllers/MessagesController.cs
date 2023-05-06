@@ -15,7 +15,7 @@ namespace COINEXEN.Web.Areas.AdminPanel.Controllers
         public async Task<IActionResult> Index()
             => View(await _messageService.GetAllMessagesAsync());
 
-        public async Task<IActionResult> MessageDetails(string id)
+        public async Task<IActionResult> MessageDetails(int id)
             => View(await _messageService.GetMessageById(id));
     }
 }
