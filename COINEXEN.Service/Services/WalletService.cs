@@ -32,7 +32,7 @@ namespace COINEXEN.Service.Services
 
         private async Task<bool> CreateUserWalletAsync(AppUser user, double balance)
         {
-            UserWallet wallet = new() { Id = user.Id, Balance = balance };
+            UserWallet wallet = new() { Id = user.Id, Balance = balance};
             bool result = await _unitOfWork.UserWalletRepository.CreateAsync(wallet);
             return result;
         }

@@ -13,12 +13,10 @@ namespace COINEXEN.Service.Services
 {
     public class BasketService : IBasketService
     {
-        readonly IUnitOfWork _unitOfWork;
         readonly ICoinService _coinService;
 
-        public BasketService(IUnitOfWork unitOfWork, ICoinService coinService)
+        public BasketService(ICoinService coinService)
         {
-            _unitOfWork = unitOfWork;
             _coinService = coinService;
         }
 

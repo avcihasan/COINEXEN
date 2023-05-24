@@ -1,14 +1,9 @@
 ﻿using AutoMapper;
-using Azure;
 using COINEXEN.Core.Entities.Identity;
 using COINEXEN.Core.Services;
-using COINEXEN.Core.ViewModels;
 using COINEXEN.Core.ViewModels.UserVMs;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using System.Security.Claims;
 
 namespace COINEXEN.Service.Services
 {

@@ -13,11 +13,7 @@ namespace COINEXEN.Repository.Contexts.Configurations
     {
         public void Configure(EntityTypeBuilder<UserWallet> builder)
         {
-            builder
-                .HasData
-                (
-                    new UserWallet() { Id = 1, Balance = 2500,AppUserId=1 }
-                );
+           
         }
     }
 }
