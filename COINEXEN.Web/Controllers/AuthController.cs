@@ -18,9 +18,7 @@ namespace COINEXEN.Web.Controllers
             _userService = userService;
             _authService = authService;
         }
-        public ActionResult Register()
-            => View();
-
+ 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterVM model)
@@ -31,11 +29,9 @@ namespace COINEXEN.Web.Controllers
                 if (result)
                     return RedirectToAction("Login", "Auth");
             }
+
             return View(model);
         }
-
-        public IActionResult Login()
-            => View();
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -49,7 +45,7 @@ namespace COINEXEN.Web.Controllers
                 else if(result)
                     return RedirectToAction("Index", "Home");
             }
-           
+
             return RedirectToAction("Index", "Home");
         }
 

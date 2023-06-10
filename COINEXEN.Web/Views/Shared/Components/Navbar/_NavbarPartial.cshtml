@@ -1,0 +1,39 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-primary py-2">
+    <div class="container-fluid px-5">
+        <a class="navbar-brand yellow-hover" href="/" style="font-size: 25px; font-weight: bold;">COINEXEN</a>
+        <a class="navbar-toggler ms-auto islemler-link yellow-hover" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars fa-2x " aria-hidden="true"></i>
+        </a>
+        <div class="collapse navbar-collapse ms-4" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
+                <li class="nav-item">
+                    <a class="nav-link yellow-hover" href="/Coins/CoinList">Al/Sat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link yellow-hover" href="/Coins/CoinPreSale">Ön Satış</a>
+                </li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link yellow-hover" href="#">Para Yatır&Çek</a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div class="aramaKutusu me-5 d-none">
+            <form class="d-flex">
+                <input class="form-control me-1 form-control-sm" type="search" placeholder="Arama" aria-label="Search">
+                <button class="btn btn-outline-warning btn-sm" type="submit">Arama</button>
+            </form>
+        </div>
+        <div>
+            <span>
+                <a id="headerButton" class="btn headerButton yellow-hover" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <i class="fa fa-bars fa-3x " aria-hidden="true"></i>
+                </a>
+            </span>
+        </div>
+
+    </div>
+</nav>

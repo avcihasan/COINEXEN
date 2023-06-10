@@ -10,6 +10,8 @@ namespace COINEXEN.Repository.Repositories
     {
         protected readonly DbSet<T> _dbSet;
 
+        public DbSet<T> Table => _dbSet;
+
         public GenericRepository(AppDbContext context)
         {
             _dbSet = context.Set<T>();

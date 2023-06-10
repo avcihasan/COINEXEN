@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\css\\admin-style.css",
+      "PackagePath": "staticwebassets\\css\\admin-style.css"
+    },
+    {
       "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\css\\body_bg.jpg",
       "PackagePath": "staticwebassets\\css\\body_bg.jpg"
     },

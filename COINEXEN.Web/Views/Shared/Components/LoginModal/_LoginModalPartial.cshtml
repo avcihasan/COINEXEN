@@ -1,0 +1,36 @@
+﻿@model LoginVM
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content bg-secondary">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Giriş</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Login" asp-controller="Auth" method="post">
+                    <div class="form-horizontal">
+                            <div class="form-group  text-center ">
+                                <label asp-for="@Model.UserName" class="control-label  my-2 text-white">Kullanıcı Adı</label>
+                                <input type="text" asp-for="@Model.UserName" class="form-control">
+                                <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group text-center">
+                                <label asp-for="@Model.Password" class="control-label  my-2 text-white">Şifre</label>
+                                <input type="password" asp-for="@Model.Password" class="form-control">
+                                <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group  p-5 text-center">
+                                <button class="btn btn-success">Giriş</button>
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+

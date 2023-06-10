@@ -9,7 +9,7 @@ namespace COINEXEN.Core.Entities.Identity
         public string Name { get; set; }
         public string Surname { get; set; }
         public City City { get; set; }
-        public Gender Gender { get; set; }
+        //public Gender Gender { get; set; }
         public int Birthday { get; set; }
 
 

@@ -73,7 +73,10 @@
                     </td>*@
                     <td class="text-center">
                         <a asp-action="CoinDetails" asp-controller="Coins" asp-route-id="@coin.Id" type="button" class="btn btn-light">PRO</a>
-                        <a asp-action="BasketDetails" asp-controller="Baskets" asp-route-id="@coin.Id" type="button" class="btn btn-primary">AL</a>
+                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basketModal">
+                            Al
+                        </a>
+                        @await Component.InvokeAsync("BasketModal",new{id=coin.Id})
                         <a asp-action="SellCoin" asp-controller="Coins" asp-route-id="@coin.Id" type="button" class="btn btn-danger">SAT</a>
                     </td>
                 </tr>
@@ -81,12 +84,6 @@
         </tbody>
     </table>
 </div>
-
-
-
-
-
-
 
 
 <div class="container my-5 hizli-satisMobil ">

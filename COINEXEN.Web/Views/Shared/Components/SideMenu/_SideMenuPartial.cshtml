@@ -1,0 +1,65 @@
+﻿
+<div class="offcanvas offcanvas-start offcanvasMenu" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="container offcanvas-close">
+        <button type="button" class="btn-close text-reset btn-close-white d-inline " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title mx-auto offcanvasMenu-header" id="offcanvasExampleLabel">COINEXEN</h5>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="list-group" style="text-align: center;">
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("admin"))
+                {
+                    <li class="list-group-item offcanvasItem">
+                        <a href="/AdminPanel" class="yellow-hover" style="font-weight:bold;color:#f4e185">Yönetici Paneli</a>
+                    </li>
+                }
+
+            }
+            <li class="list-group-item py-3 offcanvasItem"><a href="/" class="yellow-hover">Ana Sayfa</a></li>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li class="list-group-item py-3  offcanvasItem"><a href="/Members/AccountStatement" class="yellow-hover">Hesap Özeti</a></li>
+            }
+            <li class="list-group-item py-3 offcanvasItem"><a href="/Home/AboutUs" class="yellow-hover">Hakkımızda</a></li>
+            <li class="list-group-item py-3 offcanvasItem"><a href="limitler-kurallar.html" class="yellow-hover">Limitler ve Kurallar</a></li>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li class="list-group-item py-3 offcanvasItem"><a href="/Members/Settings" class="yellow-hover">Ayarlar</a></li>
+            }
+            <li class="list-group-item py-3 offcanvasItem mt-1">
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="row">
+                        <div class="col-md-12 text-white ">
+                            <span> Merhaba, <strong style="font-weight:bold;color:#f4e185">@User.Identity.Name</strong></span>
+                        </div>
+                    </div>
+                    <div class="col-md-12 ">
+                        <a type="button" class="btn btn-outline-warning btn-sm mx-1" href="/Auth/Logout" style="font-weight:normal">
+                            Çıkış Yap
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <a  class="btn btn-outline-success btn-sm m-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Giriş Yap
+                    </a>
+                    <a class="btn btn-outline-info btn-sm m-2" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        Kayıt Ol
+                    </a>
+                    @await Component.InvokeAsync("LoginModal")
+                    @await Component.InvokeAsync("RegisterModal")
+                }
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+

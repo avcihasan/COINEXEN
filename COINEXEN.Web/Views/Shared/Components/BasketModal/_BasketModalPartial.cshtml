@@ -1,0 +1,87 @@
+﻿@model GetCoinVM
+
+<div class="modal fade" id="basketModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content bg-secondary">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@Model.Name</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-action="AddToBasket" asp-controller="Baskets" method="post">
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <h5>Güncel Fiyat</h5>
+                            <p>
+                                @Model.Price.ToString().Replace(',', '.')
+                            </p>
+                            <input type="hidden" name="sayi2" id="sayi2" value="@Model.Price.ToString().Replace(',', '.')" />
+                        </div>
+
+                        <input type="hidden" name="Id" asp-for="@Model.Id" />
+                        <div class="col-md-6">
+                            <h5>Almak İstediğiniz Adet</h5>
+                            <input type="number" name="Stock" class="form-control text-center" id="AlimSayisi" />
+                            <span asp-validation-for="Stock"></span>
+                        </div>
+
+                        <br />
+                        <hr />
+                        <div class="text-end">
+                            <h5>Hesaplanan Ortalama Fiyat</h5>
+                            <input type="text" disabled name="sonuc" id="sonuc" />
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-success">
+                        <i class="fa fa-money fa-lg" aria-hidden="true">Satın Al</i>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script type="text/javascript">
+    function carpma() {
+        var AlimSayisi = document.getElementById("AlimSayisi").value;
+        var sayi2 = document.getElementById("sayi2").value;
+        if (AlimSayisi == "" || sayi2 == "") {
+            document.getElementById("sonuc").value = "0";
+        }
+        else {
+            document.getElementById("sonuc").value = parseFloat(AlimSayisi) * parseFloat(sayi2);
+            parseFloat("sonuc");
+        }
+    }
+    setInterval("carpma()", 100);
+</script>

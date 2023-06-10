@@ -64,11 +64,11 @@ namespace COINEXEN.Service.Validators.UserValidators
                     .WithMessage("{PropertyName} boş geçilemez");
 
 
-            RuleFor(x => x.Gender)
-                .NotEmpty()
-                    .WithMessage("{PropertyName} boş geçilemez")
-                .NotNull()
-                    .WithMessage("{PropertyName} boş geçilemez");
+            //RuleFor(x => x.Gender)
+            //    .NotEmpty()
+            //        .WithMessage("{PropertyName} boş geçilemez")
+            //    .NotNull()
+            //        .WithMessage("{PropertyName} boş geçilemez");
 
 
             RuleFor(x => x.Password)
