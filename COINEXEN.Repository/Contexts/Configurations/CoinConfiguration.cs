@@ -14,22 +14,41 @@ namespace COINEXEN.Repository.Contexts.Configurations
     {
         public void Configure(EntityTypeBuilder<Coin> builder)
         {
+            builder.HasKey(x=>x.Id);
+
             builder
                 .HasOne(x => x.Category)
-                .WithMany(x=>x.Coins)
-                .HasForeignKey(x=>x.CategoryId);
-
-
-
+                .WithMany(x => x.Coins)
+                .HasForeignKey(x => x.CategoryId);
 
             builder
-                .HasData(
-                     new Coin() { Id =1, Name = "Acoin", PhotoPath = "A-Photo", Description = "A-Description", Stock = 10, Price = 1.2,ShortName="A", CategoryId = 1 },
-                     new Coin() { Id = 2, Name = "Bcoin", PhotoPath = "B-Photo", Description = "B-Description", Stock = 10, Price = 1.2, ShortName = "A", CategoryId = 3},
-                     new Coin() { Id = 3, Name = "Ccoin", PhotoPath = "C-Photo", Description = "C-Description", Stock = 10, Price = 1.2, ShortName = "A", CategoryId = 3 },
-                     new Coin() { Id = 4, Name = "Dcoin", PhotoPath = "D-Photo", Description = "D-Description", Stock = 10, Price = 1.2, ShortName = "A", CategoryId = 1 },
-                     new Coin() { Id =5, Name = "Ecoin", PhotoPath = "E-Photo", Description = "E-Description", Stock = 10, Price = 1.2, ShortName = "A", CategoryId = 2}
-                );
+                .HasData(SeedCoins());
+        }
+
+        private List<Coin> SeedCoins()
+        {
+            List<string> shortNames = new()
+            {
+                        "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","x","y","z"
+            };
+            List<Coin> coins = new();
+            int i = 1;
+            foreach (var shortName in shortNames)
+            {
+                coins.Add(
+                    new Coin() 
+                    { 
+                        Id = i, 
+                        Name = $"{shortName.ToUpper()}Coin", 
+                        Description = $"{shortName.ToUpper()}-Description", 
+                        Stock = 10, 
+                        Price = 1.6, 
+                        ShortName = shortName, 
+                        CategoryId = 1
+                    });
+                i++;
+            }
+            return coins;
         }
     }
 }

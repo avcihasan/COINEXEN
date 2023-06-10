@@ -35,9 +35,6 @@ namespace COINEXEN.Web.Controllers
 
         public async Task<IActionResult> CoinDetails(int id)
         {
-            if (id == null)
-                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
-           
             GetCoinVM coin = await _coinService.GetCoinByIdAsync(id);
             if (coin == null)
                 return NotFound();

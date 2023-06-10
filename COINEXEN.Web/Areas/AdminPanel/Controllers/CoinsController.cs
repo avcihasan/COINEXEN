@@ -23,8 +23,6 @@ namespace COINEXEN.Web.Areas.AdminPanel.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            if (id == null)
-                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             Coin coin = await _unitOfWork.CoinRepository.GetCoinByIdWithCategoryAsync(id);
             if (coin == null)
                 return NotFound();
@@ -49,8 +47,6 @@ namespace COINEXEN.Web.Areas.AdminPanel.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            if (id == null)
-                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             Coin coin = await _unitOfWork.CoinRepository.GetByIdAsync(id);
             if (coin == null)
                 return NotFound();
@@ -71,8 +67,6 @@ namespace COINEXEN.Web.Areas.AdminPanel.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
-                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             Coin coin = await _unitOfWork.CoinRepository.GetCoinByIdWithCategoryAsync(id);
             if (coin == null)
                 return NotFound();
@@ -83,8 +77,6 @@ namespace COINEXEN.Web.Areas.AdminPanel.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (id == null)
-                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             if (await _coinService.RemoveByIdAsync(id))
                 return RedirectToAction("Index");
             return BadRequest();

@@ -1,0 +1,926 @@
+body {
+    background-image: url(body_bg.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 79px;
+}
+.navbar{
+    background-color: #0f2c67 !important;
+    border-bottom: 1px solid #f4e185 ;
+    position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+		width: 100%;
+		left:0;
+		right: 0;
+		z-index: 100;
+}
+.carouselExampleCaptions{
+    z-index: 1;
+}
+.offcanvasMenu{
+    background-color: #0f2c67;
+    color: white;
+    z-index: 9999999999;
+}
+.offcanvasMenu .offcanvasMenu-header{
+    font-weight: bold;
+    font-size: 2rem;
+}
+.offcanvasMenu .offcanvasItem{
+    background-color: #0f2c67;
+    border:0px;
+    
+    
+}
+.offcanvasMenu .offcanvasItem a{
+    text-decoration: none;
+    color: white ;
+    font-size: 1.35rem;
+}
+
+.yellow-hover:hover{
+    color:#f4e185 !important;
+}
+.headerButton{
+    color: white;
+}
+
+.offcanvas-close{
+    text-align: right;
+}
+
+.islemler-link{
+   
+    text-decoration: none;
+    border: none;
+    font-size: 1.45rem;
+    font-weight: bold;
+    color:white !important; 
+    
+}
+.islemler-link:hover{
+    border:0 !important;
+    color:#f4e185 !important;
+}
+.footer-link{
+    text-decoration: none;
+    color:#929fba;
+    font-size: 18px;
+}
+.footer-baslik{
+    font-weight: bold;
+
+}
+.footer-link2{
+    color:#929fba;
+}
+.footer-link2 a{
+    text-decoration: none;
+    color: white;
+}
+.hoverSocial-link{
+    width:150px;
+}
+.hoverSocial-link:hover{
+    border: 1px solid #f4e185;
+    background-color:  #0f2c67;
+}
+footer h1{
+    font-weight:bold ;
+    font-size: 50px;
+}
+footer h4{
+    margin-bottom: 20px;
+}
+footer hr{
+    background-color: #f4e185;
+}
+.carousel-control-next-icon{
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: #0f2c67;
+  
+}
+.carousel-control-prev-icon{
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: #0f2c67;
+}
+.carousel-control-prev-icon:hover{
+    border: 2px solid #f4e185;
+    
+ 
+}
+.carousel-control-next-icon:hover{
+    border: 2px solid #f4e185;
+    
+}
+.carousel-inner img{
+    object-fit: cover;
+    height: 500px;
+}
+.carousel-caption{
+    opacity: 0.5;
+    border-radius:45px;
+    color:#0f2c67;
+}
+.carousel-caption:hover{
+    opacity: 1;
+}
+#carouselExampleCaptions .carousel-indicators button{
+    background-color: #0f2c67;
+}
+
+.wallet {
+    padding: 113px 30px 0 30px;
+}
+
+.wallet_box {
+    background: #F4E185;
+    margin-bottom: 30px;
+    transition: ease-in all 0.5s;
+    padding: 25px 15px 50px 15px;
+    height: 300px;
+}
+
+.wallet_box h3 {
+    color: black;
+    font-size: 22px;
+    text-transform: uppercase;
+    transition: ease-in all 0.5s;
+    font-weight: bold;
+    line-height: 22px;
+    padding: 20px 0 20px 0;
+}
+
+.wallet_box p {
+    color: black;
+    font-size: 16px;
+    line-height: 28px;
+    transition: ease-in all 0.5s;
+}
+
+#wa_hover:hover.wallet_box {
+    background: #0F2C67;
+    transition: ease-in all 0.5s;
+}
+
+#wa_hover:hover i img {
+    filter: invert();
+    transition: ease-in all 0.5s;
+}
+
+#wa_hover:hover.wallet_box h3 {
+    color: #fff;
+    transition: ease-in all 0.5s;
+}
+
+#wa_hover:hover.wallet_box p {
+    color: #fff;
+    transition: ease-in all 0.5s;
+}
+
+.about {
+    border: 1px dashed #F4E185 !important;
+    padding-top: 50px;
+}
+
+
+.about h2{
+    color: #F4E185;
+    font-weight: bold;
+    font-size:3.0rem;
+}
+.about p{
+    color: white;
+    padding: 15px 15px 0 0;
+    line-height: 31px;
+    letter-spacing: 2px; 
+}
+.about img{
+    
+width: 90%;
+}
+.contact h2{
+    font-weight: bold;
+    font-size: 3rem;
+    color: #F4E185;
+}
+
+.contact label{
+    color: #f4e185 !important;
+}
+.contact input {
+    background: none;
+    color: white;
+}
+.contact input:hover {
+    background: #f4e185;
+    color: #0F2C67;;
+}
+.contact select {
+    background: none;
+    color: #0F2C67;
+}
+.contact select:hover {
+    background: #f4e185;
+}
+.contact option {
+    background: none;
+    color: #0F2C67;
+}
+.contact option:hover {
+    background: #f4e185;
+}
+.contact button{ 
+    
+    font-size: 25px;
+    
+}
+
+.contact .input-group span{ 
+    
+    background: #0F2C67;
+    color: white;
+    
+}
+.contact textarea{
+    background: none;
+    color: white;
+}
+.contact textarea:hover{
+    background: #f4e185;
+    color: #0F2C67;
+}
+
+
+#backtotop{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+#backtotop i{
+   color:white;
+   font-size: 45px;
+}
+#backtotop i:hover{
+    color:#F4E185;
+    
+}
+.tarihceLogo .col-md-5{
+    border-bottom: 1px solid white;
+}
+
+.tarihceLogo .col-md-2 .logoDiv{
+    border: 1px solid white;border-radius: 100%;
+}
+
+.tarihceLogo .col-md-2 .logoDiv img{
+    object-fit: cover; width: 100%; 
+}
+
+.coinCards .row .col-md-4 div{
+    border: 1px solid white;
+}
+.coinCards h2{
+    font-weight: bold;
+}
+.socailLink-tarihce .row{
+
+    border: 1px solid white; padding: 40px 0;
+}
+
+
+.socailLink-tarihce .row .col-md-12 {
+
+    margin-top: -25px;
+}
+.sponsor-tarihce {
+    margin-top: 80px !important;
+}
+.sponsor-tarihce .row{
+    
+    border: 1px solid white; padding: 40px 0;
+}
+
+
+.sponsor-tarihce .row .col-md-12 {
+
+    margin-top: -25px;
+}
+.map{
+    padding: 0 5rem;
+    margin-bottom: 50px;
+   
+}
+
+
+.satislar .col-md-4 div{
+    border:1px solid  #f4e185;
+
+}
+.satislar .col-md-4 div:hover{
+    transform: scale(1.1);
+    
+
+}
+.satislar button{
+    border-radius: 20px;
+     border:1px solid #0F2C67;
+     background-color: #f4e185;
+     color: #0F2C67;
+    font-weight: bold;
+}
+.satislar button:hover{
+   
+     border:1px solid #f4e185;
+     background-color: #0F2C67;
+     color: #f4e185;
+    
+}
+
+.satislar table thead{
+    font-size: 30px;
+    color: #f4e185;
+}
+
+
+.onSatis-header{
+    border: 1px solid white; 
+    border-top: none;
+     border-radius: 0 0 50px 50px; 
+}
+
+.onSatis-header h2{
+    font-weight:bold;
+    color: #f4e185;    
+}
+
+.ayarlar-bilgi .container img{
+    margin: auto ;
+    display: block;
+    width: 60%;
+    object-fit: cover;
+    border-radius: 60px;
+  
+}
+.ayarlar-bilgi .container hr{
+ background-color: #f4e185;
+  
+}
+
+
+.ayarlar-bilgi .container{
+    margin-top: -15px;
+}
+.ayarlar-bilgi h5{
+    color: grey;
+    margin-bottom: 0;
+    margin-top: 13px;
+    font-size: 1.2rem;
+}
+
+.ayarlar-bilgi span{
+   color:  #F4E185; font-size: 1.5rem;
+  
+}
+
+.ayarlar-header ul li{
+    background: none; 
+    border: 0; 
+    margin: 0 auto;
+}
+.ayarlar-header ul li button{
+    padding-left: 0; 
+    padding-right:0; 
+    font-weight: bold;
+}
+
+#first-div{
+    display: block;
+}
+#first-div img{
+    display: block; margin: auto; object-fit: cover; width: 60%;
+}
+#hesap-ayarlari{
+    display: none;
+}
+
+
+#hesap-ayarlari h5{
+    color: grey;
+    margin-top: 25px;
+}
+#hesap-ayarlari h3{
+    font-weight: bold; color: yellow
+}
+
+#hesap-ayarlari span{
+    color: #f4e185;
+    font-size: 1.2rem;
+  
+
+}
+
+#hesap-ayarlari button{
+    position: absolute; right: 20px;
+}
+
+#hesap-ayarlari .row{
+    padding: 0;
+}
+
+#hesap-ayarlari .row .col-md-2,.col-md-3,.col-md-4{
+    padding: 0;
+}
+
+
+#erisim-ayarlari{
+    display: none;
+}
+
+
+#erisim-ayarlari h5{
+    color: #f4e185;
+    margin-top: 25px;
+}
+#erisim-ayarlari h3{
+    font-weight: bold; color: yellow
+}
+
+#erisim-ayarlari span{
+    color: grey;
+    font-size: 1.2rem;
+  
+
+}
+
+#erisim-ayarlari button {
+    position: absolute; right: 20px;
+}
+#erisim-ayarlari  input{
+    position: absolute; right: 5px;
+}
+
+
+#erisim-ayarlari .row{
+    padding: 0;
+}
+
+
+.erisim-sifre{
+    display: inline;
+}
+
+.yellow-border{
+    border-left: 3px solid yellow;
+              
+}
+.green-border{
+    border-left: 3px solid green;
+}
+
+.green-border a {
+   
+  font-size: 50px ;
+  bottom: 0;
+  text-decoration: none;
+}
+
+
+
+.api a{
+    display: block; margin-top: 5px; color: yellow;
+    text-decoration: none;
+}
+
+
+
+#onay-bildirim{
+    display: none;
+}
+
+
+#onay-bildirim h5{
+    color: #f4e185;
+    margin-top: 25px;
+}
+#onay-bildirim h3{
+    font-weight: bold; color: yellow
+}
+
+#onay-bildirim span{
+    color: grey;
+    font-size: 1.2rem;
+  
+
+}
+
+
+#onay-bildirim  input{
+    position: absolute; right: 5px;
+}
+
+
+
+
+#iletisim-ayarlari{
+    display: none;
+}
+
+
+#iletisim-ayarlari h5{
+    color: #f4e185;
+    margin-top: 25px;
+}
+#iletisim-ayarlari h3{
+    font-weight: bold; color: yellow
+}
+
+#iletisim-ayarlari span{
+    color: grey;
+    font-size: 1.2rem;
+  
+
+}
+
+
+#iletisim-ayarlari  input{
+    position: absolute; right: 5px;
+}
+#ayarlar-mobilBilgi{
+    display: none;
+}
+
+#profilBilgi-kapatma{
+    display: none;
+    text-align: right;
+ 
+}
+#profilBilgi-kapatma button{
+    color: yellow;
+ 
+}
+#ayarlar-mobilBilgi button{
+    color: yellow;
+}
+
+
+.profilLinks .col-md-12{
+    padding: 20px 0;
+    border-bottom: 2px solid white;
+}
+
+.profilLinks .col-md-12 a{
+    text-decoration: none;
+    color:white
+}
+.profilLinks .col-md-12 a:hover{
+    color: #f4e185;
+}
+
+.profilLinks-header{
+    background-color: white; border-radius: 10px; text-align: center;
+}
+
+
+
+.profilLinks .col-md-9 img{
+    display: block; margin: auto; object-fit: cover; width: 60%;
+}
+
+
+.hesap-bilgileri td{
+    color: white !important;
+}
+.hesap-bilgileri h2,h3{
+    color: white;
+    font-weight: bold;
+}
+.red-color{
+    color: #F4E185 !important;
+}
+
+.green-color{
+    color: green !important;
+}
+
+
+.hizli-satis th,td{
+    border: none;
+}
+.hizli-satis u{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.hizli-satisMobil th,td{
+    border: none;
+}
+.hizli-satisMobil u{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.hizli-satisMobil {
+    display: none;
+}
+
+.hizli-satis .d-flex input{
+    background: none; border: 1px solid  #F4E185;
+}
+.hizli-satis .table input{
+    background: none; border: 1px solid  #F4E185;
+    margin-right: 20px;
+}
+
+.hizli-satis .d-flex button{
+    width: 100px;
+}
+.hizli-satis td button{
+    margin: 0 2px;
+}
+.hizli-satisMobil .d-flex button{
+    width: 150px;
+
+}
+.hizli-satisMobil .col-md-12 input{
+    background: none; border: 1px solid  #F4E185;
+
+}
+.fa-arrow-up{
+    color: green;
+}
+.fa-arrow-down{
+    color: red;
+}
+.offcanvas{
+    width: 340px;
+}
+.onSatis-detayHeader{
+    border:1px solid white; border-top: none;
+    border-radius: 0 0 10px 10px;
+}
+.onSatis-detayHeader h3{
+    color: white;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+.onSatis-detayHeader span{
+    color: white;
+    font-size: 1.2rem;
+
+}
+.onSatis-detayHeader img{
+    object-fit: cover; width: 40%; 
+    margin-right: 6.5rem;
+}
+.onSatis-durum{
+    background-color: #F4E185;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #0F2C67;
+}
+
+.coinBilgi p{
+    color: white;
+}
+.coinBilgi .col-md-4 div:hover{
+    transform: scale(1.05);
+    
+
+}
+.coinBilgi a{
+    border-radius: 20px;
+     border:1px solid #0F2C67;
+     background-color: #f4e185;
+     color: #0F2C67;
+    font-weight: bold;
+}
+.coinBilgi a:hover{
+   
+     border:1px solid #f4e185;
+     background-color: #0F2C67;
+     color: #f4e185;
+    
+}
+
+.coinBilgi table thead{
+    font-size: 30px;
+    color: #f4e185;
+}
+
+
+
+
+.satis-secenekleri h4{
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.satis-secenekleri .card{
+    background: none ;
+    opacity: .7;
+}
+.satis-secenekleri .card .card-header{
+    background-color: #f4e185;; color: #0F2C67;
+    font-weight: bold;
+}
+
+.satis-secenekleri .card .card-body .col-md-6 {
+    padding:5px 0;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.satis-secenekleri .card:hover {
+    transform: scale(1.03);
+}
+
+
+.sik-sorulanlar h4{
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.sik-sorulanlar .accordion-item{
+    background: none;
+}
+.sik-sorulanlar .accordion-item h2 button{
+    background: none;
+    color: white;
+    font-weight: bold;
+}
+.sik-sorulanlar .accordion-item .accordion-collapse{
+  
+    color: white;
+  
+}
+
+  .accordion-button.collapsed::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  }
+
+  .diger-projeler h4{
+    
+        color: white;
+        font-size: 1.4rem;
+        font-weight: bold;
+   
+  }
+
+
+
+.diger-projeler .col-md-4 div{
+    border:1px solid  #f4e185;
+
+}
+
+.diger-projeler button{
+    border-radius: 20px;
+     border:1px solid #0F2C67;
+     background-color: #f4e185;
+     color: #0F2C67;
+    font-weight: bold;
+}
+.diger-projeler button:hover{
+   
+     border:1px solid #f4e185;
+     background-color: #0F2C67;
+     color: #f4e185;
+    
+}
+
+.diger-projeler table thead{
+    font-size: 30px;
+    color: #f4e185;
+}
+
+
+.satisKategori .list-group-item {
+    background-color: #f4e185;
+    border: none;
+    color: #0F2C67;
+}
+
+ .satisKategori .list-group-item:hover {
+        background-color: #0F2C67;
+        border: none;
+        color: #f4e185;
+    }
+
+.satisKategori-Mobil button {
+    background-color: #0F2C67;
+}
+
+    .satisKategori-Mobil button:focus {
+        background-color: #f4e185;
+        color: #0F2C67;
+    }
+
+    .satisKategori-Mobil button:hover {
+        background-color: #f4e185;
+        color: #0F2C67;
+    }
+
+.satisKategori-Mobil .dropdown-menu, .dropdown-item {
+    background-color: #f4e185 ;
+    color: #0F2C67;
+}
+
+.satisKategori-Mobil .dropdown-item:active {
+    background-color: #0F2C67;
+    color: #f4e185;
+}
+.active-link {
+    background-color: #0F2C67 !important;
+    border: none;
+    color: #f4e185 !important;
+}
+
+
+.quantity-input {
+    max-width: 70px;
+    text-align: center;
+    float: left;
+    font-size: 19px;
+    border: 1px solid gray;
+    border-left: none;
+    border-right: none;
+    color: gray;
+    height: 30px;
+}
+
+.quantity-minus, .quantity-plus {
+    color: #fff;
+    border: none;
+    float: left;
+}
+
+.quantity-minus {
+    background-color: #E71426;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    height: 30px;
+}
+
+.quantity-plus {
+    background-color: #13D008;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    height: 30px;
+}
+@media (max-width: 768px) {
+    .about {
+        border: none;
+        
+        
+    }
+ 
+   
+   
+    
+   }
+   @media (min-width: 992px){
+    .aramaKutusu{
+        display: block !important;
+    }
+    .nav-mobil{
+        display: none;
+    }
+   }
+ 
+  
+@media (max-width: 992px){
+.hizli-satis{
+    display: none;
+}
+.hizli-satisMobil {
+    display: block;
+}
+.ayarlar-header li button{
+    height: 80px;
+}
+.onSatis-detayHeader .text-end{
+    display: none;
+}
+#headerButton{
+    display: none;
+}
+.responsive-none{
+    display: none;
+}
+    .hesapOzeti-linkler{
+        display:none;
+    }
+   }
+
+
+.psw{
+    width:10px !important;
+}

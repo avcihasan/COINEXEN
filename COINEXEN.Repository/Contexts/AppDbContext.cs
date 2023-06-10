@@ -12,7 +12,6 @@ namespace COINEXEN.Repository.Contexts
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        public DbSet<BaseEntity> BaseEntities { get; set; }
         public DbSet<Coin> Coins { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Message> Messages { get; set; }

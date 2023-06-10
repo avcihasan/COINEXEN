@@ -1,0 +1,193 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\css\\body_bg.jpg",
+      "PackagePath": "staticwebassets\\css\\body_bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\1.jpg",
+      "PackagePath": "staticwebassets\\img\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\2.jpg",
+      "PackagePath": "staticwebassets\\img\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\3.jpg",
+      "PackagePath": "staticwebassets\\img\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\COINEXEN-removebg-preview.png",
+      "PackagePath": "staticwebassets\\img\\COINEXEN-removebg-preview.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\about2.png",
+      "PackagePath": "staticwebassets\\img\\about2.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\a.png",
+      "PackagePath": "staticwebassets\\img\\coins\\a.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\b.png",
+      "PackagePath": "staticwebassets\\img\\coins\\b.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\c.png",
+      "PackagePath": "staticwebassets\\img\\coins\\c.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\d.png",
+      "PackagePath": "staticwebassets\\img\\coins\\d.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\e.png",
+      "PackagePath": "staticwebassets\\img\\coins\\e.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\f.png",
+      "PackagePath": "staticwebassets\\img\\coins\\f.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\g.png",
+      "PackagePath": "staticwebassets\\img\\coins\\g.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\h.png",
+      "PackagePath": "staticwebassets\\img\\coins\\h.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\i.png",
+      "PackagePath": "staticwebassets\\img\\coins\\i.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\j.png",
+      "PackagePath": "staticwebassets\\img\\coins\\j.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\k.png",
+      "PackagePath": "staticwebassets\\img\\coins\\k.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\l.png",
+      "PackagePath": "staticwebassets\\img\\coins\\l.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\m.png",
+      "PackagePath": "staticwebassets\\img\\coins\\m.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\n.png",
+      "PackagePath": "staticwebassets\\img\\coins\\n.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\o.png",
+      "PackagePath": "staticwebassets\\img\\coins\\o.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\p.png",
+      "PackagePath": "staticwebassets\\img\\coins\\p.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\q.png",
+      "PackagePath": "staticwebassets\\img\\coins\\q.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\r.png",
+      "PackagePath": "staticwebassets\\img\\coins\\r.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\s.png",
+      "PackagePath": "staticwebassets\\img\\coins\\s.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\t.png",
+      "PackagePath": "staticwebassets\\img\\coins\\t.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\u.png",
+      "PackagePath": "staticwebassets\\img\\coins\\u.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\v.png",
+      "PackagePath": "staticwebassets\\img\\coins\\v.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\x.png",
+      "PackagePath": "staticwebassets\\img\\coins\\x.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\y.png",
+      "PackagePath": "staticwebassets\\img\\coins\\y.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\coins\\z.png",
+      "PackagePath": "staticwebassets\\img\\coins\\z.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\faviocin.png",
+      "PackagePath": "staticwebassets\\img\\faviocin.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\kk.jpg",
+      "PackagePath": "staticwebassets\\img\\kk.jpg"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\no-avatar.png",
+      "PackagePath": "staticwebassets\\img\\no-avatar.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\top_img.png",
+      "PackagePath": "staticwebassets\\img\\top_img.png"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\wa1.svg",
+      "PackagePath": "staticwebassets\\img\\wa1.svg"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\wa2.svg",
+      "PackagePath": "staticwebassets\\img\\wa2.svg"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\wa3.svg",
+      "PackagePath": "staticwebassets\\img\\wa3.svg"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\img\\wa4.svg",
+      "PackagePath": "staticwebassets\\img\\wa4.svg"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\js\\jquery-1.10.2.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-1.10.2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\avcih\\OneDrive\\Masaüstü\\COINEXEN\\COINEXEN.Web\\wwwroot\\js\\modernizr-2.6.2.js",
+      "PackagePath": "staticwebassets\\js\\modernizr-2.6.2.js"
+    },
+    {
+      "Id": "obj\\Debug\\net60\\staticwebassets\\msbuild.COINEXEN.Web.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net60\\staticwebassets\\msbuild.build.COINEXEN.Web.props",
+      "PackagePath": "build\\COINEXEN.Web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net60\\staticwebassets\\msbuild.buildMultiTargeting.COINEXEN.Web.props",
+      "PackagePath": "buildMultiTargeting\\COINEXEN.Web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net60\\staticwebassets\\msbuild.buildTransitive.COINEXEN.Web.props",
+      "PackagePath": "buildTransitive\\COINEXEN.Web.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

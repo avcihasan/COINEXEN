@@ -25,8 +25,6 @@ namespace COINEXEN.Web.Areas.AdminPanel.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            if (id == null)
-                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             Category category = await _unitOfWork.CategoryRepository.GetByIdAsync(id);
             if (category != null)
                 return View(category);
@@ -48,8 +46,6 @@ namespace COINEXEN.Web.Areas.AdminPanel.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            if (id == null)
-                return BadRequest();
             Category category = await _unitOfWork.CategoryRepository.GetByIdAsync(id);
             if (category != null)
                 return View(category);
@@ -67,21 +63,16 @@ namespace COINEXEN.Web.Areas.AdminPanel.Controllers
         }
         public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
-                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             Category category = await _unitOfWork.CategoryRepository.GetByIdAsync(id);
             if (category != null)
                 return View(category);
             return NotFound();
         }
 
-
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (id == null)
-                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
             if (await _categoryService.RemoveByIdAsync(id))
                 return RedirectToAction("Index");
             return BadRequest();

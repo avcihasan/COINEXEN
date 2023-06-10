@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddSystemWebAdapters();
-builder.Services.AddReverseProxy().LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
+//builder.Services.AddSystemWebAdapters();
+//builder.Services.AddReverseProxy().LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -60,7 +60,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
-app.UseSystemWebAdapters();
+//app.UseSystemWebAdapters();
 
 app.MapControllerRoute(
     name: "adminPanel",
@@ -68,6 +68,6 @@ app.MapControllerRoute(
     );
 
 app.MapDefaultControllerRoute();
-app.MapReverseProxy();
+//app.MapReverseProxy();
 
 app.Run();
